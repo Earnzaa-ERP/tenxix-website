@@ -15,15 +15,22 @@ deployment:
 
     - export DEPLOYPATH=/home/solomon/tenxix.com
 
-    # Copy all HTML pages
-    - /bin/cp -R index.html $DEPLOYPATH
-    - /bin/cp -R about.html $DEPLOYPATH
-    - /bin/cp -R shop.html $DEPLOYPATH
-    - /bin/cp -R products.html $DEPLOYPATH
-    - /bin/cp -R contact.html $DEPLOYPATH
+    # Clean previous deployment (keep .well-known and cgi-bin)
+    - /bin/rm -rf $DEPLOYPATH/assets
+    - /bin/rm -rf $DEPLOYPATH/products
+    - /bin/rm -f  $DEPLOYPATH/index.html
+    - /bin/rm -f  $DEPLOYPATH/about.html
+    - /bin/rm -f  $DEPLOYPATH/shop.html
+    - /bin/rm -f  $DEPLOYPATH/products.html
+    - /bin/rm -f  $DEPLOYPATH/contact.html
 
-    # Copy individual product pages folder
-    - /bin/cp -R products $DEPLOYPATH
+    # Copy fresh HTML pages
+    - /bin/cp index.html $DEPLOYPATH/
+    - /bin/cp about.html $DEPLOYPATH/
+    - /bin/cp shop.html $DEPLOYPATH/
+    - /bin/cp products.html $DEPLOYPATH/
+    - /bin/cp contact.html $DEPLOYPATH/
 
-    # Copy assets (CSS, JS, images)
-    - /bin/cp -R assets $DEPLOYPATH
+    # Copy folders (with -R for recursive)
+    - /bin/cp -R products $DEPLOYPATH/
+    - /bin/cp -R assets $DEPLOYPATH/
