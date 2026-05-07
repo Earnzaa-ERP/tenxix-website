@@ -13,7 +13,7 @@ deployment:
     # 3. In cPanel Git Version Control → Update from Remote → Deploy HEAD
     # ============================================
 
-    - export DEPLOYPATH=/home/solomon/public_html/tenxix.com
+    - export DEPLOYPATH=/home/solomon/tenxix.com
 
     # Copy all HTML pages
     - /bin/cp -R index.html $DEPLOYPATH
