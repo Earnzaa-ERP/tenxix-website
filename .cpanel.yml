@@ -1,0 +1,29 @@
+---
+deployment:
+  tasks:
+    # ============================================
+    # AUTO-DEPLOY CONFIG for cPanel Git Version Control
+    # ============================================
+    # 1. Update DEPLOYPATH below with YOUR cPanel home + live folder
+    #    Find your cPanel username in cPanel top-right (e.g. "tenxixco")
+    #    Common paths:
+    #      Primary domain:  /home/USERNAME/public_html
+    #      Addon domain:    /home/USERNAME/public_html/tenxix.com
+    # 2. Commit + push this file to GitHub
+    # 3. In cPanel Git Version Control → Update from Remote → Deploy HEAD
+    # ============================================
+
+    - export DEPLOYPATH=/home/solomon/public_html/tenxix.com
+
+    # Copy all HTML pages
+    - /bin/cp -R index.html $DEPLOYPATH
+    - /bin/cp -R about.html $DEPLOYPATH
+    - /bin/cp -R shop.html $DEPLOYPATH
+    - /bin/cp -R products.html $DEPLOYPATH
+    - /bin/cp -R contact.html $DEPLOYPATH
+
+    # Copy individual product pages folder
+    - /bin/cp -R products $DEPLOYPATH
+
+    # Copy assets (CSS, JS, images)
+    - /bin/cp -R assets $DEPLOYPATH
