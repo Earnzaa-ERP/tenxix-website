@@ -2758,6 +2758,9 @@ p { margin-bottom: 1rem; }
 @media (max-width: 768px) {
   body { font-size: 15.5px; }
 
+  /* Section padding globally tighter */
+  .section { padding: 56px 0; }
+
   /* Mobile nav — Try Kira sits in the mobile menu */
   .nav-links {
     padding: 24px;
@@ -2773,41 +2776,64 @@ p { margin-bottom: 1rem; }
   .btn-kira { font-size: 0.95rem; }
   .nav-cart { width: auto !important; }
 
-  /* Hero — taller paddings, smaller stickers */
-  .hero { min-height: auto; padding-bottom: 80px; }
-  .hero-slide {
-    padding-top: 110px;
-    padding-bottom: 200px;
+  /* Hero — compact mobile layout */
+  .hero {
+    min-height: auto;
+    padding-top: 88px;
+    padding-bottom: 40px;
   }
-  .hero-slide .container { padding: 0 20px; }
-  .hero h1 { font-size: clamp(2.2rem, 8vw, 3.4rem); }
-  .hero-content p { font-size: 1rem; }
-  .hero-buttons { flex-direction: column; gap: 12px; width: 100%; }
-  .hero-buttons .btn { width: 100%; }
-  .hero-image img { max-width: 240px; }
+  .hero-slide {
+    padding-top: 24px;
+    padding-bottom: 110px;
+  }
+  .hero-slide .container { padding: 0 20px; gap: 20px; }
+  .hero h1 {
+    font-size: clamp(1.9rem, 9vw, 2.6rem);
+    line-height: 1.05;
+    margin-bottom: 14px;
+  }
+  .hero-content p { font-size: 0.95rem; margin-bottom: 18px; }
+  .hero-buttons { flex-direction: column; gap: 10px; width: 100%; }
+  .hero-buttons .btn { width: 100%; padding: 14px 22px; font-size: 0.92rem; }
+  .hero-image img { max-width: 200px; }
+  .hero-image .kira-orb { max-width: 220px; margin: 0 auto; }
+  .hero-image > div[style*="aspect-ratio"] { max-width: 220px !important; }
 
-  /* Hide bigger sticker accents on mobile, keep one small */
-  .hero-accent-1 { top: 5%; right: 0; padding: 8px 12px; font-size: 0.7rem; }
-  .hero-accent-2 { display: none; }
-  .hero-blob-1 { width: 180px; height: 180px; }
-  .hero-blob-2 { width: 140px; height: 140px; }
+  /* Hide all big sticker accents on mobile (clutter) */
+  .hero-accent-1, .hero-accent-2 { display: none; }
+  .hero-blob-1 { width: 160px; height: 160px; opacity: 0.25; }
+  .hero-blob-2 { width: 120px; height: 120px; opacity: 0.35; }
 
   /* Hero rating badge smaller */
-  .hero-rating { padding: 8px 14px; font-size: 0.78rem; gap: 8px; }
-  .hero-rating-stars { font-size: 0.85rem; }
+  .hero-rating {
+    padding: 7px 12px;
+    font-size: 0.74rem;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .hero-rating-stars { font-size: 0.82rem; }
 
-  /* Hero dots */
-  .hero-dots { bottom: 110px; padding: 8px 12px; gap: 6px; }
-  .hero-dot { width: 22px; height: 5px; }
-  .hero-dot.active { width: 40px; }
+  /* Hero sticker on slides */
+  .hero-content .sticker {
+    font-size: 0.66rem;
+    padding: 8px 14px;
+    margin-bottom: 12px !important;
+  }
 
-  /* Marquee — slightly smaller */
-  .marquee { padding: 16px 0; }
-  .marquee-item { font-size: 0.9rem; gap: 10px; }
+  /* Hero dots — sit cleanly above cream curve */
+  .hero-dots { bottom: 56px; padding: 7px 10px; gap: 5px; }
+  .hero-dot { width: 20px; height: 4px; }
+  .hero-dot.active { width: 36px; }
 
-  /* Kira section adjustments */
-  .kira-section { padding: 80px 0; }
-  .kira-content h2 { font-size: clamp(2rem, 7vw, 2.8rem); }
+  /* Marquee — tighter */
+  .marquee { padding: 12px 0; }
+  .marquee-item { font-size: 0.8rem; gap: 8px; }
+  .marquee-track { gap: 32px; }
+
+  /* Kira section adjustments — much tighter */
+  .kira-section { padding: 56px 0; }
+  .kira-content h2 { font-size: clamp(1.8rem, 8vw, 2.4rem); margin-bottom: 16px; }
+  .kira-content > p { font-size: 1rem; margin-bottom: 22px; }
   .kira-steps { flex-direction: column; }
   .kira-step { min-width: 100%; }
   .kira-cta-row { flex-direction: column; gap: 12px; }
@@ -2823,27 +2849,28 @@ p { margin-bottom: 1rem; }
   .kira-orb-center .tag { font-size: 0.62rem; }
 
   /* Big stats — single column readable */
-  .big-stats { padding: 70px 0; }
-  .big-stats-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
-  .big-stat { padding: 28px 14px; }
+  .big-stats { padding: 56px 0; }
+  .big-stats-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .big-stat { padding: 24px 12px; }
   .big-stat-number { font-size: clamp(2rem, 7vw, 2.8rem); }
   .big-stat-label { font-size: 0.85rem; }
 
   /* Press strip — wrap better */
-  .press-strip { padding: 30px 0; }
-  .press-logos { gap: 24px 32px; }
-  .press-logo, .press-logo.serif { font-size: 1.05rem; }
+  .press-strip { padding: 24px 0; }
+  .press-logos { gap: 20px 28px; }
+  .press-logo, .press-logo.serif { font-size: 1rem; }
+  .press-strip-label { font-size: 0.7rem; margin-bottom: 16px; }
 
   /* Comparison table — readable on mobile */
-  .comparison-section { padding: 70px 0; }
-  .comparison-table-wrap { margin-top: 32px; }
+  .comparison-section { padding: 56px 0; }
+  .comparison-table-wrap { margin-top: 28px; }
   .comparison-table thead th { padding: 14px 8px; font-size: 0.78rem; }
   .comparison-table tbody td { padding: 14px 8px; font-size: 0.78rem; }
   .comparison-table tbody td:first-child { font-size: 0.82rem; }
 
   /* Bundle builder */
-  .bundle-section { padding: 70px 0; }
-  .bundle-grid { grid-template-columns: 1fr; gap: 24px; }
+  .bundle-section { padding: 56px 0; }
+  .bundle-grid { grid-template-columns: 1fr; gap: 20px; }
   .bundle-products { grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
   .bundle-item { padding: 14px 10px; }
   .bundle-item-name { font-size: 0.78rem; }
@@ -2851,7 +2878,7 @@ p { margin-bottom: 1rem; }
   .bundle-summary { position: static; padding: 24px; }
 
   /* Wall of love */
-  .wall-of-love { padding: 70px 0; }
+  .wall-of-love { padding: 56px 0; }
   .wall-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
   .wall-card:nth-child(n) { transform: none; aspect-ratio: 1; }
   .wall-card-content { padding: 14px; }
@@ -2859,11 +2886,22 @@ p { margin-bottom: 1rem; }
   .wall-card-content .name { font-size: 0.7rem; }
 
   /* Big display headline section */
-  .headline-massive { font-size: clamp(2.4rem, 11vw, 4rem); }
+  .headline-massive { font-size: clamp(2.2rem, 11vw, 3.6rem); }
 
   /* Page header (about/contact/products) */
-  .page-header { padding: 130px 0 80px; }
-  .page-header h1 { font-size: clamp(2.4rem, 8vw, 3.6rem); }
+  .page-header { padding: 110px 0 60px; }
+  .page-header h1 { font-size: clamp(2rem, 8vw, 3.2rem); }
+  .page-header p { font-size: 0.95rem; }
+
+  /* Tighter heading spacing globally on mobile */
+  .section-label {
+    font-size: 0.68rem;
+    padding: 6px 12px;
+    margin-bottom: 14px;
+    letter-spacing: 0.08em;
+  }
+  .section-title { margin-bottom: 14px; font-size: clamp(1.7rem, 7vw, 2.4rem); }
+  .section-subtitle { font-size: 0.95rem; margin-bottom: 28px; }
 
   /* Product cards */
   .products-grid { gap: 20px; }
