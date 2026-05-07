@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — TENXIX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/TENXIX_LOGO__.png" alt="TENXIX">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><button class="btn-kira" onclick="openKira()"><span class="pulse-dot"></span> Try Kira AI</button></li>
+        <li><a href="#" class="nav-cart" onclick="openCart(); return false;">&#9825; <span class="cart-count">0</span></a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HEADER ========== -->
+  <section class="page-header">
+    <div class="container">
+      <p class="section-label">Get in Touch</p>
+      <h1>We'd Love to Hear from You</h1>
+      <p>Questions, feedback, or collaboration inquiries — our team is here to help.</p>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Contact Form -->
+        <div class="fade-up">
+          <p class="section-label">Send a Message</p>
+          <h2 class="section-title">Drop Us a Line</h2>
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject">
+                <option value="general">General Enquiry</option>
+                <option value="order">Order Support</option>
+                <option value="product">Product Question</option>
+                <option value="wholesale">Wholesale / Partnership</option>
+                <option value="press">Press & Media</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us how we can help..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="fade-up">
+          <p class="section-label">Contact Info</p>
+          <h2 class="section-title">Other Ways to Reach Us</h2>
+
+          <div class="contact-info-block">
+            <h4>Email</h4>
+            <p><a href="mailto:hello@tenxix.com">hello@tenxix.com</a></p>
+          </div>
+
+          <div class="contact-info-block">
+            <h4>Phone</h4>
+            <p><a href="tel:+18001234567">+1 (800) 123-4567</a></p>
+          </div>
+
+          <div class="contact-info-block">
+            <h4>Hours</h4>
+            <p>Monday — Friday: 9am – 6pm EST<br>Saturday: 10am – 4pm EST<br>Sunday: Closed</p>
+          </div>
+
+          <div class="contact-info-block">
+            <h4>Headquarters</h4>
+            <p>TENXIX Beauty Inc.<br>123 Luxe Avenue, Suite 400<br>New York, NY 10001</p>
+          </div>
+
+          <div class="contact-info-block">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+              <a href="#" aria-label="Instagram">IG</a>
+              <a href="#" aria-label="Twitter / X">X</a>
+              <a href="#" aria-label="TikTok">TT</a>
+              <a href="#" aria-label="Facebook">FB</a>
+              <a href="#" aria-label="Pinterest">PI</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ SNIPPET ========== -->
+  <section class="section section-gray">
+    <div class="container text-center">
+      <p class="section-label fade-up">FAQs</p>
+      <h2 class="section-title fade-up">Common Questions</h2>
+
+      <div class="values-grid" style="text-align:left;">
+        <div class="value-card fade-up" style="text-align:left;background:#fff;border:1px solid var(--gray);padding:32px;">
+          <h4>What is your return policy?</h4>
+          <p>We offer a 30-day satisfaction guarantee. If you're not happy with your purchase, contact us for a full refund or exchange.</p>
+        </div>
+        <div class="value-card fade-up" style="text-align:left;background:#fff;border:1px solid var(--gray);padding:32px;">
+          <h4>Do you ship internationally?</h4>
+          <p>Yes! We ship to over 50 countries. Standard international delivery takes 7–14 business days. Express options are available at checkout.</p>
+        </div>
+        <div class="value-card fade-up" style="text-align:left;background:#fff;border:1px solid var(--gray);padding:32px;">
+          <h4>Are your products cruelty-free?</h4>
+          <p>Absolutely. All TENXIX products are certified cruelty-free and never tested on animals. Many of our formulas are also vegan-friendly.</p>
+        </div>
+        <div class="value-card fade-up" style="text-align:left;background:#fff;border:1px solid var(--gray);padding:32px;">
+          <h4>How do I track my order?</h4>
+          <p>Once your order ships, you'll receive a tracking email with a link to follow your package in real-time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/TENXIX_LOGO__.png" alt="TENXIX">
+          <p>Premium skincare crafted at the intersection of science and nature. Luxury you can feel, results you can see.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="shop.html">Serums</a></li>
+            <li><a href="shop.html">Soaps</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Help Centre</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Track Order</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TENXIX. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Kira AI Modal -->
+  <div class="kira-modal-overlay" onclick="closeKira()"></div>
+  <div class="kira-modal" role="dialog" aria-label="Kira Skin Analyser">
+    <div class="kira-modal-header">
+      <div class="kira-modal-title">
+        <div class="kira-modal-title-icon">K</div>
+        <div class="kira-modal-title-text">
+          <h3>Kira &mdash; AI Skin Analyser</h3>
+          <p>Africa's smartest skincare advisor</p>
+        </div>
+      </div>
+      <button class="kira-modal-close" onclick="closeKira()" aria-label="Close">&times;</button>
+    </div>
+    <div class="kira-modal-body">
+      <div class="kira-modal-loading">
+        <div class="kira-loader"></div>
+        <p>Loading Kira&hellip;</p>
+      </div>
+      <iframe data-src="https://scan.tenxix.com" allow="camera; microphone" title="Kira Skin Analyser"></iframe>
+    </div>
+  </div>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay"></div>
+  <div class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="cart-close">&times;</button>
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <span class="cart-total-amount">$0.00</span>
+      </div>
+      <button class="btn btn-primary">Checkout</button>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

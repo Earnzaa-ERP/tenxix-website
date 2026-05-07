@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TENXIX — Premium Skincare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/TENXIX_LOGO__.png" alt="TENXIX">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><button class="btn-kira" onclick="openKira()"><span class="pulse-dot"></span> Try Kira AI</button></li>
+        <li><a href="#" class="nav-cart" onclick="openCart(); return false;">&#9825; <span class="cart-count">0</span></a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO CAROUSEL ========== -->
+  <section class="hero">
+    <div class="hero-slides">
+
+      <!-- SLIDE 1 — Brand intro -->
+      <div class="hero-slide bg-purple active">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-rating">
+              <span class="hero-rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <span class="hero-rating-text"><strong>4.9 / 5</strong> &mdash; Loved by 50,000+ customers</span>
+            </div>
+            <h1>Skincare That Actually <span class="squiggle-underline">Works.</span></h1>
+            <p>Clinically formulated serums and soaps powered by Kira AI &mdash; the smartest way to glow.</p>
+            <div class="hero-buttons">
+              <a href="shop.html" class="btn btn-yellow">Shop Bestsellers &rarr;</a>
+              <button class="btn btn-outline" onclick="openKira()" style="border-color:rgba(255,255,255,0.4);color:#fff;">Try Kira Free</button>
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="hero-blob hero-blob-1"></div>
+            <div class="hero-blob hero-blob-2"></div>
+            <div class="hero-accent hero-accent-1">&#10024; Bestseller</div>
+            <div class="hero-accent hero-accent-2">No.1 in Africa &#127811;</div>
+            <img src="assets/images/acne-complex-4-mockup.jpg.jpeg" alt="TENXIX Acne Complex-4 Serum">
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 2 — Kira AI -->
+      <div class="hero-slide bg-deep">
+        <div class="container">
+          <div class="hero-content">
+            <span class="sticker" style="margin-bottom:18px;">&#10024; New &middot; AI-Powered</span>
+            <h1>Meet <em style="color:var(--yellow);font-style:italic;">Kira.</em><br>Your Skin's Best Friend.</h1>
+            <p>Africa's first AI skin analyser. Scan your skin in 60 seconds &mdash; get your personalised routine instantly.</p>
+            <div class="hero-buttons">
+              <button class="btn btn-yellow" onclick="openKira()">Analyse My Skin &rarr;</button>
+              <a href="about.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);color:#fff;">Learn More</a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="hero-blob hero-blob-1" style="background:var(--yellow);opacity:0.25;"></div>
+            <div class="hero-blob hero-blob-2"></div>
+            <div class="hero-accent hero-accent-1">&#129504; AI Skin Analysis</div>
+            <div class="hero-accent hero-accent-2">98.4% Accuracy &#10003;</div>
+            <div style="position:relative;z-index:2;width:100%;max-width:460px;aspect-ratio:1;margin:0 auto;">
+              <div class="kira-orb" style="position:absolute;inset:0;">
+                <div class="kira-scanline"></div>
+                <div class="kira-orb-center">
+                  <div class="name">Kira</div>
+                  <div class="tag">Skin AI</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 3 — Bestseller spotlight -->
+      <div class="hero-slide bg-gradient">
+        <div class="container">
+          <div class="hero-content">
+            <span class="sticker cream" style="margin-bottom:18px;">&#127942; #1 Bestseller</span>
+            <h1>Your Glow-Up <em style="color:var(--yellow);font-style:italic;">Starts Here.</em></h1>
+            <p>The Rapid Glow &amp; Corrector Serum &mdash; fades dark spots, brightens skin tone, and rejuvenates dull skin in just weeks.</p>
+            <div class="hero-buttons">
+              <a href="products/rapid-glow-corrector-serum.html" class="btn btn-yellow">Shop The Glow &rarr;</a>
+              <a href="shop.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);color:#fff;">View All Products</a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="hero-blob hero-blob-1"></div>
+            <div class="hero-blob hero-blob-2" style="background:var(--yellow);opacity:0.3;"></div>
+            <div class="hero-accent hero-accent-1">&#10024; Best Glow Serum</div>
+            <div class="hero-accent hero-accent-2">Save 15% Today</div>
+            <img src="assets/images/rapid-glow-corrector-mockup.jpg.PNG" alt="Rapid Glow Serum">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Carousel controls -->
+    <button class="hero-arrow prev" onclick="heroChange(-1)" aria-label="Previous slide">&larr;</button>
+    <button class="hero-arrow next" onclick="heroChange(1)" aria-label="Next slide">&rarr;</button>
+
+    <div class="hero-dots">
+      <button class="hero-dot active" onclick="heroGoTo(0)" aria-label="Slide 1"></button>
+      <button class="hero-dot" onclick="heroGoTo(1)" aria-label="Slide 2"></button>
+      <button class="hero-dot" onclick="heroGoTo(2)" aria-label="Slide 3"></button>
+    </div>
+  </section>
+
+  <!-- ========== SCROLLING REVIEWS MARQUEE ========== -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span class="marquee-item"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> "My skin is finally clear!" &mdash; Chioma A.</span>
+      <span class="marquee-item"><span class="dot"></span></span>
+      <span class="marquee-item"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> "Worth every naira" &mdash; Tunde O.</span>
+      <span class="marquee-item"><span class="dot"></span></span>
+      <span class="marquee-item"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> "I'm obsessed with this glow" &mdash; Amina B.</span>
+      <span class="marquee-item"><span class="dot"></span></span>
+      <span class="marquee-item"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> "TENXIX changed my skin" &mdash; Blessing N.</span>
+      <span class="marquee-item"><span class="dot"></span></span>
+      <span class="marquee-item"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> "Best skincare ever" &mdash; Adaeze O.</span>
+      <span class="marquee-item"><span class="dot"></span></span>
+      <!-- duplicate for seamless loop -->
+      <span class="marquee-item"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> "My skin is finally clear!" &mdash; Chioma A.</span>
+      <span class="marquee-item"><span class="dot"></span></span>
+      <span class="marquee-item"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> "Worth every naira" &mdash; Tunde O.</span>
+      <span class="marquee-item"><span class="dot"></span></span>
+      <span class="marquee-item"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> "I'm obsessed with this glow" &mdash; Amina B.</span>
+      <span class="marquee-item"><span class="dot"></span></span>
+      <span class="marquee-item"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> "TENXIX changed my skin" &mdash; Blessing N.</span>
+      <span class="marquee-item"><span class="dot"></span></span>
+      <span class="marquee-item"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> "Best skincare ever" &mdash; Adaeze O.</span>
+      <span class="marquee-item"><span class="dot"></span></span>
+    </div>
+  </div>
+
+  <!-- ========== PRESS LOGOS STRIP ========== -->
+  <section class="press-strip">
+    <div class="container">
+      <p class="press-strip-label">As Featured In</p>
+      <div class="press-logos">
+        <span class="press-logo serif">Vogue</span>
+        <span class="press-logo italic">BellaNaija</span>
+        <span class="press-logo">ELLE</span>
+        <span class="press-logo serif">Glamour</span>
+        <span class="press-logo italic">The Guardian</span>
+        <span class="press-logo">Cosmopolitan</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MEET KIRA — AI SKIN ANALYSER ========== -->
+  <section class="kira-section">
+    <div class="container">
+      <div class="kira-grid">
+        <div class="kira-content">
+          <span class="sticker fade-up">&#10024; Africa's No.1 AI Skin Analyser</span>
+          <h2 class="fade-up">Meet <em>Kira.</em><br>Your Personal Skin Advisor.</h2>
+          <p class="fade-up">No more guesswork. Kira scans your skin, analyses 12+ concerns in seconds, and recommends the exact TENXIX products for <em>your</em> unique skin &mdash; not someone else's.</p>
+
+          <div class="kira-steps">
+            <div class="kira-step fade-up">
+              <div class="kira-step-num">1</div>
+              <h4>Scan</h4>
+              <p>Take a quick selfie in good lighting</p>
+            </div>
+            <div class="kira-step fade-up">
+              <div class="kira-step-num">2</div>
+              <h4>Analyse</h4>
+              <p>AI evaluates your unique skin profile</p>
+            </div>
+            <div class="kira-step fade-up">
+              <div class="kira-step-num">3</div>
+              <h4>Personalise</h4>
+              <p>Get your custom routine in seconds</p>
+            </div>
+          </div>
+
+          <div class="kira-cta-row fade-up">
+            <button class="btn btn-yellow" onclick="openKira()">Try Kira Now &rarr;</button>
+            <span class="free-tag">&#10003; 100% Free &middot; Takes 60 seconds</span>
+          </div>
+
+          <div class="kira-stats fade-up">
+            <div>
+              <div class="kira-stat-num">98.4%</div>
+              <div class="kira-stat-lbl">Analysis accuracy</div>
+            </div>
+            <div>
+              <div class="kira-stat-num">12+</div>
+              <div class="kira-stat-lbl">Skin concerns detected</div>
+            </div>
+            <div>
+              <div class="kira-stat-num">200K+</div>
+              <div class="kira-stat-lbl">Skins analysed</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="kira-visual fade-up">
+          <div class="kira-orb">
+            <div class="kira-scanline"></div>
+            <div class="kira-orb-center">
+              <div class="name">Kira</div>
+              <div class="tag">Skin AI</div>
+            </div>
+          </div>
+          <div class="kira-data kira-data-1"><span class="dot"></span>Hydration: 67%</div>
+          <div class="kira-data kira-data-2"><span class="dot"></span>Oiliness: Moderate</div>
+          <div class="kira-data kira-data-3"><span class="dot"></span>Acne: 3 spots</div>
+          <div class="kira-data kira-data-4"><span class="dot"></span>Pigmentation: Mild</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BIG STATS SECTION ========== -->
+  <section class="big-stats">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 56px;">
+        <span class="section-label fade-up">By the Numbers</span>
+        <h2 class="fade-up">The Results Speak for Themselves</h2>
+      </div>
+      <div class="big-stats-grid">
+        <div class="big-stat fade-up">
+          <div class="big-stat-number">50K+</div>
+          <div class="big-stat-label">Happy customers across Nigeria</div>
+        </div>
+        <div class="big-stat fade-up">
+          <div class="big-stat-number">94%</div>
+          <div class="big-stat-label">Saw clearer skin in 4 weeks</div>
+        </div>
+        <div class="big-stat fade-up">
+          <div class="big-stat-number">4.9&#9733;</div>
+          <div class="big-stat-label">Average rating from verified buyers</div>
+        </div>
+        <div class="big-stat fade-up">
+          <div class="big-stat-number">98%</div>
+          <div class="big-stat-label">Would recommend to a friend</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURED PRODUCTS ========== -->
+  <section class="section">
+    <div class="container text-center">
+      <p class="section-label fade-up">Bestsellers</p>
+      <h2 class="section-title fade-up">Curated for Your Skin</h2>
+      <p class="section-subtitle mx-auto fade-up">Our most loved formulas — crafted with precision, powered by nature.</p>
+
+      <div class="products-grid">
+
+        <div class="product-card fade-up" onclick="window.location='products/acne-complex-4-serum.html'" style="cursor:pointer;">
+          <div class="product-image">
+            <span class="product-badge">Bestseller</span>
+            <img src="assets/images/acne-complex-4-mockup.jpg.jpeg" alt="Acne Complex-4 Serum">
+          </div>
+          <div class="product-info">
+            <p class="product-category">Serum</p>
+            <h3 class="product-name">Acne Complex-4 Serum</h3>
+            <p class="product-desc">Kills Acne Bacteria, Unclogs Pores, Prevent New Breakouts &amp; Fades Acne Marks.</p>
+            <p class="product-price">&#8358;22,500</p>
+            <button class="btn btn-primary" onclick="event.stopPropagation(); addToCart('Acne Complex-4 Serum', 22500)">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card fade-up" onclick="window.location='products/rapid-glow-corrector-serum.html'" style="cursor:pointer;">
+          <div class="product-image">
+            <span class="product-badge">Bestseller</span>
+            <img src="assets/images/rapid-glow-corrector-mockup.jpg.PNG" alt="Rapid Glow &amp; Corrector Serum">
+          </div>
+          <div class="product-info">
+            <p class="product-category">Serum</p>
+            <h3 class="product-name">Rapid Glow &amp; Corrector Serum</h3>
+            <p class="product-desc">Targets uneven skin tone, Post Acne Marks &amp; Hyperpigmentation, Rejuvenate Dull Tired-Looking Skin, Sun-Damage &amp; Wrinkles.</p>
+            <p class="product-price">&#8358;22,500</p>
+            <button class="btn btn-primary" onclick="event.stopPropagation(); addToCart('Rapid Glow & Corrector Serum', 22500)">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="product-card fade-up" onclick="window.location='products/clear-glow-exfoliating-soap.html'" style="cursor:pointer;">
+          <div class="product-image">
+            <span class="product-badge">Bestseller</span>
+            <img src="assets/images/clearfix.jpg.jpeg" alt="Clear Glow Exfoliating Soap">
+          </div>
+          <div class="product-info">
+            <p class="product-category">Soap</p>
+            <h3 class="product-name">Clear Glow Exfoliating Soap</h3>
+            <p class="product-desc">Remove dead skin, unclog pores and reveal visibly brighter, smoother skin from the very first wash.</p>
+            <p class="product-price">&#8358;9,500</p>
+            <button class="btn btn-primary" onclick="event.stopPropagation(); addToCart('Clear Glow Exfoliating Soap', 9500)">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SNIPPET ========== -->
+  <section class="section section-gray">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-placeholder fade-up">About image (replace with your image)</div>
+        <div class="about-content fade-up">
+          <p class="section-label">Our Philosophy</p>
+          <h2>Beauty That Respects Your Skin — and the Planet</h2>
+          <p>At TENXIX, we believe luxury skincare should never compromise. Every formula is dermatologist-tested, cruelty-free, and crafted with sustainably sourced ingredients that deliver visible results from the very first use.</p>
+          <p>Born from a passion for clean beauty, TENXIX bridges the gap between clinical efficacy and indulgent self-care rituals.</p>
+          <a href="about.html" class="btn btn-outline" style="margin-top:8px;">Read Our Story</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== VALUES ========== -->
+  <section class="section section-dark">
+    <div class="container text-center">
+      <p class="section-label" style="color:rgba(255,255,255,0.5);">Why TENXIX</p>
+      <h2 class="section-title fade-up" style="color:#fff;">The TENXIX Difference</h2>
+      <div class="values-grid">
+        <div class="value-card fade-up">
+          <div class="value-icon">&#10022;</div>
+          <h4>Clean Formulas</h4>
+          <p>No parabens, sulfates, or synthetic fragrances. Just pure, effective ingredients.</p>
+        </div>
+        <div class="value-card fade-up">
+          <div class="value-icon">&#9752;</div>
+          <h4>Sustainably Sourced</h4>
+          <p>Ethically harvested botanicals and eco-conscious packaging at every step.</p>
+        </div>
+        <div class="value-card fade-up">
+          <div class="value-icon">&#9878;</div>
+          <h4>Dermatologist Tested</h4>
+          <p>Clinically validated formulations for safety, efficacy, and visible results.</p>
+        </div>
+        <div class="value-card fade-up">
+          <div class="value-icon">&#9829;</div>
+          <h4>Cruelty Free</h4>
+          <p>Never tested on animals. Certified cruelty-free and vegan-friendly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COMPARISON TABLE ========== -->
+  <section class="comparison-section">
+    <div class="container">
+      <div class="comparison-layout">
+        <div class="comparison-text fade-up">
+          <span class="section-label">Us vs. Them</span>
+          <h2>Us vs. Them.</h2>
+          <p>Not overhyped or overpriced. Just real skincare solutions, powered by AI, made for African skin.</p>
+        </div>
+
+        <div class="compare-table fade-up">
+          <!-- Header Row -->
+          <div class="compare-row compare-header">
+            <div></div>
+            <div class="col-tenxix">
+              <span class="compare-brand compare-brand-tenxix">tenxix</span>
+            </div>
+            <div>
+              <span class="compare-brand-other">
+                <span class="compare-brand-other-icon">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
+                </span>
+                generic skincare
+              </span>
+            </div>
+            <div>
+              <span class="compare-brand-other">
+                <span class="compare-brand-other-icon">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2"/><line x1="9" y1="6" x2="15" y2="6"/></svg>
+                </span>
+                overpriced brand
+              </span>
+            </div>
+          </div>
+
+          <!-- Price Row -->
+          <div class="compare-row">
+            <div>Price per Bottle</div>
+            <div class="col-tenxix">&#8358;22,500</div>
+            <div><span class="compare-emoji">&#129320;</span></div>
+            <div><span class="compare-price-red">&#8358;80,000+</span></div>
+          </div>
+
+          <!-- Rating Row -->
+          <div class="compare-row">
+            <div>Customer Rating</div>
+            <div class="col-tenxix"><span class="compare-stars-yellow">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+            <div><span class="compare-stars-grey">&#9733;&#9733;&#9733;</span></div>
+            <div><span class="compare-stars-grey">&#9733;&#9733;&#9733;&#9733;</span></div>
+          </div>
+
+          <!-- Made for African Skin -->
+          <div class="compare-row">
+            <div>Made for African Skin</div>
+            <div class="col-tenxix"><span class="compare-tenxix-mark">T</span></div>
+            <div><span class="compare-circle compare-no-bg">&times;</span></div>
+            <div><span class="compare-circle compare-no-bg">&times;</span></div>
+          </div>
+
+          <!-- AI Skin Analysis (Kira) -->
+          <div class="compare-row">
+            <div>AI Skin Analysis (Kira)</div>
+            <div class="col-tenxix"><span class="compare-tenxix-mark">T</span></div>
+            <div><span class="compare-circle compare-no-bg">&times;</span></div>
+            <div><span class="compare-circle compare-no-bg">&times;</span></div>
+          </div>
+
+          <!-- Clinically Tested -->
+          <div class="compare-row">
+            <div>Clinically Tested</div>
+            <div class="col-tenxix"><span class="compare-tenxix-mark">T</span></div>
+            <div><span class="compare-circle compare-no-bg">&times;</span></div>
+            <div><span class="compare-circle compare-yes-bg">&check;</span></div>
+          </div>
+
+          <!-- Cruelty-Free & Vegan -->
+          <div class="compare-row">
+            <div>Cruelty-Free &amp; Vegan</div>
+            <div class="col-tenxix"><span class="compare-tenxix-mark">T</span></div>
+            <div><span class="compare-circle compare-no-bg">&times;</span></div>
+            <div><span class="compare-circle compare-yes-bg">&check;</span></div>
+          </div>
+
+          <!-- 30-Day Money-Back -->
+          <div class="compare-row">
+            <div>30-Day Money-Back</div>
+            <div class="col-tenxix"><span class="compare-tenxix-mark">T</span></div>
+            <div><span class="compare-circle compare-no-bg">&times;</span></div>
+            <div><span class="compare-circle compare-no-bg">&times;</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BUNDLE BUILDER ========== -->
+  <section class="bundle-section">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label fade-up">Save More</span>
+        <h2 class="fade-up">Build Your Routine &amp; Save 15%</h2>
+        <p class="section-subtitle mx-auto fade-up">Combine 2 or more products and unlock instant savings. Your skin (and wallet) will thank you.</p>
+      </div>
+      <div class="bundle-grid">
+        <div class="bundle-products fade-up">
+          <div class="bundle-item selected" onclick="toggleBundle(this, 'Acne Complex-4 Serum', 22500)">
+            <div class="bundle-item-image"><img src="assets/images/acne-complex-4-mockup.jpg.jpeg" alt="Acne Complex-4 Serum"></div>
+            <div class="bundle-item-name">Acne Complex-4 Serum</div>
+            <div class="bundle-item-price">&#8358;22,500</div>
+          </div>
+          <div class="bundle-item selected" onclick="toggleBundle(this, 'Rapid Glow & Corrector Serum', 22500)">
+            <div class="bundle-item-image"><img src="assets/images/rapid-glow-corrector-mockup.jpg.PNG" alt="Rapid Glow"></div>
+            <div class="bundle-item-name">Rapid Glow Serum</div>
+            <div class="bundle-item-price">&#8358;22,500</div>
+          </div>
+          <div class="bundle-item selected" onclick="toggleBundle(this, 'Clear Glow Exfoliating Soap', 9500)">
+            <div class="bundle-item-image"><img src="assets/images/clearfix.jpg.jpeg" alt="Clear Glow Soap"></div>
+            <div class="bundle-item-name">Clear Glow Soap</div>
+            <div class="bundle-item-price">&#8358;9,500</div>
+          </div>
+        </div>
+        <div class="bundle-summary fade-up">
+          <h3>Your Bundle</h3>
+          <div id="bundleRows">
+            <div class="bundle-summary-row"><span>Acne Complex-4 Serum</span><span>&#8358;22,500</span></div>
+            <div class="bundle-summary-row"><span>Rapid Glow Serum</span><span>&#8358;22,500</span></div>
+            <div class="bundle-summary-row"><span>Clear Glow Soap</span><span>&#8358;9,500</span></div>
+          </div>
+          <div class="bundle-summary-divider"></div>
+          <div class="bundle-summary-row"><span>Subtotal</span><span id="bundleSubtotal">&#8358;54,500</span></div>
+          <div class="bundle-summary-row discount"><span>Bundle Discount (15%)</span><span id="bundleDiscount">&minus;&#8358;8,175</span></div>
+          <div class="bundle-summary-divider"></div>
+          <div class="bundle-summary-total"><span>Total</span><span id="bundleTotal">&#8358;46,325</span></div>
+          <button class="btn btn-primary" onclick="addBundleToCart()">Add Bundle to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== VIDEO TESTIMONIAL REEL ========== -->
+  <section class="video-reel">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label fade-up">Real Stories</span>
+        <h2 class="fade-up">Watch Customers Share Their Glow-Up</h2>
+        <p class="section-subtitle mx-auto fade-up">Hear it from real TENXIX customers across Africa &mdash; in their own words.</p>
+      </div>
+      <div class="video-grid">
+
+        <!-- Video Card 1 -->
+        <div class="video-card fade-up" onclick="playVideo(this)">
+          <span class="video-card-tag">Acne Results</span>
+          <!-- Replace placeholder with: <video src="..." muted loop></video> OR <img class="video-thumb" src="..."> -->
+          <div class="video-card-placeholder">CA<span>Chioma A.</span></div>
+          <button class="video-card-play" aria-label="Play video">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <div class="video-card-caption">"My acne cleared in 3 weeks!"</div>
+          <div class="video-card-expand">
+            <svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+          </div>
+        </div>
+
+        <!-- Video Card 2 -->
+        <div class="video-card fade-up" onclick="playVideo(this)">
+          <span class="video-card-tag">The Glow</span>
+          <div class="video-card-placeholder">AB<span>Amina B.</span></div>
+          <button class="video-card-play" aria-label="Play video">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <div class="video-card-caption">"My glow is real and unreal!"</div>
+          <div class="video-card-expand">
+            <svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+          </div>
+        </div>
+
+        <!-- Video Card 3 -->
+        <div class="video-card fade-up" onclick="playVideo(this)">
+          <span class="video-card-tag">Kira AI</span>
+          <div class="video-card-placeholder">TO<span>Tunde O.</span></div>
+          <button class="video-card-play" aria-label="Play video">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <div class="video-card-caption">"Kira nailed my routine"</div>
+          <div class="video-card-expand">
+            <svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+          </div>
+        </div>
+
+        <!-- Video Card 4 -->
+        <div class="video-card fade-up" onclick="playVideo(this)">
+          <span class="video-card-tag">Dark Spots</span>
+          <div class="video-card-placeholder">BN<span>Blessing N.</span></div>
+          <button class="video-card-play" aria-label="Play video">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <div class="video-card-caption">"Dark spots completely gone"</div>
+          <div class="video-card-expand">
+            <svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+          </div>
+        </div>
+
+        <!-- Video Card 5 -->
+        <div class="video-card fade-up" onclick="playVideo(this)">
+          <span class="video-card-tag">Routine</span>
+          <div class="video-card-placeholder">JE<span>Joy E.</span></div>
+          <button class="video-card-play" aria-label="Play video">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <div class="video-card-caption">"Life-changing skincare"</div>
+          <div class="video-card-expand">
+            <svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WALL OF LOVE — Lifestyle Photo Grid ========== -->
+  <section class="wall-of-love">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label fade-up">#TENXIXGlow</span>
+        <h2 class="fade-up sparkle-wrap">Real People. Real Results.</h2>
+        <p class="section-subtitle mx-auto fade-up" style="margin-top:24px;">See how 50,000+ customers across Nigeria are transforming their skin with TENXIX.</p>
+      </div>
+      <div class="wall-grid">
+        <div class="wall-card fade-up">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="wall-card-quote">"My skin is finally clear after 3 weeks. Honestly the best decision I made all year!"</p>
+          <div class="wall-card-author">
+            <div class="wall-card-avatar">
+              <!-- Replace with: <img src="assets/images/customer-chioma.jpg" alt="Chioma A."> -->
+              CA
+            </div>
+            <div class="wall-card-meta">
+              <p class="name">Chioma A.</p>
+              <p class="location">Lagos &middot; &#10003; Verified</p>
+            </div>
+          </div>
+        </div>
+        <div class="wall-card fade-up">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="wall-card-quote">"Worth every single naira. Two weeks in and people are already noticing my glow."</p>
+          <div class="wall-card-author">
+            <div class="wall-card-avatar">
+              <!-- Replace with: <img src="assets/images/customer-tunde.jpg" alt="Tunde O."> -->
+              TO
+            </div>
+            <div class="wall-card-meta">
+              <p class="name">Tunde O.</p>
+              <p class="location">Abuja &middot; &#10003; Verified</p>
+            </div>
+          </div>
+        </div>
+        <div class="wall-card fade-up">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="wall-card-quote">"I'm obsessed with this glow! My skin has never looked this radiant before."</p>
+          <div class="wall-card-author">
+            <div class="wall-card-avatar">
+              <!-- Replace with: <img src="assets/images/customer-amina.jpg" alt="Amina B."> -->
+              AB
+            </div>
+            <div class="wall-card-meta">
+              <p class="name">Amina B.</p>
+              <p class="location">Kano &middot; &#10003; Verified</p>
+            </div>
+          </div>
+        </div>
+        <div class="wall-card fade-up">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="wall-card-quote">"My dark spots are completely gone. I keep telling everyone about TENXIX!"</p>
+          <div class="wall-card-author">
+            <div class="wall-card-avatar">
+              <!-- Replace with: <img src="assets/images/customer-blessing.jpg" alt="Blessing N."> -->
+              BN
+            </div>
+            <div class="wall-card-meta">
+              <p class="name">Blessing N.</p>
+              <p class="location">Port Harcourt &middot; &#10003; Verified</p>
+            </div>
+          </div>
+        </div>
+        <div class="wall-card fade-up">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="wall-card-quote">"Best skincare I've ever used. Period. Will keep buying for life."</p>
+          <div class="wall-card-author">
+            <div class="wall-card-avatar">
+              <!-- Replace with: <img src="assets/images/customer-adaeze.jpg" alt="Adaeze O."> -->
+              AO
+            </div>
+            <div class="wall-card-meta">
+              <p class="name">Adaeze O.</p>
+              <p class="location">Lagos &middot; &#10003; Verified</p>
+            </div>
+          </div>
+        </div>
+        <div class="wall-card fade-up">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="wall-card-quote">"The glow is unreal. My friends keep asking what I'm using on my skin."</p>
+          <div class="wall-card-author">
+            <div class="wall-card-avatar">
+              <!-- Replace with: <img src="assets/images/customer-fatima.jpg" alt="Fatima K."> -->
+              FK
+            </div>
+            <div class="wall-card-meta">
+              <p class="name">Fatima K.</p>
+              <p class="location">Kaduna &middot; &#10003; Verified</p>
+            </div>
+          </div>
+        </div>
+        <div class="wall-card fade-up">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="wall-card-quote">"My skin has never looked better. The Kira analysis was so accurate too!"</p>
+          <div class="wall-card-author">
+            <div class="wall-card-avatar">
+              <!-- Replace with: <img src="assets/images/customer-daniel.jpg" alt="Daniel U."> -->
+              DU
+            </div>
+            <div class="wall-card-meta">
+              <p class="name">Daniel U.</p>
+              <p class="location">Benin City &middot; &#10003; Verified</p>
+            </div>
+          </div>
+        </div>
+        <div class="wall-card fade-up">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="wall-card-quote">"Life-changing. After years of trying everything, this finally works."</p>
+          <div class="wall-card-author">
+            <div class="wall-card-avatar">
+              <!-- Replace with: <img src="assets/images/customer-joy.jpg" alt="Joy E."> -->
+              JE
+            </div>
+            <div class="wall-card-meta">
+              <p class="name">Joy E.</p>
+              <p class="location">Warri &middot; &#10003; Verified</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BIG DISPLAY HEADLINE ========== -->
+  <section class="section section-purple" style="text-align:center;">
+    <div class="container">
+      <span class="sticker fade-up" style="margin-bottom:24px;">&#10024; The Glow Starts Here</span>
+      <h2 class="headline-massive fade-up" style="color:#fff;margin: 24px 0 32px;">Clear Skin <em>Isn't Magic.</em><br>It's <span class="highlight-yellow" style="color:var(--purple-deep);">TENXIX.</span></h2>
+      <p class="fade-up" style="color:rgba(255,255,255,0.85);max-width:600px;margin:0 auto 40px;font-size:1.15rem;">Three products. One glow-up. Backed by science, loved by thousands.</p>
+      <a href="shop.html" class="btn btn-yellow fade-up">Start Your Routine &rarr;</a>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="section">
+    <div class="container text-center">
+      <p class="section-label fade-up">Testimonials</p>
+      <h2 class="section-title fade-up">What Our Customers Say</h2>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-up">
+          <span class="testimonial-product-tag">Acne Complex-4 Serum</span>
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"My hormonal acne cleared up in just three weeks. I've struggled with breakouts for years &mdash; this is the only thing that has ever genuinely worked for my skin."</p>
+          <div class="testimonial-meta">
+            <div class="testimonial-avatar">
+              <!-- Replace with: <img src="assets/images/customer-amara.jpg" alt="Amara K."> -->
+              AK
+            </div>
+            <div>
+              <p class="testimonial-author">Amara K.</p>
+              <p class="testimonial-role">Lagos &middot; <span class="verified">&#10003; Verified Buyer</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-up">
+          <span class="testimonial-product-tag">Rapid Glow Serum</span>
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"Finally, a serum that doesn't irritate my sensitive skin. My dark spots are fading and my skin glows like never before. Kira recommended it for me &mdash; spot on!"</p>
+          <div class="testimonial-meta">
+            <div class="testimonial-avatar">
+              <!-- Replace with: <img src="assets/images/customer-jessica.jpg" alt="Jessica M."> -->
+              JM
+            </div>
+            <div>
+              <p class="testimonial-author">Jessica M.</p>
+              <p class="testimonial-role">Abuja &middot; <span class="verified">&#10003; Verified Buyer</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-up">
+          <span class="testimonial-product-tag">Full Routine</span>
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"TENXIX is the only brand my whole routine comes from. The bundle saves me money, and the quality is unmatched at this price point. My skin has never looked better."</p>
+          <div class="testimonial-meta">
+            <div class="testimonial-avatar">
+              <!-- Replace with: <img src="assets/images/customer-david.jpg" alt="David R."> -->
+              DR
+            </div>
+            <div>
+              <p class="testimonial-author">David R.</p>
+              <p class="testimonial-role">Port Harcourt &middot; <span class="verified">&#10003; Verified Buyer</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA BANNER ========== -->
+  <section class="section-purple cta-banner">
+    <div class="container">
+      <p class="section-label fade-up" style="color:rgba(255,255,255,0.6);">Limited Time</p>
+      <h2 class="fade-up">Get 15% Off Your First Order</h2>
+      <p class="fade-up">Join the TENXIX community and unlock exclusive access to new launches, skincare tips, and member-only offers.</p>
+      <a href="shop.html" class="btn btn-white fade-up">Shop the Collection</a>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/TENXIX_LOGO__.png" alt="TENXIX">
+          <p>Premium skincare crafted at the intersection of science and nature. Luxury you can feel, results you can see.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="shop.html">Serums</a></li>
+            <li><a href="shop.html">Soaps</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Help Centre</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Track Order</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TENXIX. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Kira AI Modal -->
+  <div class="kira-modal-overlay" onclick="closeKira()"></div>
+  <div class="kira-modal" role="dialog" aria-label="Kira Skin Analyser">
+    <div class="kira-modal-header">
+      <div class="kira-modal-title">
+        <div class="kira-modal-title-icon">K</div>
+        <div class="kira-modal-title-text">
+          <h3>Kira &mdash; AI Skin Analyser</h3>
+          <p>Africa's smartest skincare advisor</p>
+        </div>
+      </div>
+      <button class="kira-modal-close" onclick="closeKira()" aria-label="Close">&times;</button>
+    </div>
+    <div class="kira-modal-body">
+      <div class="kira-modal-loading">
+        <div class="kira-loader"></div>
+        <p>Loading Kira&hellip;</p>
+      </div>
+      <iframe data-src="https://scan.tenxix.com" allow="camera; microphone" title="Kira Skin Analyser"></iframe>
+    </div>
+  </div>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay"></div>
+  <div class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="cart-close">&times;</button>
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <span class="cart-total-amount">$0.00</span>
+      </div>
+      <button class="btn btn-primary">Checkout</button>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

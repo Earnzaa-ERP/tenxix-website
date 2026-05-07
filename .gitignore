@@ -1,0 +1,27 @@
+# OS / system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.cursor/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Node (if you add tooling later)
+node_modules/
+
+# Backup files
+*.bk
+*.bak
+*~
+
+# Environment / secrets
+.env
+.env.local

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products — TENXIX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/TENXIX_LOGO__.png" alt="TENXIX">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><button class="btn-kira" onclick="openKira()"><span class="pulse-dot"></span> Try Kira AI</button></li>
+        <li><a href="#" class="nav-cart" onclick="openCart(); return false;">&#9825; <span class="cart-count">0</span></a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HEADER ========== -->
+  <section class="page-header">
+    <div class="container">
+      <p class="section-label">Our Collections</p>
+      <h1>Explore Our Product Range</h1>
+      <p>Six carefully curated categories — each designed to target specific skin concerns with clinical precision.</p>
+    </div>
+  </section>
+
+  <!-- ========== CATEGORIES ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="categories-grid">
+
+        <!-- Serums -->
+        <div class="category-card fade-up" onclick="window.location='shop.html'">
+          <div class="category-info">
+            <h3>Serums</h3>
+            <p>Targeted treatments for acne, dark spots, uneven skin tone and radiant glow.</p>
+          </div>
+        </div>
+
+        <!-- Soaps -->
+        <div class="category-card fade-up" onclick="window.location='shop.html'">
+          <div class="category-info">
+            <h3>Soaps</h3>
+            <p>Exfoliating and cleansing soaps for brighter, smoother skin.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CATEGORY DETAILS ========== -->
+
+  <!-- Serums -->
+  <section class="section section-gray" id="serums">
+    <div class="container">
+      <p class="section-label fade-up">Category Spotlight</p>
+      <h2 class="section-title fade-up">Serums</h2>
+      <p class="section-subtitle fade-up">Powerful, targeted treatments for acne, hyperpigmentation, dark spots, and skin renewal. Formulated for visible results from the first use.</p>
+      <div class="products-grid">
+        <div class="product-card fade-up" onclick="window.location='products/acne-complex-4-serum.html'" style="cursor:pointer;">
+          <div class="product-image"><span class="product-badge">Bestseller</span><img src="assets/images/acne-complex-4-mockup.jpg.jpeg" alt="Acne Complex-4 Serum"></div>
+          <div class="product-info">
+            <p class="product-category">Serum</p>
+            <h3 class="product-name">Acne Complex-4 Serum</h3>
+            <p class="product-desc">Kills Acne Bacteria, Unclogs Pores, Prevent New Breakouts &amp; Fades Acne Marks.</p>
+            <p class="product-price">&#8358;22,500</p>
+            <button class="btn btn-primary" onclick="event.stopPropagation(); addToCart('Acne Complex-4 Serum', 22500)">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card fade-up" onclick="window.location='products/rapid-glow-corrector-serum.html'" style="cursor:pointer;">
+          <div class="product-image"><span class="product-badge">Bestseller</span><img src="assets/images/rapid-glow-corrector-mockup.jpg.PNG" alt="Rapid Glow &amp; Corrector Serum"></div>
+          <div class="product-info">
+            <p class="product-category">Serum</p>
+            <h3 class="product-name">Rapid Glow &amp; Corrector Serum</h3>
+            <p class="product-desc">Targets uneven skin tone, Post Acne Marks &amp; Hyperpigmentation, Rejuvenate Dull Tired-Looking Skin, Sun-Damage &amp; Wrinkles.</p>
+            <p class="product-price">&#8358;22,500</p>
+            <button class="btn btn-primary" onclick="event.stopPropagation(); addToCart('Rapid Glow & Corrector Serum', 22500)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Soaps -->
+  <section class="section" id="soaps">
+    <div class="container">
+      <p class="section-label fade-up">Category Spotlight</p>
+      <h2 class="section-title fade-up">Soaps</h2>
+      <p class="section-subtitle fade-up">Cleansing and exfoliating soaps that remove dead skin, unclog pores, and leave your skin visibly brighter and smoother.</p>
+      <div class="products-grid">
+        <div class="product-card fade-up" onclick="window.location='products/clear-glow-exfoliating-soap.html'" style="cursor:pointer;">
+          <div class="product-image"><span class="product-badge">Bestseller</span><img src="assets/images/clearfix.jpg.jpeg" alt="Clear Glow Exfoliating Soap"></div>
+          <div class="product-info">
+            <p class="product-category">Soap</p>
+            <h3 class="product-name">Clear Glow Exfoliating Soap</h3>
+            <p class="product-desc">Remove dead skin, unclog pores and reveal visibly brighter, smoother skin from the very first wash.</p>
+            <p class="product-price">&#8358;9,500</p>
+            <button class="btn btn-primary" onclick="event.stopPropagation(); addToCart('Clear Glow Exfoliating Soap', 9500)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="section-purple cta-banner">
+    <div class="container">
+      <h2 class="fade-up">Find Your Perfect Routine</h2>
+      <p class="fade-up">Not sure where to start? Browse our shop and build a routine tailored to your skin.</p>
+      <a href="shop.html" class="btn btn-white fade-up">Shop All Products</a>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/TENXIX_LOGO__.png" alt="TENXIX">
+          <p>Premium skincare crafted at the intersection of science and nature. Luxury you can feel, results you can see.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="shop.html">Serums</a></li>
+            <li><a href="shop.html">Soaps</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Help Centre</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Track Order</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TENXIX. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Kira AI Modal -->
+  <div class="kira-modal-overlay" onclick="closeKira()"></div>
+  <div class="kira-modal" role="dialog" aria-label="Kira Skin Analyser">
+    <div class="kira-modal-header">
+      <div class="kira-modal-title">
+        <div class="kira-modal-title-icon">K</div>
+        <div class="kira-modal-title-text">
+          <h3>Kira &mdash; AI Skin Analyser</h3>
+          <p>Africa's smartest skincare advisor</p>
+        </div>
+      </div>
+      <button class="kira-modal-close" onclick="closeKira()" aria-label="Close">&times;</button>
+    </div>
+    <div class="kira-modal-body">
+      <div class="kira-modal-loading">
+        <div class="kira-loader"></div>
+        <p>Loading Kira&hellip;</p>
+      </div>
+      <iframe data-src="https://scan.tenxix.com" allow="camera; microphone" title="Kira Skin Analyser"></iframe>
+    </div>
+  </div>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay"></div>
+  <div class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="cart-close">&times;</button>
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <span class="cart-total-amount">$0.00</span>
+      </div>
+      <button class="btn btn-primary">Checkout</button>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

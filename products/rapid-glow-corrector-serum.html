@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rapid Glow &amp; Corrector Serum — TENXIX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+  <!-- ========== URGENCY BAR ========== -->
+  <div class="urgency-bar">
+    <strong>LIMITED OFFER:</strong> Free shipping on all orders above &#8358;30,000 &mdash; Shop now before stock runs out!
+  </div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" style="top:38px;">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/images/TENXIX_LOGO__.png" alt="TENXIX">
+      </a>
+      <ul class="nav-links" style="top:118px;">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../products.html">Products</a></li>
+        <li><a href="../shop.html">Shop</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><button class="btn-kira" onclick="openKira()"><span class="pulse-dot"></span> Try Kira AI</button></li>
+        <li><a href="#" class="nav-cart" onclick="openCart(); return false;">&#9825; <span class="cart-count">0</span></a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== PRODUCT DETAIL ========== -->
+  <section class="product-page">
+    <div class="container">
+      <div class="product-page-grid">
+
+        <!-- Image Gallery in Hero Card -->
+        <div class="product-gallery fade-up">
+          <div class="product-hero-card">
+            <div class="product-hero-banner">
+              <span class="flame">&#128293;</span> Limited Time Offer: Save up to 15% <span class="flame">&#128293;</span>
+            </div>
+            <div class="product-hero-body">
+              <div class="product-hero-image-area">
+                <img id="mainImage" src="../assets/images/rapid-glow-corrector-mockup.jpg.PNG" alt="Rapid Glow &amp; Corrector Serum">
+              </div>
+            </div>
+          </div>
+          <div class="product-gallery-thumbs" style="margin-top:12px;">
+            <div class="thumb active" onclick="switchImage(this, '../assets/images/rapid-glow-corrector-mockup.jpg.PNG')">
+              <img src="../assets/images/rapid-glow-corrector-mockup.jpg.PNG" alt="Front view">
+            </div>
+            <div class="thumb" onclick="switchImage(this, '../assets/images/rapid-glow-corrector-mockup.jpg.PNG')">
+              <img src="../assets/images/rapid-glow-corrector-mockup.jpg.PNG" alt="Side view">
+            </div>
+            <div class="thumb" onclick="switchImage(this, '../assets/images/rapid-glow-corrector-mockup.jpg.PNG')">
+              <img src="../assets/images/rapid-glow-corrector-mockup.jpg.PNG" alt="Detail view">
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="product-page-info fade-up">
+          <div class="product-rating" style="margin-bottom: 14px;">
+            <span class="product-rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <a href="#reviews" class="product-rating-link">4.8 / 5 (184 Reviews) &middot; 50,000+ Customers</a>
+          </div>
+
+          <p class="section-label">Serum</p>
+          <h1>Rapid Glow &amp; Corrector Serum</h1>
+
+          <p class="product-page-subhead">Your all-in-one brightening &amp; anti-ageing powerhouse &mdash; targets dark spots, hyperpigmentation, sun damage &amp; wrinkles in just weeks.</p>
+
+          <ul class="benefit-list">
+            <li><span class="benefit-check">&check;</span> Fades dark spots &amp; post-acne marks</li>
+            <li><span class="benefit-check">&check;</span> Brightens dull, tired-looking skin</li>
+            <li><span class="benefit-check">&check;</span> Repairs sun damage &amp; reduces wrinkles</li>
+            <li><span class="benefit-check">&check;</span> Reveals visible glow within 5 days</li>
+          </ul>
+
+          <div class="stock-bar">
+            <span class="stock-bar-icon">&#128293;</span>
+            <span class="stock-bar-text"><strong>Selling fast!</strong> Only 22% left in stock</span>
+            <div class="stock-bar-progress"><div class="stock-bar-progress-fill" style="width:22%;"></div></div>
+          </div>
+
+          <p style="font-weight:600;margin-bottom:10px;font-size:0.95rem;">Choose your pack:</p>
+          <div class="pack-selector">
+            <div class="pack-option" onclick="selectPack(this, 1, 22500)">
+              <div class="pack-option-qty">1</div>
+              <div class="pack-option-label">Bottle</div>
+              <div class="pack-option-price">&#8358;22,500</div>
+            </div>
+            <div class="pack-option selected" onclick="selectPack(this, 3, 60750)">
+              <div class="pack-option-badge">Most Popular</div>
+              <div class="pack-option-qty">3</div>
+              <div class="pack-option-label">Bottles &mdash; Save 10%</div>
+              <div class="pack-option-price">&#8358;60,750</div>
+            </div>
+            <div class="pack-option" onclick="selectPack(this, 6, 114750)">
+              <div class="pack-option-badge">Best Value</div>
+              <div class="pack-option-qty">6</div>
+              <div class="pack-option-label">Bottles &mdash; Save 15%</div>
+              <div class="pack-option-price">&#8358;114,750</div>
+            </div>
+          </div>
+
+          <p style="font-weight:600;margin-bottom:10px;font-size:0.95rem;">How would you like it?</p>
+          <div class="purchase-options">
+            <div class="purchase-option selected" onclick="selectPurchase(this, 'subscribe')">
+              <div class="purchase-option-label">Subscribe &amp; Save <span class="purchase-option-savings">15% OFF</span></div>
+              <div class="purchase-option-price"><span class="purchase-option-strike">&#8358;60,750</span> &#8358;51,638</div>
+              <div class="purchase-option-perks">Free shipping &middot; Cancel anytime</div>
+            </div>
+            <div class="purchase-option" onclick="selectPurchase(this, 'onetime')">
+              <div class="purchase-option-label">One-time Purchase</div>
+              <div class="purchase-option-price">&#8358;60,750</div>
+              <div class="purchase-option-perks">No commitment</div>
+            </div>
+          </div>
+
+          <div class="product-page-actions">
+            <button class="btn btn-primary" style="flex:1;font-size:1.05rem;padding:20px 32px;" id="mainAddToCart" onclick="addToCart('Rapid Glow & Corrector Serum (3-Pack Subscribe)', 51638);">Add to Cart &mdash; &#8358;51,638</button>
+          </div>
+          <p style="text-align:center;font-size:0.82rem;color:var(--gray-dark);margin-bottom:24px;">&#128666; Free shipping on orders &#8358;30,000+ &middot; &#8635; 30-day money-back guarantee</p>
+
+          <!-- Kira CTA -->
+          <div class="kira-cta-card">
+            <div class="kira-cta-icon">&#10024;</div>
+            <div class="kira-cta-text">
+              <h4>Is this the right serum for your skin?</h4>
+              <p>Kira analyses your skin in 60 seconds and recommends the perfect product for your concerns.</p>
+            </div>
+            <button class="btn btn-yellow" onclick="openKira()">Try Kira Free</button>
+          </div>
+
+          <div class="trust-badges">
+            <div class="trust-badges-banner">
+              <span class="trust-badges-banner-check">&check;</span>
+              Limited Time Discount Auto-Applied
+            </div>
+            <div class="trust-badges-row">
+              <div class="trust-badge">
+                <span class="trust-badge-icon">
+                  <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/><polyline points="9 12 11 14 15 10"/></svg>
+                </span>
+                Clinically &amp;<br>3rd-party tested
+              </div>
+              <div class="trust-badge">
+                <span class="trust-badge-icon">
+                  <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="8 12 11 15 16 9"/></svg>
+                </span>
+                30-Day<br>Guarantee
+              </div>
+              <div class="trust-badge">
+                <span class="trust-badge-icon">
+                  <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                </span>
+                Free delivery<br>over &#8358;30k
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHY THIS WORKS — HIGHLIGHTS ========== -->
+  <section class="section section-dark">
+    <div class="container text-center">
+      <p class="section-label fade-up" style="color:rgba(255,255,255,0.5);">Why It Works</p>
+      <h2 class="section-title fade-up" style="color:#fff;">Multi-Action Glow System</h2>
+      <div class="highlights-grid">
+        <div class="highlight-card fade-up">
+          <div class="highlight-icon">&#10024;</div>
+          <h4 style="color:#fff;">Brightens Skin</h4>
+          <p>Advanced brightening complex breaks down melanin clusters for a more luminous, even complexion.</p>
+        </div>
+        <div class="highlight-card fade-up">
+          <div class="highlight-icon">&#127774;</div>
+          <h4 style="color:#fff;">Corrects Tone</h4>
+          <p>Targets and fades hyperpigmentation, dark spots, and post-acne marks at the cellular level.</p>
+        </div>
+        <div class="highlight-card fade-up">
+          <div class="highlight-icon">&#128260;</div>
+          <h4 style="color:#fff;">Repairs Damage</h4>
+          <p>Reverses visible signs of sun damage and environmental stress with potent antioxidants.</p>
+        </div>
+        <div class="highlight-card fade-up">
+          <div class="highlight-icon">&#9201;</div>
+          <h4 style="color:#fff;">Anti-Ageing</h4>
+          <p>Stimulates collagen production to smooth fine lines, wrinkles, and restore youthful firmness.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== KEY INGREDIENTS ========== -->
+  <section class="section">
+    <div class="container text-center">
+      <p class="section-label fade-up">Powered by Nature &amp; Science</p>
+      <h2 class="section-title fade-up">Key Ingredients</h2>
+      <p class="section-subtitle mx-auto fade-up">Every ingredient is purposefully chosen, clinically tested, and transparently listed.</p>
+      <div class="ingredients-grid">
+        <div class="ingredient-card fade-up">
+          <div class="ingredient-icon">&#127819;</div>
+          <h4>Vitamin C (20%)</h4>
+          <p>Potent antioxidant that brightens, evens skin tone, and protects against free radical damage.</p>
+        </div>
+        <div class="ingredient-card fade-up">
+          <div class="ingredient-icon">&#10024;</div>
+          <h4>Alpha Arbutin</h4>
+          <p>Gentle yet powerful skin brightener that inhibits melanin production to fade dark spots.</p>
+        </div>
+        <div class="ingredient-card fade-up">
+          <div class="ingredient-icon">&#127807;</div>
+          <h4>Retinol (0.5%)</h4>
+          <p>Gold-standard anti-ageing ingredient that accelerates cell turnover and smooths wrinkles.</p>
+        </div>
+        <div class="ingredient-card fade-up">
+          <div class="ingredient-icon">&#128167;</div>
+          <h4>Glycolic Acid</h4>
+          <p>AHA exfoliant that dissolves dead skin cells, revealing the fresh, radiant skin underneath.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BEFORE & AFTER / RESULTS ========== -->
+  <section class="section section-gray">
+    <div class="container">
+      <div class="ba-grid">
+        <div class="ba-visual fade-up">
+          <div class="ba-card">
+            <div class="ba-card-img">Before photo (replace)</div>
+            <p>Before</p>
+          </div>
+          <div class="ba-card">
+            <div class="ba-card-img">After photo (replace)</div>
+            <p>After 6 Weeks</p>
+          </div>
+        </div>
+        <div class="ba-content fade-up">
+          <p class="section-label">Real Results</p>
+          <h2>Your Glow-Up Starts Here</h2>
+          <p>In independent testing across 150 participants over 8 weeks, users experienced dramatic improvements in skin brightness, tone evenness, and wrinkle reduction.</p>
+          <p>Most users report a noticeable glow within the first 5 days of use.</p>
+          <div class="ba-stats">
+            <div class="ba-stat">
+              <div class="ba-stat-number">96%</div>
+              <div class="ba-stat-label">Reported brighter skin</div>
+            </div>
+            <div class="ba-stat">
+              <div class="ba-stat-number">91%</div>
+              <div class="ba-stat-label">Saw faded dark spots</div>
+            </div>
+            <div class="ba-stat">
+              <div class="ba-stat-number">88%</div>
+              <div class="ba-stat-label">Noticed smoother texture</div>
+            </div>
+            <div class="ba-stat">
+              <div class="ba-stat-number">5 Days</div>
+              <div class="ba-stat-label">To see first glow</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW TO USE ========== -->
+  <section class="section">
+    <div class="container text-center">
+      <p class="section-label fade-up">Simple Routine</p>
+      <h2 class="section-title fade-up">How to Use</h2>
+      <div class="highlights-grid">
+        <div class="highlight-card fade-up">
+          <div class="highlight-icon" style="font-size:1.6rem;font-weight:700;color:var(--purple);">1</div>
+          <h4>Cleanse</h4>
+          <p>Start with a clean canvas. Use the Clear Glow Exfoliating Soap or your favourite gentle cleanser.</p>
+        </div>
+        <div class="highlight-card fade-up">
+          <div class="highlight-icon" style="font-size:1.6rem;font-weight:700;color:var(--purple);">2</div>
+          <h4>Apply</h4>
+          <p>Dispense 2–3 drops and spread evenly across face, neck, and any dark spots.</p>
+        </div>
+        <div class="highlight-card fade-up">
+          <div class="highlight-icon" style="font-size:1.6rem;font-weight:700;color:var(--purple);">3</div>
+          <h4>Massage</h4>
+          <p>Gently pat and press into skin using upward motions until fully absorbed.</p>
+        </div>
+        <div class="highlight-card fade-up">
+          <div class="highlight-icon" style="font-size:1.6rem;font-weight:700;color:var(--purple);">4</div>
+          <h4>Protect</h4>
+          <p>Always apply SPF in the morning. The active ingredients increase sun sensitivity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CUSTOMER REVIEWS ========== -->
+  <section class="section section-gray">
+    <div class="container">
+      <div class="text-center">
+        <p class="section-label fade-up">Customer Reviews</p>
+        <h2 class="section-title fade-up">Real People, Real Glow</h2>
+        <div class="product-rating fade-up" style="justify-content:center;margin-bottom:8px;">
+          <span class="product-rating-stars" style="font-size:1.3rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="product-rating-text" style="font-size:1rem;">4.8 out of 5 &mdash; Based on 184 reviews</span>
+        </div>
+      </div>
+
+      <div class="product-reviews">
+        <div class="review-card fade-up">
+          <div class="review-header">
+            <div class="review-author-info">
+              <h4>Amina B.</h4>
+              <p>Lagos, Nigeria</p>
+            </div>
+            <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </div>
+          <p class="review-text">"My skin was dull and covered in dark spots from years of sun exposure. After 3 weeks with this serum, people started asking me what I changed. My glow is REAL and I'm obsessed!"</p>
+          <span class="review-verified">&#10003; Verified Purchase</span>
+        </div>
+
+        <div class="review-card fade-up">
+          <div class="review-header">
+            <div class="review-author-info">
+              <h4>Emeka C.</h4>
+              <p>Enugu, Nigeria</p>
+            </div>
+            <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </div>
+          <p class="review-text">"I had stubborn hyperpigmentation on my cheeks for 2 years. Nothing worked until this serum. Within a month, the dark patches lightened dramatically. This product is worth every naira."</p>
+          <span class="review-verified">&#10003; Verified Purchase</span>
+        </div>
+
+        <div class="review-card fade-up">
+          <div class="review-header">
+            <div class="review-author-info">
+              <h4>Ngozi I.</h4>
+              <p>Ibadan, Nigeria</p>
+            </div>
+            <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </div>
+          <p class="review-text">"I'm 42 and this serum makes me look like I'm in my early 30s. The fine lines around my eyes have softened, my skin tone is more even, and I genuinely glow. My husband even noticed!"</p>
+          <span class="review-verified">&#10003; Verified Purchase</span>
+        </div>
+
+        <div class="review-card fade-up">
+          <div class="review-header">
+            <div class="review-author-info">
+              <h4>Kemi A.</h4>
+              <p>Abuja, Nigeria</p>
+            </div>
+            <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+          </div>
+          <p class="review-text">"Great serum that does what it says. My acne marks from last year are almost gone. Only 4 stars because shipping took a bit long, but the product itself is 5 stars without question."</p>
+          <span class="review-verified">&#10003; Verified Purchase</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section class="section">
+    <div class="container">
+      <p class="section-label fade-up">FAQ</p>
+      <h2 class="section-title fade-up">Frequently Asked Questions</h2>
+
+      <div class="faq-list">
+        <div class="faq-item fade-up">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            How soon will I notice a glow?
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><p>Most users notice a visible radiance boost within the first 3–5 days. Dark spots and hyperpigmentation typically begin fading within 2–4 weeks of consistent use.</p></div>
+        </div>
+        <div class="faq-item fade-up">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            Can I use this if I have acne?
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><p>Yes! This serum works beautifully alongside the Acne Complex-4 Serum. Use the Acne serum first, let it absorb, then apply the Rapid Glow serum for complete treatment and brightening.</p></div>
+        </div>
+        <div class="faq-item fade-up">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            Do I need to wear SPF with this serum?
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><p>Yes, absolutely. This serum contains active ingredients like Vitamin C and Retinol that can increase sun sensitivity. Always apply broad-spectrum SPF 30+ during the day.</p></div>
+        </div>
+        <div class="faq-item fade-up">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            Is this safe for pregnant or nursing mothers?
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><p>This serum contains retinol, which is not recommended during pregnancy or breastfeeding. Please consult your doctor before use if you are pregnant or nursing.</p></div>
+        </div>
+        <div class="faq-item fade-up">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            What's your return policy?
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><p>We offer a 30-day money-back guarantee. If you're not satisfied with your results, contact us for a full refund — no questions asked.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="section-purple cta-banner">
+    <div class="container">
+      <h2 class="fade-up">Unlock Your Natural Radiance</h2>
+      <p class="fade-up">Join 50,000+ happy customers who transformed their skin with TENXIX.</p>
+      <button class="btn btn-white fade-up" onclick="addToCart('Rapid Glow & Corrector Serum', 22500);">Add to Cart &mdash; &#8358;22,500</button>
+    </div>
+  </section>
+
+  <!-- ========== YOU MAY ALSO LIKE ========== -->
+  <section class="section">
+    <div class="container text-center">
+      <p class="section-label fade-up">Complete Your Routine</p>
+      <h2 class="section-title fade-up">Pairs Perfectly With</h2>
+      <div class="products-grid" style="max-width:800px;margin:48px auto 0;">
+        <div class="product-card fade-up" onclick="window.location='acne-complex-4-serum.html'" style="cursor:pointer;">
+          <div class="product-image"><span class="product-badge">Bestseller</span><img src="../assets/images/acne-complex-4-mockup.jpg.jpeg" alt="Acne Complex-4 Serum"></div>
+          <div class="product-info">
+            <p class="product-category">Serum</p>
+            <h3 class="product-name">Acne Complex-4 Serum</h3>
+            <p class="product-desc">Kills Acne Bacteria, Unclogs Pores, Prevent New Breakouts &amp; Fades Acne Marks.</p>
+            <p class="product-price">&#8358;22,500</p>
+            <button class="btn btn-primary" onclick="event.stopPropagation(); addToCart('Acne Complex-4 Serum', 22500)">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card fade-up" onclick="window.location='clear-glow-exfoliating-soap.html'" style="cursor:pointer;">
+          <div class="product-image"><span class="product-badge">Bestseller</span><img src="../assets/images/clearfix.jpg.jpeg" alt="Clear Glow Exfoliating Soap"></div>
+          <div class="product-info">
+            <p class="product-category">Soap</p>
+            <h3 class="product-name">Clear Glow Exfoliating Soap</h3>
+            <p class="product-desc">Remove dead skin, unclog pores and reveal visibly brighter, smoother skin.</p>
+            <p class="product-price">&#8358;9,500</p>
+            <button class="btn btn-primary" onclick="event.stopPropagation(); addToCart('Clear Glow Exfoliating Soap', 9500)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../assets/images/TENXIX_LOGO__.png" alt="TENXIX">
+          <p>Premium skincare crafted at the intersection of science and nature. Luxury you can feel, results you can see.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="../products.html">All Products</a></li>
+            <li><a href="../shop.html">Serums</a></li>
+            <li><a href="../shop.html">Soaps</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="../about.html">About Us</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="../contact.html">Help Centre</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TENXIX. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Kira AI Modal -->
+  <div class="kira-modal-overlay" onclick="closeKira()"></div>
+  <div class="kira-modal" role="dialog" aria-label="Kira Skin Analyser">
+    <div class="kira-modal-header">
+      <div class="kira-modal-title">
+        <div class="kira-modal-title-icon">K</div>
+        <div class="kira-modal-title-text">
+          <h3>Kira &mdash; AI Skin Analyser</h3>
+          <p>Africa's smartest skincare advisor</p>
+        </div>
+      </div>
+      <button class="kira-modal-close" onclick="closeKira()" aria-label="Close">&times;</button>
+    </div>
+    <div class="kira-modal-body">
+      <div class="kira-modal-loading">
+        <div class="kira-loader"></div>
+        <p>Loading Kira&hellip;</p>
+      </div>
+      <iframe data-src="https://scan.tenxix.com" allow="camera; microphone" title="Kira Skin Analyser"></iframe>
+    </div>
+  </div>
+
+  <!-- Sticky Add to Cart Bar -->
+  <div class="sticky-cart-bar">
+    <div class="sticky-cart-info">
+      <div class="sticky-cart-img"><img src="../assets/images/rapid-glow-corrector-mockup.jpg.PNG" alt=""></div>
+      <div class="sticky-cart-text">
+        <div class="sticky-cart-name">Rapid Glow &amp; Corrector Serum</div>
+        <div class="sticky-cart-price">&#8358;22,500</div>
+      </div>
+    </div>
+    <button class="btn btn-primary" onclick="addToCart('Rapid Glow & Corrector Serum', 22500)">Add to Cart</button>
+  </div>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay"></div>
+  <div class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="cart-close">&times;</button>
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <span class="cart-total-amount">&#8358;0</span>
+      </div>
+      <button class="btn btn-primary">Checkout</button>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    function switchImage(thumb, src) {
+      document.getElementById('mainImage').src = src;
+      document.querySelectorAll('.product-gallery-thumbs .thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    }
+
+    let selectedPack = { qty: 3, price: 60750 };
+    let selectedPurchase = 'subscribe';
+
+    function selectPack(el, qty, price) {
+      document.querySelectorAll('.pack-option').forEach(p => p.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedPack = { qty, price };
+      updateMainPrice();
+    }
+    function selectPurchase(el, type) {
+      document.querySelectorAll('.purchase-option').forEach(p => p.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedPurchase = type;
+      updateMainPrice();
+    }
+    function updateMainPrice() {
+      const finalPrice = selectedPurchase === 'subscribe'
+        ? Math.round(selectedPack.price * 0.85)
+        : selectedPack.price;
+      const btn = document.getElementById('mainAddToCart');
+      const label = selectedPurchase === 'subscribe' ? 'Subscribe' : 'One-time';
+      btn.textContent = `Add to Cart — ₦${finalPrice.toLocaleString()}`;
+      btn.setAttribute('onclick', `addToCart('Rapid Glow & Corrector Serum (${selectedPack.qty}-Pack ${label})', ${finalPrice})`);
+    }
+  </script>
+</body>
+</html>

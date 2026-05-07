@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clear Glow Exfoliating Soap — TENXIX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+  <!-- ========== URGENCY BAR ========== -->
+  <div class="urgency-bar">
+    <strong>BUNDLE &amp; SAVE:</strong> Pair with any serum and get free shipping &mdash; limited time only!
+  </div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" style="top:38px;">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/images/TENXIX_LOGO__.png" alt="TENXIX">
+      </a>
+      <ul class="nav-links" style="top:118px;">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../products.html">Products</a></li>
+        <li><a href="../shop.html">Shop</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><button class="btn-kira" onclick="openKira()"><span class="pulse-dot"></span> Try Kira AI</button></li>
+        <li><a href="#" class="nav-cart" onclick="openCart(); return false;">&#9825; <span class="cart-count">0</span></a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== PRODUCT DETAIL ========== -->
+  <section class="product-page">
+    <div class="container">
+      <div class="product-page-grid">
+
+        <!-- Image Gallery in Hero Card -->
+        <div class="product-gallery fade-up">
+          <div class="product-hero-card">
+            <div class="product-hero-banner">
+              <span class="flame">&#128293;</span> Best Seller: Save up to 15% Today <span class="flame">&#128293;</span>
+            </div>
+            <div class="product-hero-body">
+              <div class="product-hero-image-area">
+                <img id="mainImage" src="../assets/images/clearfix.jpg.jpeg" alt="Clear Glow Exfoliating Soap">
+              </div>
+            </div>
+          </div>
+          <div class="product-gallery-thumbs" style="margin-top:12px;">
+            <div class="thumb active" onclick="switchImage(this, '../assets/images/clearfix.jpg.jpeg')">
+              <img src="../assets/images/clearfix.jpg.jpeg" alt="Front view">
+            </div>
+            <div class="thumb" onclick="switchImage(this, '../assets/images/clearfix.jpg.jpeg')">
+              <img src="../assets/images/clearfix.jpg.jpeg" alt="Side view">
+            </div>
+            <div class="thumb" onclick="switchImage(this, '../assets/images/clearfix.jpg.jpeg')">
+              <img src="../assets/images/clearfix.jpg.jpeg" alt="Lather view">
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="product-page-info fade-up">
+          <div class="product-rating" style="margin-bottom: 14px;">
+            <span class="product-rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <a href="#reviews" class="product-rating-link">4.9 / 5 (312 Reviews) &middot; 50,000+ Customers</a>
+          </div>
+
+          <p class="section-label">Soap</p>
+          <h1>Clear Glow Exfoliating Soap</h1>
+
+          <p class="product-page-subhead">The perfect first step in any skincare routine &mdash; reveals visibly brighter, smoother skin from the very first wash.</p>
+
+          <ul class="benefit-list">
+            <li><span class="benefit-check">&check;</span> Removes dead skin cells &amp; impurities</li>
+            <li><span class="benefit-check">&check;</span> Unclogs pores for clearer, healthier skin</li>
+            <li><span class="benefit-check">&check;</span> Brightens dull skin from the first use</li>
+            <li><span class="benefit-check">&check;</span> Gentle enough for daily face &amp; body use</li>
+          </ul>
+
+          <div class="stock-bar">
+            <span class="stock-bar-icon">&#128293;</span>
+            <span class="stock-bar-text"><strong>Best seller!</strong> Only 12% left in stock</span>
+            <div class="stock-bar-progress"><div class="stock-bar-progress-fill" style="width:12%;"></div></div>
+          </div>
+
+          <p style="font-weight:600;margin-bottom:10px;font-size:0.95rem;">Choose your pack:</p>
+          <div class="pack-selector">
+            <div class="pack-option" onclick="selectPack(this, 1, 9500)">
+              <div class="pack-option-qty">1</div>
+              <div class="pack-option-label">Bar</div>
+              <div class="pack-option-price">&#8358;9,500</div>
+            </div>
+            <div class="pack-option selected" onclick="selectPack(this, 3, 25650)">
+              <div class="pack-option-badge">Most Popular</div>
+              <div class="pack-option-qty">3</div>
+              <div class="pack-option-label">Bars &mdash; Save 10%</div>
+              <div class="pack-option-price">&#8358;25,650</div>
+            </div>
+            <div class="pack-option" onclick="selectPack(this, 6, 48450)">
+              <div class="pack-option-badge">Best Value</div>
+              <div class="pack-option-qty">6</div>
+              <div class="pack-option-label">Bars &mdash; Save 15%</div>
+              <div class="pack-option-price">&#8358;48,450</div>
+            </div>
+          </div>
+
+          <p style="font-weight:600;margin-bottom:10px;font-size:0.95rem;">How would you like it?</p>
+          <div class="purchase-options">
+            <div class="purchase-option selected" onclick="selectPurchase(this, 'subscribe')">
+              <div class="purchase-option-label">Subscribe &amp; Save <span class="purchase-option-savings">15% OFF</span></div>
+              <div class="purchase-option-price"><span class="purchase-option-strike">&#8358;25,650</span> &#8358;21,803</div>
+              <div class="purchase-option-perks">Free shipping &middot; Cancel anytime</div>
+            </div>
+            <div class="purchase-option" onclick="selectPurchase(this, 'onetime')">
+              <div class="purchase-option-label">One-time Purchase</div>
+              <div class="purchase-option-price">&#8358;25,650</div>
+              <div class="purchase-option-perks">No commitment</div>
+            </div>
+          </div>
+
+          <div class="product-page-actions">
+            <button class="btn btn-primary" style="flex:1;font-size:1.05rem;padding:20px 32px;" id="mainAddToCart" onclick="addToCart('Clear Glow Exfoliating Soap (3-Pack Subscribe)', 21803);">Add to Cart &mdash; &#8358;21,803</button>
+          </div>
+          <p style="text-align:center;font-size:0.82rem;color:var(--gray-dark);margin-bottom:24px;">&#128666; Free shipping on orders &#8358;30,000+ &middot; &#8635; 30-day money-back guarantee</p>
+
+          <!-- Kira CTA -->
+          <div class="kira-cta-card">
+            <div class="kira-cta-icon">&#10024;</div>
+            <div class="kira-cta-text">
+              <h4>Build your perfect routine with Kira</h4>
+              <p>Get an AI-powered skin analysis and discover which serum to pair with this soap.</p>
+            </div>
+            <button class="btn btn-yellow" onclick="openKira()">Try Kira Free</button>
+          </div>
+
+          <div class="trust-badges">
+            <div class="trust-badges-banner">
+              <span class="trust-badges-banner-check">&check;</span>
+              Limited Time Discount Auto-Applied
+            </div>
+            <div class="trust-badges-row">
+              <div class="trust-badge">
+                <span class="trust-badge-icon">
+                  <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-.5 8-5 8-10V6l-8-4z"/><polyline points="9 12 11 14 15 10"/></svg>
+                </span>
+                Clinically &amp;<br>3rd-party tested
+              </div>
+              <div class="trust-badge">
+                <span class="trust-badge-icon">
+                  <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="8 12 11 15 16 9"/></svg>
+                </span>
+                30-Day<br>Guarantee
+              </div>
+              <div class="trust-badge">
+                <span class="trust-badge-icon">
+                  <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                </span>
+                Free delivery<br>over &#8358;30k
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHY THIS WORKS — HIGHLIGHTS ========== -->
+  <section class="section section-dark">
+    <div class="container text-center">
+      <p class="section-label fade-up" style="color:rgba(255,255,255,0.5);">Why It Works</p>
+      <h2 class="section-title fade-up" style="color:#fff;">The Foundation of Clear Skin</h2>
+      <div class="highlights-grid">
+        <div class="highlight-card fade-up">
+          <div class="highlight-icon">&#128171;</div>
+          <h4 style="color:#fff;">Deep Cleansing</h4>
+          <p>Micro-exfoliating particles gently lift dirt, oil, and makeup from deep within pores.</p>
+        </div>
+        <div class="highlight-card fade-up">
+          <div class="highlight-icon">&#10024;</div>
+          <h4 style="color:#fff;">Instant Brightness</h4>
+          <p>Removes the dull layer of dead skin cells to reveal the brighter, fresher skin underneath.</p>
+        </div>
+        <div class="highlight-card fade-up">
+          <div class="highlight-icon">&#127807;</div>
+          <h4 style="color:#fff;">Gentle Formula</h4>
+          <p>pH-balanced and enriched with natural botanicals — tough on impurities, gentle on skin.</p>
+        </div>
+        <div class="highlight-card fade-up">
+          <div class="highlight-icon">&#128260;</div>
+          <h4 style="color:#fff;">Boosts Absorption</h4>
+          <p>Preps skin perfectly so serums and treatments penetrate deeper and work harder.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== KEY INGREDIENTS ========== -->
+  <section class="section">
+    <div class="container text-center">
+      <p class="section-label fade-up">Powered by Nature &amp; Science</p>
+      <h2 class="section-title fade-up">Key Ingredients</h2>
+      <p class="section-subtitle mx-auto fade-up">Clean, effective, and transparently formulated with ingredients you can trust.</p>
+      <div class="ingredients-grid">
+        <div class="ingredient-card fade-up">
+          <div class="ingredient-icon">&#127813;</div>
+          <h4>Papaya Extract</h4>
+          <p>Natural enzyme exfoliant that gently dissolves dead skin cells and brightens complexion.</p>
+        </div>
+        <div class="ingredient-card fade-up">
+          <div class="ingredient-icon">&#127810;</div>
+          <h4>Shea Butter</h4>
+          <p>Rich emollient that nourishes and protects skin's moisture barrier while cleansing.</p>
+        </div>
+        <div class="ingredient-card fade-up">
+          <div class="ingredient-icon">&#127774;</div>
+          <h4>Turmeric</h4>
+          <p>Anti-inflammatory powerhouse that calms irritation and gives skin a warm, natural glow.</p>
+        </div>
+        <div class="ingredient-card fade-up">
+          <div class="ingredient-icon">&#128167;</div>
+          <h4>Glycerin</h4>
+          <p>Humectant that draws moisture to skin, preventing the dryness common with exfoliating soaps.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BEFORE & AFTER / RESULTS ========== -->
+  <section class="section section-gray">
+    <div class="container">
+      <div class="ba-grid">
+        <div class="ba-visual fade-up">
+          <div class="ba-card">
+            <div class="ba-card-img">Before photo (replace)</div>
+            <p>Before</p>
+          </div>
+          <div class="ba-card">
+            <div class="ba-card-img">After photo (replace)</div>
+            <p>After 2 Weeks</p>
+          </div>
+        </div>
+        <div class="ba-content fade-up">
+          <p class="section-label">Real Results</p>
+          <h2>Brighter Skin from the First Wash</h2>
+          <p>In user testing across 200 participants, the Clear Glow Exfoliating Soap delivered visible results from the very first use, with cumulative improvement over the first month.</p>
+          <p>Users consistently reported smoother, clearer, and more radiant skin.</p>
+          <div class="ba-stats">
+            <div class="ba-stat">
+              <div class="ba-stat-number">97%</div>
+              <div class="ba-stat-label">Felt smoother skin instantly</div>
+            </div>
+            <div class="ba-stat">
+              <div class="ba-stat-number">93%</div>
+              <div class="ba-stat-label">Noticed brighter complexion</div>
+            </div>
+            <div class="ba-stat">
+              <div class="ba-stat-number">90%</div>
+              <div class="ba-stat-label">Said pores looked smaller</div>
+            </div>
+            <div class="ba-stat">
+              <div class="ba-stat-number">1 Wash</div>
+              <div class="ba-stat-label">To feel the difference</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW TO USE ========== -->
+  <section class="section">
+    <div class="container text-center">
+      <p class="section-label fade-up">Simple Routine</p>
+      <h2 class="section-title fade-up">How to Use</h2>
+      <div class="highlights-grid">
+        <div class="highlight-card fade-up">
+          <div class="highlight-icon" style="font-size:1.6rem;font-weight:700;color:var(--purple);">1</div>
+          <h4>Wet</h4>
+          <p>Splash your face and body with lukewarm water to open pores.</p>
+        </div>
+        <div class="highlight-card fade-up">
+          <div class="highlight-icon" style="font-size:1.6rem;font-weight:700;color:var(--purple);">2</div>
+          <h4>Lather</h4>
+          <p>Work the soap into a rich lather between your hands or with a soft washcloth.</p>
+        </div>
+        <div class="highlight-card fade-up">
+          <div class="highlight-icon" style="font-size:1.6rem;font-weight:700;color:var(--purple);">3</div>
+          <h4>Massage</h4>
+          <p>Apply to face and body in gentle circular motions for 30–60 seconds.</p>
+        </div>
+        <div class="highlight-card fade-up">
+          <div class="highlight-icon" style="font-size:1.6rem;font-weight:700;color:var(--purple);">4</div>
+          <h4>Rinse &amp; Treat</h4>
+          <p>Rinse thoroughly and follow with your TENXIX serum for maximum results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CUSTOMER REVIEWS ========== -->
+  <section class="section section-gray">
+    <div class="container">
+      <div class="text-center">
+        <p class="section-label fade-up">Customer Reviews</p>
+        <h2 class="section-title fade-up">Our Most Reviewed Product</h2>
+        <div class="product-rating fade-up" style="justify-content:center;margin-bottom:8px;">
+          <span class="product-rating-stars" style="font-size:1.3rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="product-rating-text" style="font-size:1rem;">4.9 out of 5 &mdash; Based on 312 reviews</span>
+        </div>
+      </div>
+
+      <div class="product-reviews">
+        <div class="review-card fade-up">
+          <div class="review-header">
+            <div class="review-author-info">
+              <h4>Adaeze O.</h4>
+              <p>Lagos, Nigeria</p>
+            </div>
+            <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </div>
+          <p class="review-text">"This soap is incredible. From the FIRST wash my skin felt different — smoother, softer, cleaner. After one week my husband asked what I'm doing differently. It's this soap. Just this soap!"</p>
+          <span class="review-verified">&#10003; Verified Purchase</span>
+        </div>
+
+        <div class="review-card fade-up">
+          <div class="review-header">
+            <div class="review-author-info">
+              <h4>Daniel U.</h4>
+              <p>Benin City, Nigeria</p>
+            </div>
+            <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </div>
+          <p class="review-text">"I was sceptical about a soap making a difference but this one did. My skin looks brighter and the rough patches on my arms are completely gone. I've bought 5 bars now for the whole family."</p>
+          <span class="review-verified">&#10003; Verified Purchase</span>
+        </div>
+
+        <div class="review-card fade-up">
+          <div class="review-header">
+            <div class="review-author-info">
+              <h4>Halima M.</h4>
+              <p>Kaduna, Nigeria</p>
+            </div>
+            <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </div>
+          <p class="review-text">"The best exfoliating soap I've ever used, and I've tried many. It doesn't dry out my skin like others do. My dark knuckles and elbows are actually getting lighter. So happy I found TENXIX."</p>
+          <span class="review-verified">&#10003; Verified Purchase</span>
+        </div>
+
+        <div class="review-card fade-up">
+          <div class="review-header">
+            <div class="review-author-info">
+              <h4>Joy E.</h4>
+              <p>Warri, Nigeria</p>
+            </div>
+            <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </div>
+          <p class="review-text">"At &#8358;9,500 this soap is honestly a steal. It lasts long, it works, and it smells amazing. I use it with the Acne serum and my skin has never been this clear. 10/10 recommend!"</p>
+          <span class="review-verified">&#10003; Verified Purchase</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section class="section">
+    <div class="container">
+      <p class="section-label fade-up">FAQ</p>
+      <h2 class="section-title fade-up">Frequently Asked Questions</h2>
+
+      <div class="faq-list">
+        <div class="faq-item fade-up">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            Can I use this soap every day?
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><p>Yes! The Clear Glow Exfoliating Soap is formulated to be gentle enough for daily use. It won't strip your skin or cause irritation, even with regular use.</p></div>
+        </div>
+        <div class="faq-item fade-up">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            Can I use this on my body too?
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><p>Absolutely! This soap works beautifully on both face and body. Many customers use it to brighten dark knuckles, elbows, knees, and underarms.</p></div>
+        </div>
+        <div class="faq-item fade-up">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            Will this soap dry out my skin?
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><p>No. Unlike many exfoliating soaps, ours is enriched with shea butter and glycerin to maintain moisture while cleansing. Your skin will feel clean but never tight or dry.</p></div>
+        </div>
+        <div class="faq-item fade-up">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            How long does one bar last?
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><p>With daily use on the face, one 150g bar typically lasts 6–8 weeks. If used on both face and body, it lasts about 3–4 weeks.</p></div>
+        </div>
+        <div class="faq-item fade-up">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            Which serum should I pair this with?
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><p>For acne-prone skin, pair with the Acne Complex-4 Serum. For brightening and anti-ageing, pair with the Rapid Glow &amp; Corrector Serum. For the ultimate routine, use all three!</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="section-purple cta-banner">
+    <div class="container">
+      <h2 class="fade-up">Start Your Glow-Up Today</h2>
+      <p class="fade-up">The first step to clear, radiant skin starts with the right cleanser.</p>
+      <button class="btn btn-white fade-up" onclick="addToCart('Clear Glow Exfoliating Soap', 9500);">Add to Cart &mdash; &#8358;9,500</button>
+    </div>
+  </section>
+
+  <!-- ========== YOU MAY ALSO LIKE ========== -->
+  <section class="section">
+    <div class="container text-center">
+      <p class="section-label fade-up">Complete Your Routine</p>
+      <h2 class="section-title fade-up">Pairs Perfectly With</h2>
+      <div class="products-grid" style="max-width:800px;margin:48px auto 0;">
+        <div class="product-card fade-up" onclick="window.location='acne-complex-4-serum.html'" style="cursor:pointer;">
+          <div class="product-image"><span class="product-badge">Bestseller</span><img src="../assets/images/acne-complex-4-mockup.jpg.jpeg" alt="Acne Complex-4 Serum"></div>
+          <div class="product-info">
+            <p class="product-category">Serum</p>
+            <h3 class="product-name">Acne Complex-4 Serum</h3>
+            <p class="product-desc">Kills Acne Bacteria, Unclogs Pores, Prevent New Breakouts &amp; Fades Acne Marks.</p>
+            <p class="product-price">&#8358;22,500</p>
+            <button class="btn btn-primary" onclick="event.stopPropagation(); addToCart('Acne Complex-4 Serum', 22500)">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-card fade-up" onclick="window.location='rapid-glow-corrector-serum.html'" style="cursor:pointer;">
+          <div class="product-image"><span class="product-badge">Bestseller</span><img src="../assets/images/rapid-glow-corrector-mockup.jpg.PNG" alt="Rapid Glow &amp; Corrector Serum"></div>
+          <div class="product-info">
+            <p class="product-category">Serum</p>
+            <h3 class="product-name">Rapid Glow &amp; Corrector Serum</h3>
+            <p class="product-desc">Targets uneven skin tone, Post Acne Marks &amp; Hyperpigmentation.</p>
+            <p class="product-price">&#8358;22,500</p>
+            <button class="btn btn-primary" onclick="event.stopPropagation(); addToCart('Rapid Glow & Corrector Serum', 22500)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../assets/images/TENXIX_LOGO__.png" alt="TENXIX">
+          <p>Premium skincare crafted at the intersection of science and nature. Luxury you can feel, results you can see.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="../products.html">All Products</a></li>
+            <li><a href="../shop.html">Serums</a></li>
+            <li><a href="../shop.html">Soaps</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="../about.html">About Us</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="../contact.html">Help Centre</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TENXIX. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Kira AI Modal -->
+  <div class="kira-modal-overlay" onclick="closeKira()"></div>
+  <div class="kira-modal" role="dialog" aria-label="Kira Skin Analyser">
+    <div class="kira-modal-header">
+      <div class="kira-modal-title">
+        <div class="kira-modal-title-icon">K</div>
+        <div class="kira-modal-title-text">
+          <h3>Kira &mdash; AI Skin Analyser</h3>
+          <p>Africa's smartest skincare advisor</p>
+        </div>
+      </div>
+      <button class="kira-modal-close" onclick="closeKira()" aria-label="Close">&times;</button>
+    </div>
+    <div class="kira-modal-body">
+      <div class="kira-modal-loading">
+        <div class="kira-loader"></div>
+        <p>Loading Kira&hellip;</p>
+      </div>
+      <iframe data-src="https://scan.tenxix.com" allow="camera; microphone" title="Kira Skin Analyser"></iframe>
+    </div>
+  </div>
+
+  <!-- Sticky Add to Cart Bar -->
+  <div class="sticky-cart-bar">
+    <div class="sticky-cart-info">
+      <div class="sticky-cart-img"><img src="../assets/images/clearfix.jpg.jpeg" alt=""></div>
+      <div class="sticky-cart-text">
+        <div class="sticky-cart-name">Clear Glow Exfoliating Soap</div>
+        <div class="sticky-cart-price">&#8358;9,500</div>
+      </div>
+    </div>
+    <button class="btn btn-primary" onclick="addToCart('Clear Glow Exfoliating Soap', 9500)">Add to Cart</button>
+  </div>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay"></div>
+  <div class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="cart-close">&times;</button>
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <span class="cart-total-amount">&#8358;0</span>
+      </div>
+      <button class="btn btn-primary">Checkout</button>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    function switchImage(thumb, src) {
+      document.getElementById('mainImage').src = src;
+      document.querySelectorAll('.product-gallery-thumbs .thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    }
+
+    let selectedPack = { qty: 3, price: 25650 };
+    let selectedPurchase = 'subscribe';
+
+    function selectPack(el, qty, price) {
+      document.querySelectorAll('.pack-option').forEach(p => p.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedPack = { qty, price };
+      updateMainPrice();
+    }
+    function selectPurchase(el, type) {
+      document.querySelectorAll('.purchase-option').forEach(p => p.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedPurchase = type;
+      updateMainPrice();
+    }
+    function updateMainPrice() {
+      const finalPrice = selectedPurchase === 'subscribe'
+        ? Math.round(selectedPack.price * 0.85)
+        : selectedPack.price;
+      const btn = document.getElementById('mainAddToCart');
+      const label = selectedPurchase === 'subscribe' ? 'Subscribe' : 'One-time';
+      btn.textContent = `Add to Cart — ₦${finalPrice.toLocaleString()}`;
+      btn.setAttribute('onclick', `addToCart('Clear Glow Exfoliating Soap (${selectedPack.qty}-Pack ${label})', ${finalPrice})`);
+    }
+  </script>
+</body>
+</html>

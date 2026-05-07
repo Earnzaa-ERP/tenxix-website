@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — TENXIX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/TENXIX_LOGO__.png" alt="TENXIX">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><button class="btn-kira" onclick="openKira()"><span class="pulse-dot"></span> Try Kira AI</button></li>
+        <li><a href="#" class="nav-cart" onclick="openCart(); return false;">&#9825; <span class="cart-count">0</span></a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HEADER ========== -->
+  <section class="page-header">
+    <div class="container">
+      <p class="section-label">About TENXIX</p>
+      <h1>We Don't Just Sell Skincare.<br>We Give Skincare <em style="color:var(--yellow);font-style:italic;">Solutions.</em></h1>
+      <p>Africa's No.1 AI-powered skincare brand. Where every product is matched to your unique skin through Kira &mdash; our intelligent skin analyser.</p>
+    </div>
+  </section>
+
+  <!-- ========== KIRA POSITIONING ========== -->
+  <section class="kira-section">
+    <div class="container">
+      <div class="kira-grid">
+        <div class="kira-content">
+          <span class="sticker fade-up">&#10024; The TENXIX Difference</span>
+          <h2 class="fade-up">Powered by <em>Kira.</em><br>Trusted by Thousands.</h2>
+          <p class="fade-up">Other skincare brands hand you a generic product and hope it works. We do something radically different. <strong style="color:var(--yellow);">We analyse your skin first.</strong></p>
+          <p class="fade-up" style="margin-bottom: 36px;">Kira, our AI skin analyser, scans your skin in 60 seconds and matches you with the exact products your skin needs &mdash; no guesswork, no wasted money, no irritation from the wrong formula.</p>
+
+          <div class="kira-cta-row fade-up">
+            <button class="btn btn-yellow" onclick="openKira()">Try Kira Now &rarr;</button>
+            <span class="free-tag">&#10003; Free &middot; 60 seconds &middot; No signup needed</span>
+          </div>
+
+          <div class="kira-stats fade-up">
+            <div>
+              <div class="kira-stat-num">No.1</div>
+              <div class="kira-stat-lbl">AI skincare in Africa</div>
+            </div>
+            <div>
+              <div class="kira-stat-num">98.4%</div>
+              <div class="kira-stat-lbl">Analysis accuracy</div>
+            </div>
+            <div>
+              <div class="kira-stat-num">200K+</div>
+              <div class="kira-stat-lbl">Skins analysed</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="kira-visual fade-up">
+          <div class="kira-orb">
+            <div class="kira-scanline"></div>
+            <div class="kira-orb-center">
+              <div class="name">Kira</div>
+              <div class="tag">Skin AI</div>
+            </div>
+          </div>
+          <div class="kira-data kira-data-1"><span class="dot"></span>Hydration: 67%</div>
+          <div class="kira-data kira-data-2"><span class="dot"></span>Oiliness: Moderate</div>
+          <div class="kira-data kira-data-3"><span class="dot"></span>Acne: 3 spots</div>
+          <div class="kira-data kira-data-4"><span class="dot"></span>Pigmentation: Mild</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BRAND STORY ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="story-section">
+        <div class="story-image fade-up">Brand story image (replace with your image)</div>
+        <div class="fade-up">
+          <p class="section-label">Our Beginning</p>
+          <h2 class="section-title">Born from a Belief That Skincare Should Be Different</h2>
+          <p>TENXIX was founded on a simple but powerful idea: everyone deserves access to skincare that truly works — without harmful chemicals, without compromise, and without emptying your wallet.</p>
+          <p>Our founder spent years researching the gap between clinical dermatology and natural beauty. The result? A line of products that harnesses the best of both worlds — advanced scientific formulations enriched with sustainably sourced botanical extracts.</p>
+          <p>From a small lab to a global community of skincare lovers, TENXIX has grown because of one thing: results you can see and feel from the very first application.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MISSION ========== -->
+  <section class="section section-purple">
+    <div class="container text-center">
+      <p class="section-label fade-up" style="color:rgba(255,255,255,0.6);">Our Mission</p>
+      <h2 class="section-title fade-up">Empowering Confidence Through Conscious Beauty</h2>
+      <p class="section-subtitle mx-auto fade-up" style="color:rgba(255,255,255,0.75);">We exist to prove that premium skincare can be clean, sustainable, and accessible — all at once.</p>
+
+      <div class="mission-grid">
+        <div class="mission-card fade-up">
+          <h4>Transparency First</h4>
+          <p>Every ingredient is listed, explained, and backed by research. No hidden fillers, no proprietary blends — just honest formulations you can trust.</p>
+        </div>
+        <div class="mission-card fade-up">
+          <h4>Sustainability at the Core</h4>
+          <p>From recyclable packaging to carbon-neutral shipping, every decision we make considers its environmental impact. Beauty shouldn't cost the earth.</p>
+        </div>
+        <div class="mission-card fade-up">
+          <h4>Inclusive by Design</h4>
+          <p>Our products are formulated and tested across all skin types, tones, and concerns. Great skincare has no boundaries.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHY TENXIX ========== -->
+  <section class="section">
+    <div class="container text-center">
+      <p class="section-label fade-up">Why TENXIX</p>
+      <h2 class="section-title fade-up">What Sets Us Apart</h2>
+      <div class="values-grid">
+        <div class="value-card fade-up">
+          <div class="value-icon">&#128300;</div>
+          <h4>Research-Driven</h4>
+          <p>Every product undergoes 12+ months of R&amp;D. We partner with leading dermatologists and cosmetic chemists to ensure clinical-grade efficacy.</p>
+        </div>
+        <div class="value-card fade-up">
+          <div class="value-icon">&#127807;</div>
+          <h4>Ethically Sourced</h4>
+          <p>Our botanicals come from fair-trade farms. We maintain full supply-chain traceability from seed to serum.</p>
+        </div>
+        <div class="value-card fade-up">
+          <div class="value-icon">&#128150;</div>
+          <h4>Community Powered</h4>
+          <p>Your feedback shapes our formulas. We co-develop products with our community through open beta testing programmes.</p>
+        </div>
+        <div class="value-card fade-up">
+          <div class="value-icon">&#9878;</div>
+          <h4>Certified Clean</h4>
+          <p>Free from 1,400+ harmful ingredients. Certified by independent clean beauty standards and dermatologist-approved.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STATS ========== -->
+  <section class="section section-dark">
+    <div class="container text-center">
+      <div class="values-grid">
+        <div class="value-card fade-up">
+          <h2 style="color:var(--purple-light);font-size:3rem;">50K+</h2>
+          <p style="color:rgba(255,255,255,0.7);">Happy Customers Worldwide</p>
+        </div>
+        <div class="value-card fade-up">
+          <h2 style="color:var(--purple-light);font-size:3rem;">30+</h2>
+          <p style="color:rgba(255,255,255,0.7);">Award-Winning Products</p>
+        </div>
+        <div class="value-card fade-up">
+          <h2 style="color:var(--purple-light);font-size:3rem;">98%</h2>
+          <p style="color:rgba(255,255,255,0.7);">Customer Satisfaction Rate</p>
+        </div>
+        <div class="value-card fade-up">
+          <h2 style="color:var(--purple-light);font-size:3rem;">0</h2>
+          <p style="color:rgba(255,255,255,0.7);">Harmful Chemicals Used</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="section-purple cta-banner">
+    <div class="container">
+      <h2 class="fade-up">Ready to Experience the Difference?</h2>
+      <p class="fade-up">Join thousands who have transformed their skincare routine with TENXIX.</p>
+      <a href="shop.html" class="btn btn-white fade-up">Explore Our Products</a>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/TENXIX_LOGO__.png" alt="TENXIX">
+          <p>Premium skincare crafted at the intersection of science and nature. Luxury you can feel, results you can see.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="shop.html">Serums</a></li>
+            <li><a href="shop.html">Soaps</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Help Centre</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Track Order</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TENXIX. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Kira AI Modal -->
+  <div class="kira-modal-overlay" onclick="closeKira()"></div>
+  <div class="kira-modal" role="dialog" aria-label="Kira Skin Analyser">
+    <div class="kira-modal-header">
+      <div class="kira-modal-title">
+        <div class="kira-modal-title-icon">K</div>
+        <div class="kira-modal-title-text">
+          <h3>Kira &mdash; AI Skin Analyser</h3>
+          <p>Africa's smartest skincare advisor</p>
+        </div>
+      </div>
+      <button class="kira-modal-close" onclick="closeKira()" aria-label="Close">&times;</button>
+    </div>
+    <div class="kira-modal-body">
+      <div class="kira-modal-loading">
+        <div class="kira-loader"></div>
+        <p>Loading Kira&hellip;</p>
+      </div>
+      <iframe data-src="https://scan.tenxix.com" allow="camera; microphone" title="Kira Skin Analyser"></iframe>
+    </div>
+  </div>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay"></div>
+  <div class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="cart-close">&times;</button>
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <span class="cart-total-amount">$0.00</span>
+      </div>
+      <button class="btn btn-primary">Checkout</button>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
