@@ -22,6 +22,10 @@ node_modules/
 *.bak
 *~
 
+# Zip archives (used for cPanel upload, don't track)
+*.zip
+*.tar.gz
+
 # Environment / secrets
 .env
 .env.local
