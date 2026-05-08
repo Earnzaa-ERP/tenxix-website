@@ -11,8 +11,13 @@
 </head>
 <body>
 
+  <!-- ========== URGENCY BAR ========== -->
+  <div class="urgency-bar">
+    <strong>FREE SHIPPING</strong> on orders above &#8358;30,000 &mdash; Plus get a FREE AI skin analysis with Kira!
+  </div>
+
   <!-- ========== NAVBAR ========== -->
-  <nav class="navbar">
+  <nav class="navbar" style="top:38px;">
     <div class="container">
       <a href="index.html" class="nav-logo">
         <img src="assets/images/tenxix-logo.png" alt="TENXIX">
@@ -24,11 +29,15 @@
         <li><a href="shop.html">Shop</a></li>
         <li><a href="contact.html" class="active">Contact</a></li>
         <li><button class="btn-kira" onclick="openKira()"><span class="pulse-dot"></span> Try Kira AI</button></li>
-        <li><a href="#" class="nav-cart" onclick="openCart(); return false;">&#9825; <span class="cart-count">0</span></a></li>
       </ul>
+      <a href="#" class="nav-cart" onclick="openCart(); return false;" aria-label="Open cart">&#9825;<span class="cart-count">0</span></a>
       <button class="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
+    </div>
+    <div class="nav-quick-actions">
+      <a href="shop.html" class="nav-quick-btn">Shop Now</a>
+      <button class="nav-quick-btn nav-quick-btn-yellow" onclick="openKira()">Try Kira AI &rarr;</button>
     </div>
   </nav>
 
