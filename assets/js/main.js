@@ -120,7 +120,7 @@ function addToCart(name, price) {
     cart.push({ name, price, qty: 1 });
   }
   saveCart();
-  showToast(`${name} added to cart`);
+  openCart();
 }
 
 function removeFromCart(index) {
