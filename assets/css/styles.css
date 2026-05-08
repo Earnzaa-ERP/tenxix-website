@@ -1210,18 +1210,90 @@ p { margin-bottom: 1rem; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px;
+  padding: 22px 24px 16px;
   border-bottom: 1px solid var(--gray);
 }
 .cart-header h3 {
   font-family: var(--font-heading);
+  font-size: 1.3rem;
 }
 .cart-close {
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   cursor: pointer;
   color: var(--black);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+}
+.cart-close:hover { background: var(--gray); }
+
+/* Free shipping progress */
+.cart-progress {
+  padding: 16px 24px 14px;
+  background: var(--cream-light);
+  border-bottom: 1px solid var(--gray);
+}
+.cart-progress-text {
+  font-size: 0.82rem;
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--black);
+  font-weight: 500;
+}
+.cart-progress-text strong { color: var(--purple); font-weight: 700; }
+.cart-progress-text.unlocked { color: #2a9d2a; font-weight: 600; }
+.cart-progress-text.unlocked strong { color: #2a9d2a; }
+.cart-progress-bar {
+  width: 100%;
+  height: 6px;
+  background: var(--cream-dark);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.cart-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--purple), var(--purple-light));
+  border-radius: 999px;
+  transition: width 0.4s ease;
+  width: 0%;
+}
+.cart-progress-fill.unlocked {
+  background: linear-gradient(90deg, #2a9d2a, #4dbe4d);
+}
+
+/* Discount auto-applied banner */
+.cart-discount-banner {
+  background: var(--purple-deep);
+  color: #fff;
+  text-align: center;
+  padding: 12px 20px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.cart-discount-banner-icon {
+  width: 18px;
+  height: 18px;
+  background: var(--yellow);
+  color: var(--purple-deep);
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 800;
+  flex-shrink: 0;
 }
 
 .cart-items {
@@ -1231,20 +1303,24 @@ p { margin-bottom: 1rem; }
 }
 .cart-item {
   display: flex;
-  gap: 16px;
-  padding: 16px 0;
+  gap: 14px;
+  padding: 18px 0;
   border-bottom: 1px solid var(--gray);
 }
+.cart-item:last-child { border-bottom: none; }
 .cart-item-image {
-  width: 64px;
-  height: 64px;
-  background: var(--gray);
+  width: 72px;
+  height: 72px;
+  background: var(--cream-light);
+  border-radius: var(--radius-sm);
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.6rem;
-  color: var(--gray-dark);
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--purple);
 }
 .cart-item-details {
   flex: 1;
@@ -1302,20 +1378,73 @@ p { margin-bottom: 1rem; }
 }
 
 .cart-footer {
-  padding: 24px;
+  padding: 20px 24px 24px;
   border-top: 1px solid var(--gray);
+  background: #fff;
 }
 .cart-total {
   display: flex;
   justify-content: space-between;
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 20px;
+  align-items: center;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 18px;
 }
-.cart-footer .btn {
+.cart-total span:first-child {
+  color: var(--black);
+}
+.cart-total-amount {
+  color: var(--purple-deep);
+  font-size: 1.25rem;
+  font-family: var(--font-heading);
+  font-weight: 800;
+}
+.cart-footer .btn.cart-checkout-btn {
   width: 100%;
   text-align: center;
+  padding: 18px 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
+.cart-checkout-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* Trust badges in cart */
+.cart-trust {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray);
+}
+.cart-trust-item {
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--gray-dark);
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  line-height: 1.2;
+}
+.cart-trust-item-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--purple);
+}
+.cart-trust-item-icon svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; }
 
 /* ---------- Notification Toast ---------- */
 .toast {

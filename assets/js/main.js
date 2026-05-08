@@ -40,17 +40,26 @@ fadeElements.forEach(el => observer.observe(el));
 // ---------- Cart System ----------
 let cart = JSON.parse(localStorage.getItem('tenxix_cart')) || [];
 
+const FREE_SHIPPING_THRESHOLD = 30000;
+
 function saveCart() {
   localStorage.setItem('tenxix_cart', JSON.stringify(cart));
   updateCartUI();
 }
 
 function updateCartUI() {
-  // Update cart count badges
+  const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+  const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+
+  // Update cart count badges (header icon)
   document.querySelectorAll('.cart-count').forEach(el => {
-    const total = cart.reduce((sum, item) => sum + item.qty, 0);
-    el.textContent = total;
-    el.style.display = total > 0 ? 'flex' : 'none';
+    el.textContent = totalQty;
+    el.style.display = totalQty > 0 ? 'flex' : 'none';
+  });
+
+  // Update cart count text in sidebar header "Your Cart (X)"
+  document.querySelectorAll('.cart-count-text').forEach(el => {
+    el.textContent = totalQty;
   });
 
   // Update cart sidebar if it exists
@@ -58,7 +67,7 @@ function updateCartUI() {
   if (!cartItems) return;
 
   if (cart.length === 0) {
-    cartItems.innerHTML = '<div class="cart-empty"><p>Your cart is empty</p></div>';
+    cartItems.innerHTML = '<div class="cart-empty"><p>Your cart is empty</p><p style="font-size:0.85rem;margin-top:8px;">Add a product to start your glow-up</p></div>';
   } else {
     cartItems.innerHTML = cart.map((item, i) => `
       <div class="cart-item">
@@ -77,11 +86,29 @@ function updateCartUI() {
     `).join('');
   }
 
-  // Update total
+  // Update subtotal
   const totalEl = document.querySelector('.cart-total-amount');
   if (totalEl) {
-    const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
-    totalEl.textContent = `\u20A6${total.toLocaleString()}`;
+    totalEl.textContent = `\u20A6${subtotal.toLocaleString()}`;
+  }
+
+  // Update free shipping progress bar
+  const progressText = document.querySelector('.cart-progress-text');
+  const progressFill = document.querySelector('.cart-progress-fill');
+  if (progressText && progressFill) {
+    if (subtotal >= FREE_SHIPPING_THRESHOLD) {
+      progressText.classList.add('unlocked');
+      progressFill.classList.add('unlocked');
+      progressText.innerHTML = '\u{1F389} Congrats! You unlocked <strong>FREE SHIPPING</strong>';
+      progressFill.style.width = '100%';
+    } else {
+      progressText.classList.remove('unlocked');
+      progressFill.classList.remove('unlocked');
+      const remaining = FREE_SHIPPING_THRESHOLD - subtotal;
+      const pct = Math.min(100, (subtotal / FREE_SHIPPING_THRESHOLD) * 100);
+      progressText.innerHTML = `Add <strong>\u20A6${remaining.toLocaleString()}</strong> more for <strong>FREE SHIPPING</strong>`;
+      progressFill.style.width = pct + '%';
+    }
   }
 }
 
