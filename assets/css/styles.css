@@ -2800,10 +2800,32 @@ p { margin-bottom: 1rem; }
   .hero-image .kira-orb { max-width: 220px; margin: 0 auto; }
   .hero-image > div[style*="aspect-ratio"] { max-width: 220px !important; }
 
-  /* Hide all big sticker accents on mobile (clutter) */
-  .hero-accent-1, .hero-accent-2 { display: none; }
-  .hero-blob-1 { width: 160px; height: 160px; opacity: 0.25; }
-  .hero-blob-2 { width: 120px; height: 120px; opacity: 0.35; }
+  /* Show floating stickers on mobile (smaller) */
+  .hero-accent-1, .hero-accent-2 {
+    display: inline-block;
+    font-size: 0.62rem;
+    padding: 7px 12px;
+    box-shadow: 0 4px 0 #C49A1F, 0 8px 16px rgba(0,0,0,0.12);
+  }
+  .hero-accent-1 { top: 4%; right: -2%; transform: rotate(6deg); }
+  .hero-accent-2 { bottom: 4%; left: -2%; transform: rotate(-5deg); background: #fff; color: var(--purple); box-shadow: 0 4px 0 rgba(0,0,0,0.12); }
+  .hero-blob-1 { width: 200px; height: 200px; opacity: 0.3; }
+  .hero-blob-2 { width: 160px; height: 160px; opacity: 0.4; }
+
+  /* Ensure hero image / orb wrapper is properly sized on mobile */
+  .hero-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    min-height: 240px;
+  }
+  .hero-image > div[style*="aspect-ratio"] {
+    max-width: 240px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+  .hero-image .kira-orb { width: 100%; height: 100%; }
 
   /* Hero rating badge smaller */
   .hero-rating {
