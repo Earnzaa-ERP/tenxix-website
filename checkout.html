@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — TENXIX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- ========== URGENCY BAR ========== -->
+  <div class="urgency-bar">
+    <strong>FREE SHIPPING</strong> on orders above &#8358;30,000 &mdash; Plus get a FREE AI skin analysis with Kira!
+  </div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" style="top:38px;">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/images/tenxix-logo.png" alt="TENXIX">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><button class="btn-kira" onclick="openKira()"><span class="pulse-dot"></span> Try Kira AI</button></li>
+      </ul>
+      <a href="#" class="nav-cart" onclick="openCart(); return false;" aria-label="Open cart">&#9825;<span class="cart-count">0</span></a>
+      <button class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-quick-actions">
+      <a href="shop.html" class="nav-quick-btn">Shop Now</a>
+      <button class="nav-quick-btn nav-quick-btn-yellow" onclick="openKira()">Try Kira AI &rarr;</button>
+    </div>
+  </nav>
+
+  <!-- ========== CHECKOUT ========== -->
+  <section class="checkout-section">
+    <div class="container">
+      <div class="checkout-header">
+        <h1>Checkout</h1>
+        <p>Just a few details and your skincare is on its way.</p>
+      </div>
+
+      <!-- Empty cart state -->
+      <div class="checkout-empty" id="checkoutEmpty" style="display:none;">
+        <div class="checkout-empty-icon">&#128722;</div>
+        <h2>Your cart is empty</h2>
+        <p>Add a product before checking out.</p>
+        <a href="shop.html" class="btn btn-primary">Browse Products</a>
+      </div>
+
+      <!-- Success state (after order placed) -->
+      <div class="checkout-success" id="checkoutSuccess" style="display:none;">
+        <div class="checkout-success-icon">&#10003;</div>
+        <h2>Thank you! Your order is confirmed.</h2>
+        <p>Order ID: <strong id="orderId">#TX-000000</strong></p>
+        <p class="checkout-success-msg">We&rsquo;ll call <strong id="orderPhone">your phone</strong> within 24 hours to confirm delivery details. <strong>Please have <span id="orderAmount">&#8358;0</span> ready in cash on delivery.</strong></p>
+        <a href="index.html" class="btn btn-primary">Back to Home</a>
+      </div>
+
+      <!-- Main checkout layout -->
+      <div class="checkout-grid" id="checkoutGrid">
+
+        <!-- LEFT: Form -->
+        <form class="checkout-form" id="checkoutForm" novalidate>
+          <h3 class="checkout-section-title">1. Contact Information</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fullName">Full Name *</label>
+              <input type="text" id="fullName" name="fullName" required placeholder="e.g. Chioma Adeyemi">
+            </div>
+          </div>
+          <div class="form-row form-row-2">
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required placeholder="you@example.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" required placeholder="0801 234 5678">
+            </div>
+          </div>
+
+          <h3 class="checkout-section-title">2. Delivery Address</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="address">Street Address *</label>
+              <input type="text" id="address" name="address" required placeholder="123 Skincare Avenue, Apt 5B">
+            </div>
+          </div>
+          <div class="form-row form-row-3">
+            <div class="form-group">
+              <label for="city">City *</label>
+              <input type="text" id="city" name="city" required placeholder="Lagos">
+            </div>
+            <div class="form-group">
+              <label for="state">State *</label>
+              <select id="state" name="state" required>
+                <option value="">Select State</option>
+                <option value="Abia">Abia</option>
+                <option value="Abuja FCT">Abuja FCT</option>
+                <option value="Adamawa">Adamawa</option>
+                <option value="Akwa Ibom">Akwa Ibom</option>
+                <option value="Anambra">Anambra</option>
+                <option value="Bauchi">Bauchi</option>
+                <option value="Bayelsa">Bayelsa</option>
+                <option value="Benue">Benue</option>
+                <option value="Borno">Borno</option>
+                <option value="Cross River">Cross River</option>
+                <option value="Delta">Delta</option>
+                <option value="Ebonyi">Ebonyi</option>
+                <option value="Edo">Edo</option>
+                <option value="Ekiti">Ekiti</option>
+                <option value="Enugu">Enugu</option>
+                <option value="Gombe">Gombe</option>
+                <option value="Imo">Imo</option>
+                <option value="Jigawa">Jigawa</option>
+                <option value="Kaduna">Kaduna</option>
+                <option value="Kano">Kano</option>
+                <option value="Katsina">Katsina</option>
+                <option value="Kebbi">Kebbi</option>
+                <option value="Kogi">Kogi</option>
+                <option value="Kwara">Kwara</option>
+                <option value="Lagos">Lagos</option>
+                <option value="Nasarawa">Nasarawa</option>
+                <option value="Niger">Niger</option>
+                <option value="Ogun">Ogun</option>
+                <option value="Ondo">Ondo</option>
+                <option value="Osun">Osun</option>
+                <option value="Oyo">Oyo</option>
+                <option value="Plateau">Plateau</option>
+                <option value="Rivers">Rivers</option>
+                <option value="Sokoto">Sokoto</option>
+                <option value="Taraba">Taraba</option>
+                <option value="Yobe">Yobe</option>
+                <option value="Zamfara">Zamfara</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="zip">Postal Code</label>
+              <input type="text" id="zip" name="zip" placeholder="100001">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="notes">Delivery Notes <span style="color:var(--gray-dark);font-weight:400;">(optional)</span></label>
+              <textarea id="notes" name="notes" rows="3" placeholder="Landmarks, gate code, preferred time, etc."></textarea>
+            </div>
+          </div>
+
+          <h3 class="checkout-section-title">3. Payment Method</h3>
+          <div class="payment-methods">
+            <label class="payment-method selected" for="payCOD">
+              <input type="radio" name="paymentMethod" id="payCOD" value="cod" checked>
+              <div class="payment-method-body">
+                <div class="payment-method-top">
+                  <span class="payment-method-name">
+                    <span class="payment-method-icon">&#128181;</span>
+                    Cash on Delivery
+                  </span>
+                  <span class="payment-method-tag payment-method-tag-available">Available</span>
+                </div>
+                <p class="payment-method-desc">Pay in cash to the delivery agent when your order arrives. No advance payment required.</p>
+              </div>
+            </label>
+
+            <label class="payment-method disabled" for="payOnline">
+              <input type="radio" name="paymentMethod" id="payOnline" value="online" disabled>
+              <div class="payment-method-body">
+                <div class="payment-method-top">
+                  <span class="payment-method-name">
+                    <span class="payment-method-icon">&#128179;</span>
+                    Payment Before Delivery
+                    <span class="payment-method-bonus">Save 5%</span>
+                  </span>
+                  <span class="payment-method-tag payment-method-tag-soon">Coming Soon</span>
+                </div>
+                <p class="payment-method-desc">Pay upfront with your card or bank transfer and save 5% off your order. We&rsquo;re setting up our secure payment gateway &mdash; available soon.</p>
+              </div>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary checkout-place-btn" id="placeOrderBtn">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+            Place Order &mdash; <span id="placeOrderTotal">&#8358;0</span>
+          </button>
+          <p class="checkout-fineprint">By placing this order, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+        </form>
+
+        <!-- RIGHT: Order summary -->
+        <aside class="checkout-summary">
+          <div class="checkout-summary-card">
+            <h3 class="checkout-summary-title">Order Summary</h3>
+
+            <div class="checkout-items" id="checkoutItems">
+              <!-- populated by JS -->
+            </div>
+
+            <div class="checkout-promo">
+              <input type="text" id="promoCode" placeholder="Discount code (optional)">
+              <button type="button" onclick="applyPromo()">Apply</button>
+            </div>
+
+            <div class="checkout-totals">
+              <div class="checkout-row">
+                <span>Subtotal</span>
+                <span id="sumSubtotal">&#8358;0</span>
+              </div>
+              <div class="checkout-row">
+                <span>Shipping</span>
+                <span id="sumShipping">&#8358;2,500</span>
+              </div>
+              <div class="checkout-row checkout-row-discount" id="sumDiscountRow" style="display:none;">
+                <span>Payment Discount (5%)</span>
+                <span id="sumDiscount">-&#8358;0</span>
+              </div>
+              <div class="checkout-row checkout-row-total">
+                <span>Total</span>
+                <span id="sumTotal">&#8358;0</span>
+              </div>
+            </div>
+
+            <!-- Trust badges -->
+            <div class="checkout-trust">
+              <div class="checkout-trust-item">
+                <span class="checkout-trust-icon">&#128274;</span>
+                Secure checkout
+              </div>
+              <div class="checkout-trust-item">
+                <span class="checkout-trust-icon">&#8635;</span>
+                30-day guarantee
+              </div>
+              <div class="checkout-trust-item">
+                <span class="checkout-trust-icon">&#128666;</span>
+                Fast delivery
+              </div>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/tenxix-logo.png" alt="TENXIX">
+          <p>Premium skincare crafted at the intersection of science and nature. Luxury you can feel, results you can see.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="shop.html">Serums</a></li>
+            <li><a href="shop.html">Soaps</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Help Centre</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TENXIX. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Kira AI Modal -->
+  <div class="kira-modal-overlay" onclick="closeKira()"></div>
+  <div class="kira-modal" role="dialog" aria-label="Kira Skin Analyser">
+    <div class="kira-modal-header">
+      <div class="kira-modal-title">
+        <div class="kira-modal-title-icon">K</div>
+        <div class="kira-modal-title-text">
+          <h3>Kira &mdash; AI Skin Analyser</h3>
+          <p>Africa's smartest skincare advisor</p>
+        </div>
+      </div>
+      <button class="kira-modal-close" onclick="closeKira()" aria-label="Close">&times;</button>
+    </div>
+    <div class="kira-modal-body">
+      <div class="kira-modal-loading">
+        <div class="kira-loader"></div>
+        <p>Loading Kira&hellip;</p>
+      </div>
+      <iframe data-src="https://scan.tenxix.com" allow="camera; microphone" title="Kira Skin Analyser"></iframe>
+    </div>
+  </div>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay"></div>
+  <div class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Your Cart (<span class="cart-count-text">0</span>)</h3>
+      <button class="cart-close" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="cart-progress">
+      <p class="cart-progress-text">Add <strong>&#8358;<span class="cart-progress-remaining">30,000</span></strong> more for <strong>FREE SHIPPING</strong></p>
+      <div class="cart-progress-bar"><div class="cart-progress-fill"></div></div>
+    </div>
+    <div class="cart-discount-banner">
+      <span class="cart-discount-banner-icon">&check;</span>
+      Limited Time Discount Auto-Applied
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Subtotal</span>
+        <span class="cart-total-amount">&#8358;0</span>
+      </div>
+      <a href="checkout.html" class="btn btn-primary cart-checkout-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+        Secure Checkout
+      </a>
+      <div class="cart-trust">
+        <div class="cart-trust-item">
+          <span class="cart-trust-item-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+          4.9 Stars<br>50K+ reviews
+        </div>
+        <div class="cart-trust-item">
+          <span class="cart-trust-item-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3.5-7.1"/><polyline points="21 4 21 12 13 12"/></svg></span>
+          30-day<br>guarantee
+        </div>
+        <div class="cart-trust-item">
+          <span class="cart-trust-item-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+          Secure<br>checkout
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/checkout.js"></script>
+</body>
+</html>
