@@ -23,6 +23,7 @@ deployment:
     - /bin/rm -f  $DEPLOYPATH/shop.html
     - /bin/rm -f  $DEPLOYPATH/products.html
     - /bin/rm -f  $DEPLOYPATH/contact.html
+    - /bin/rm -f  $DEPLOYPATH/checkout.html
 
     # Copy fresh HTML pages
     - /bin/cp index.html $DEPLOYPATH/
@@ -30,6 +31,7 @@ deployment:
     - /bin/cp shop.html $DEPLOYPATH/
     - /bin/cp products.html $DEPLOYPATH/
     - /bin/cp contact.html $DEPLOYPATH/
+    - /bin/cp checkout.html $DEPLOYPATH/
 
     # Copy folders (with -R for recursive)
     - /bin/cp -R products $DEPLOYPATH/
