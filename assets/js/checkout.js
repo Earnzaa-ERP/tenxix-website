@@ -2,7 +2,12 @@
    TENXIX — Checkout Logic (ERP-integrated)
    Loaded as a plain <script> on checkout.html.
    Requires erp-bridge.js to be loaded first.
+
+   Wrapped in an IIFE so our top-level const/let
+   don't collide with main.js (which declares its
+   own FREE_SHIPPING_THRESHOLD etc. at top scope).
    ============================================ */
+(function () {
 
 const SHIPPING_FLAT = 2500;
 const FREE_SHIPPING_THRESHOLD = 30000;
@@ -300,3 +305,5 @@ if (document.readyState === 'loading') {
 } else {
   init();
 }
+
+})();
