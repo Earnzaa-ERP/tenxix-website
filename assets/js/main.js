@@ -92,23 +92,18 @@ function updateCartUI() {
     totalEl.textContent = `\u20A6${subtotal.toLocaleString()}`;
   }
 
-  // Update free shipping progress bar
+  // Free shipping is always on right now \u2014 show the live countdown
+  // instead of a threshold progress. promo-countdown.js owns the timer
+  // and updates any .promo-countdown span we drop into the message.
   const progressText = document.querySelector('.cart-progress-text');
   const progressFill = document.querySelector('.cart-progress-fill');
-  if (progressText && progressFill) {
-    if (subtotal >= FREE_SHIPPING_THRESHOLD) {
-      progressText.classList.add('unlocked');
-      progressFill.classList.add('unlocked');
-      progressText.innerHTML = '\u{1F389} Congrats! You unlocked <strong>FREE SHIPPING</strong>';
-      progressFill.style.width = '100%';
-    } else {
-      progressText.classList.remove('unlocked');
-      progressFill.classList.remove('unlocked');
-      const remaining = FREE_SHIPPING_THRESHOLD - subtotal;
-      const pct = Math.min(100, (subtotal / FREE_SHIPPING_THRESHOLD) * 100);
-      progressText.innerHTML = `Add <strong>\u20A6${remaining.toLocaleString()}</strong> more for <strong>FREE SHIPPING</strong>`;
-      progressFill.style.width = pct + '%';
-    }
+  if (progressText) {
+    progressText.classList.add('unlocked');
+    progressText.innerHTML = '\u{1F389} <strong>FREE SHIPPING</strong> ends in <span class="promo-countdown">23:59:59</span>';
+  }
+  if (progressFill) {
+    progressFill.classList.add('unlocked');
+    progressFill.style.width = '100%';
   }
 }
 

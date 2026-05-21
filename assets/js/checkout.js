@@ -9,8 +9,11 @@
    ============================================ */
 (function () {
 
-const SHIPPING_FLAT = 2500;
-const FREE_SHIPPING_THRESHOLD = 30000;
+// Real shipping the customer pays = 0 (promo).
+// The "strikethrough" amount we display in the order summary so the
+// customer feels they're being gifted shipping.
+const SHIPPING_FLAT = 0;
+const SHIPPING_PROMO_AMOUNT = 3500;
 const PAYAHEAD_DISCOUNT = 0.05;
 
 // ─── Product name → ERP SKU mapping ─────────────────────────────────
@@ -86,7 +89,10 @@ function selectedPayment() {
 
 function getTotals(cart) {
   const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
-  const shipping = subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_FLAT;
+  // Shipping is currently free (SHIPPING_FLAT = 0). We still send it to the
+  // ERP as a separate field so the columns are consistent when shipping
+  // charges resume later.
+  const shipping = SHIPPING_FLAT;
   const payment = selectedPayment();
   // Pay-ahead discount applies only when customer selects the prepaid option.
   const discount = payment === 'online' ? Math.round(subtotal * PAYAHEAD_DISCOUNT) : 0;
@@ -114,7 +120,22 @@ function renderItems(cart) {
 function renderTotals(cart) {
   const t = getTotals(cart);
   if (subtotalEl) subtotalEl.textContent = fmt(t.subtotal);
-  if (shippingEl) shippingEl.textContent = t.shipping === 0 ? 'FREE' : fmt(t.shipping);
+  if (shippingEl) {
+    if (t.shipping === 0) {
+      // Strikethrough the "was" price + show countdown so customer
+      // perceives shipping as a gifted promo, not a baseline freebie.
+      shippingEl.innerHTML =
+        '<span style="text-decoration:line-through;color:var(--gray-dark);font-weight:400;margin-right:6px;">' +
+        fmt(SHIPPING_PROMO_AMOUNT) +
+        '</span>' +
+        '<strong style="color:#0a8f3e;">FREE</strong>' +
+        '<span style="display:block;font-size:0.75rem;color:var(--gray-dark);font-weight:400;margin-top:2px;">' +
+        'ends in <span class="promo-countdown">23:59:59</span>' +
+        '</span>';
+    } else {
+      shippingEl.textContent = fmt(t.shipping);
+    }
+  }
   if (totalEl) totalEl.textContent = fmt(t.total);
   if (placeOrderTotalEl) placeOrderTotalEl.textContent = fmt(t.total);
   if (discountRowEl) {
