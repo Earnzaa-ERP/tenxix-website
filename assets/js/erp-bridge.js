@@ -17,10 +17,15 @@
   // ─── CONFIG ────────────────────────────────────────────────────────
   var SUPABASE_URL = 'https://neqtdckyrowyechbeppr.supabase.co';
 
-  // Fallback slug — ERP prefers URL resolution. Slug is only used when
-  // the current page URL isn't registered in order_form_landing_pages.
-  var FALLBACK_FORM_SLUG  = 'tenxix-acne-complex';
-  var FALLBACK_FORM_TOKEN = '19cf3c51-59e5-4840-a07a-2d161923cbef';
+  // Fallback slug — used only when the current page URL doesn't match
+  // a registered row in order_form_landing_pages. Pointed at a generic
+  // "Tenxix Storefront — Organic" form so untagged visits (homepage,
+  // /shop, /about etc.) get filed under that catch-all bucket instead
+  // of leaking into whichever product form happened to be the default.
+  // Product-page entries continue to route to their specific form via
+  // URL resolution and never touch this fallback.
+  var FALLBACK_FORM_SLUG  = 'tenxix-storefront';
+  var FALLBACK_FORM_TOKEN = '265670a5-c79c-42bb-b6cd-023a9107798c';
 
   // SKU → ERP product map. Single-unit products = pack 1.
   var PRODUCT_MAP = {
