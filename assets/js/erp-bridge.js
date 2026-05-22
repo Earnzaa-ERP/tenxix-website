@@ -199,16 +199,112 @@
     return data;
   }
 
+  // ── Ad pixel injection (Meta / TikTok) ──────────────────────────────
+  // When a visit lands with `cmp=X`, fetch that campaign's pixel config
+  // from the ERP and inject ONLY that buyer's pixel(s). Other buyers
+  // never see the visit. PageView fires automatically once loaded;
+  // AddToCart / InitiateCheckout / Purchase are fired by checkout.js
+  // and main.js via window.erpBridge.trackEvent(...).
+  var PIXEL_ENDPOINT = SUPABASE_URL + '/functions/v1/pixel-config';
+  var pixelConfig = { meta: null, tiktok: null };
+  var pixelsInjected = false;
+
+  function loadMetaPixel(pixelId) {
+    if (window.fbq) {                                  // already loaded by a prior visit
+      try { window.fbq('init', pixelId); window.fbq('track', 'PageView'); } catch (e) {}
+      return;
+    }
+    /* eslint-disable */
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    /* eslint-enable */
+    try {
+      window.fbq('init', pixelId);
+      window.fbq('track', 'PageView');
+    } catch (e) { console.warn('[erpBridge] Meta pixel init failed:', e); }
+  }
+
+  function loadTikTokPixel(pixelId) {
+    if (window.ttq && window.ttq.load) {
+      try { window.ttq.load(pixelId); window.ttq.page(); } catch (e) {}
+      return;
+    }
+    /* eslint-disable */
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+      ttq.load(pixelId); ttq.page();
+    }(window, document, 'ttq');
+    /* eslint-enable */
+  }
+
+  async function fetchAndInjectPixels() {
+    if (pixelsInjected) return;
+    var attribution = readAttribution();
+    var cmp = attribution && attribution.cmp;
+    if (!cmp) return;                                   // organic visit — no pixel
+    try {
+      var res = await fetch(PIXEL_ENDPOINT + '?cmp=' + encodeURIComponent(cmp));
+      if (!res.ok) return;
+      var data = await res.json();
+      pixelConfig = { meta: data.meta || null, tiktok: data.tiktok || null };
+      if (pixelConfig.meta && pixelConfig.meta.pixel_id)     loadMetaPixel(pixelConfig.meta.pixel_id);
+      if (pixelConfig.tiktok && pixelConfig.tiktok.pixel_id) loadTikTokPixel(pixelConfig.tiktok.pixel_id);
+      pixelsInjected = true;
+    } catch (e) {
+      console.warn('[erpBridge] pixel-config fetch failed:', e);
+    }
+  }
+
+  // Public event API — checkout.js / main.js call this on cart and
+  // checkout actions. Fires the equivalent event to whichever pixels
+  // are loaded; no-ops cleanly if no pixel was injected (organic visit).
+  //
+  //   eventName: 'AddToCart' | 'InitiateCheckout' | 'Purchase' | 'ViewContent' | ...
+  //   payload:   { value, currency, contents, content_ids, ... } — Meta-style.
+  //              We map the same fields to TikTok's expected shape.
+  function trackEvent(eventName, payload) {
+    payload = payload || {};
+    // Meta
+    if (window.fbq && pixelConfig.meta) {
+      try { window.fbq('track', eventName, payload); }
+      catch (e) { console.warn('[erpBridge] fbq track failed:', e); }
+    }
+    // TikTok — uses slightly different event names; map common ones.
+    if (window.ttq && pixelConfig.tiktok) {
+      var ttEvent = eventName === 'Purchase' ? 'CompletePayment'
+                  : eventName === 'AddToCart' ? 'AddToCart'
+                  : eventName === 'InitiateCheckout' ? 'InitiateCheckout'
+                  : eventName === 'ViewContent' ? 'ViewContent'
+                  : eventName;
+      try {
+        window.ttq.track(ttEvent, {
+          value: payload.value,
+          currency: payload.currency || 'NGN',
+          content_id: (payload.content_ids && payload.content_ids[0]) || payload.content_id,
+          content_type: payload.content_type || 'product',
+        });
+      } catch (e) { console.warn('[erpBridge] ttq track failed:', e); }
+    }
+  }
+
   // Auto-capture on every page load so attribution sticks across navigation.
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', captureAttribution);
+    document.addEventListener('DOMContentLoaded', function () {
+      captureAttribution();
+      fetchAndInjectPixels();
+    });
   } else {
     captureAttribution();
+    fetchAndInjectPixels();
   }
 
   window.erpBridge = {
     submitOrderToERP: submitOrderToERP,
     captureAttribution: captureAttribution,
     resetIdempotencyKey: resetIdempotencyKey,
+    trackEvent: trackEvent,
   };
 })();

@@ -116,6 +116,16 @@ function addToCart(name, price) {
   }
   saveCart();
   openCart();
+
+  // Fire AddToCart to the buyer's pixel(s) — no-op for organic visits.
+  if (window.erpBridge && typeof window.erpBridge.trackEvent === 'function') {
+    window.erpBridge.trackEvent('AddToCart', {
+      value: price,
+      currency: 'NGN',
+      content_ids: [name],
+      content_type: 'product',
+    });
+  }
 }
 
 function removeFromCart(index) {

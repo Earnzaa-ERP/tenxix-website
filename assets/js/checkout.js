@@ -256,6 +256,19 @@ async function handlePlaceOrder() {
     const orderRef = result.order_ref || result.order_id || fallbackOrderId();
     const orderIdStr = String(orderRef).startsWith('#') ? orderRef : '#' + orderRef;
 
+    // Fire Purchase to the buyer's pixel(s) BEFORE clearing cart so the
+    // payload reflects what was actually bought.
+    if (window.erpBridge && typeof window.erpBridge.trackEvent === 'function') {
+      window.erpBridge.trackEvent('Purchase', {
+        value: t.total,
+        currency: 'NGN',
+        num_items: cart.reduce((s, i) => s + i.qty, 0),
+        content_ids: cart.map(i => i.name),
+        content_type: 'product',
+        order_id: orderRef,
+      });
+    }
+
     clearCart();
     if (typeof window.updateCartUI === 'function') window.updateCartUI();
 
@@ -298,6 +311,18 @@ function init() {
   }
   renderItems(cart);
   renderTotals(cart);
+
+  // Fire InitiateCheckout to the buyer's pixel(s) — no-op for organic visits.
+  if (window.erpBridge && typeof window.erpBridge.trackEvent === 'function') {
+    const t = getTotals(cart);
+    window.erpBridge.trackEvent('InitiateCheckout', {
+      value: t.total,
+      currency: 'NGN',
+      num_items: cart.reduce((s, i) => s + i.qty, 0),
+      content_ids: cart.map(i => i.name),
+      content_type: 'product',
+    });
+  }
 
   // Payment method change → re-render totals + active class
   document.querySelectorAll('input[name="paymentMethod"]').forEach(input => {
