@@ -198,6 +198,11 @@
     var payload = {
       token: FALLBACK_FORM_TOKEN,
       idempotency_key: getOrCreateIdempotencyKey(),
+      // Browser↔CAPI dedup: caller can pass a UUID they'll also use when
+      // firing the browser Purchase pixel; ERP will use the same id in
+      // its server-side Conversions API call so Meta / TikTok collapse
+      // them to one conversion.
+      event_id: opts.event_id || null,
       customer: {
         full_name: customer.full_name,
         email: customer.email || null,

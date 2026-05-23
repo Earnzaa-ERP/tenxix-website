@@ -226,8 +226,18 @@ async function handlePlaceOrder() {
   try {
     const items = cart.map(convertCartItem);
 
+    // One event_id shared by:
+    //   - the server-side CAPI Purchase event (fired by the ERP after the order is created)
+    //   - the browser pixel Purchase event we fire below
+    // Meta / TikTok dedupe to a single conversion when both arrive.
+    const purchaseEventId =
+      (window.crypto && window.crypto.randomUUID)
+        ? window.crypto.randomUUID()
+        : 'evt-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
+
     const result = await window.erpBridge.submitOrderToERP({
       cart: items,
+      event_id: purchaseEventId,
       customer: {
         full_name: document.getElementById('fullName').value.trim(),
         email: document.getElementById('email').value.trim(),
@@ -257,9 +267,10 @@ async function handlePlaceOrder() {
     const orderIdStr = String(orderRef).startsWith('#') ? orderRef : '#' + orderRef;
 
     // Fire Purchase to the buyer's pixel(s) BEFORE clearing cart so the
-    // payload reflects what was actually bought. Pass customer email +
-    // phone so the bridge can hash them and apply Meta / TikTok Event
-    // Match Quality — significantly improves attribution.
+    // payload reflects what was actually bought. Pass:
+    //  - customer email + phone for Event Match Quality (hashed in bridge)
+    //  - event_id matching the server-side CAPI event so Meta / TikTok
+    //    dedupe the two and count exactly one conversion.
     if (window.erpBridge && typeof window.erpBridge.trackEvent === 'function') {
       window.erpBridge.trackEvent('Purchase', {
         value: t.total,
@@ -268,6 +279,7 @@ async function handlePlaceOrder() {
         content_ids: cart.map(i => i.name),
         content_type: 'product',
         order_id: orderRef,
+        event_id: purchaseEventId,
         customer: {
           email: document.getElementById('email').value.trim(),
           phone: phone,
