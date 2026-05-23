@@ -257,7 +257,9 @@ async function handlePlaceOrder() {
     const orderIdStr = String(orderRef).startsWith('#') ? orderRef : '#' + orderRef;
 
     // Fire Purchase to the buyer's pixel(s) BEFORE clearing cart so the
-    // payload reflects what was actually bought.
+    // payload reflects what was actually bought. Pass customer email +
+    // phone so the bridge can hash them and apply Meta / TikTok Event
+    // Match Quality — significantly improves attribution.
     if (window.erpBridge && typeof window.erpBridge.trackEvent === 'function') {
       window.erpBridge.trackEvent('Purchase', {
         value: t.total,
@@ -266,6 +268,10 @@ async function handlePlaceOrder() {
         content_ids: cart.map(i => i.name),
         content_type: 'product',
         order_id: orderRef,
+        customer: {
+          email: document.getElementById('email').value.trim(),
+          phone: phone,
+        },
       });
     }
 

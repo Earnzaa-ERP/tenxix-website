@@ -74,7 +74,10 @@
   function captureAttribution() {
     if (typeof window === 'undefined') return;
     var params = new URLSearchParams(window.location.search);
-    var carry = ['cmp','cr','pg','ref','utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+    // fbclid / ttclid are stamped by Meta / TikTok respectively when a
+    // user clicks an ad. Capturing them gives the pixel a stronger
+    // match signal even when third-party cookies are blocked.
+    var carry = ['cmp','cr','pg','ref','utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','ttclid'];
 
     var stored = {};
     try { stored = JSON.parse(sessionStorage.getItem(ATTR_KEY) || '{}'); } catch (e) {}
@@ -98,6 +101,47 @@
     }
 
     sessionStorage.setItem(ATTR_KEY, JSON.stringify(stored));
+  }
+
+  // ── User data hashing for Meta Event Match Quality ─────────────────
+  // Meta + TikTok both improve attribution accuracy when events carry
+  // hashed customer identifiers (email / phone). SHA-256 is the
+  // expected hash. Strings are normalised (lowercased, stripped) per
+  // the platforms' docs before hashing.
+  async function sha256(str) {
+    if (!str) return undefined;
+    if (!window.crypto || !window.crypto.subtle) return undefined;
+    var enc = new TextEncoder();
+    var buf = await window.crypto.subtle.digest('SHA-256', enc.encode(str));
+    var bytes = new Uint8Array(buf);
+    var hex = '';
+    for (var i = 0; i < bytes.length; i++) {
+      hex += bytes[i].toString(16).padStart(2, '0');
+    }
+    return hex;
+  }
+
+  function normaliseEmail(e) {
+    return (e || '').toString().trim().toLowerCase() || undefined;
+  }
+  function normalisePhone(p) {
+    // Meta expects E.164 digits-only without leading 0 / + symbols.
+    var digits = (p || '').toString().replace(/\D/g, '');
+    if (!digits) return undefined;
+    // Default Nigerian numbers — strip leading 0, prepend 234 if needed.
+    if (digits.length === 11 && digits.charAt(0) === '0') digits = '234' + digits.slice(1);
+    return digits;
+  }
+
+  async function buildUserData(customer, attribution) {
+    var em = normaliseEmail(customer && customer.email);
+    var ph = normalisePhone(customer && customer.phone);
+    var userData = {};
+    if (em) userData.em = await sha256(em);
+    if (ph) userData.ph = await sha256(ph);
+    // External click identifiers — sent UNHASHED per Meta docs
+    if (attribution && attribution.fbclid) userData.fbc = 'fb.1.' + Date.now() + '.' + attribution.fbclid;
+    return userData;
   }
 
   function readAttribution() {
@@ -263,13 +307,50 @@
   // are loaded; no-ops cleanly if no pixel was injected (organic visit).
   //
   //   eventName: 'AddToCart' | 'InitiateCheckout' | 'Purchase' | 'ViewContent' | ...
-  //   payload:   { value, currency, contents, content_ids, ... } — Meta-style.
-  //              We map the same fields to TikTok's expected shape.
-  function trackEvent(eventName, payload) {
+  //   payload:   { value, currency, content_ids, content_type, num_items, order_id,
+  //                customer: { email, phone }   // optional — boosts Event Match Quality
+  //              }
+  //
+  // Async so we can SHA-256 the customer email/phone before firing
+  // (Meta + TikTok use hashed identifiers for matching). Callers can
+  // fire-and-forget — the underlying fbq/ttq HTTP requests go out
+  // even if the caller doesn't await.
+  //
+  // Returns the event_id (UUID) — passed back so we can echo the same
+  // id from server-side CAPI later for browser↔server dedup.
+  async function trackEvent(eventName, payload) {
     payload = payload || {};
+    var eventId = payload.event_id
+      || (window.crypto && window.crypto.randomUUID ? window.crypto.randomUUID()
+          : 'evt-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10));
+
+    // If the caller supplied customer info (typically only Purchase),
+    // re-init the pixels with hashed matching params so this event +
+    // any subsequent events benefit from Event Match Quality.
+    if (payload.customer && (window.fbq || window.ttq)) {
+      var userData = await buildUserData(payload.customer, readAttribution());
+      if (window.fbq && pixelConfig.meta) {
+        try { window.fbq('init', pixelConfig.meta.pixel_id, userData); } catch (e) {}
+      }
+      if (window.ttq && pixelConfig.tiktok) {
+        try {
+          window.ttq.identify({
+            email: userData.em,
+            phone_number: userData.ph,
+          });
+        } catch (e) {}
+      }
+    }
+
+    // Strip customer from what we send to the pixel — it's already
+    // applied via matching above.
+    var pixelPayload = Object.assign({}, payload);
+    delete pixelPayload.customer;
+    delete pixelPayload.event_id;
+
     // Meta
     if (window.fbq && pixelConfig.meta) {
-      try { window.fbq('track', eventName, payload); }
+      try { window.fbq('track', eventName, pixelPayload, { eventID: eventId }); }
       catch (e) { console.warn('[erpBridge] fbq track failed:', e); }
     }
     // TikTok — uses slightly different event names; map common ones.
@@ -281,13 +362,16 @@
                   : eventName;
       try {
         window.ttq.track(ttEvent, {
-          value: payload.value,
-          currency: payload.currency || 'NGN',
-          content_id: (payload.content_ids && payload.content_ids[0]) || payload.content_id,
-          content_type: payload.content_type || 'product',
+          value: pixelPayload.value,
+          currency: pixelPayload.currency || 'NGN',
+          content_id: (pixelPayload.content_ids && pixelPayload.content_ids[0]) || pixelPayload.content_id,
+          content_type: pixelPayload.content_type || 'product',
+          event_id: eventId,
         });
       } catch (e) { console.warn('[erpBridge] ttq track failed:', e); }
     }
+
+    return eventId;
   }
 
   // Auto-capture on every page load so attribution sticks across navigation.
