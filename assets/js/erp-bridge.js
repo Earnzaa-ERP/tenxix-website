@@ -255,8 +255,69 @@
   // AddToCart / InitiateCheckout / Purchase are fired by checkout.js
   // and main.js via window.erpBridge.trackEvent(...).
   var PIXEL_ENDPOINT = SUPABASE_URL + '/functions/v1/pixel-config';
+  var EVENTLOG_ENDPOINT = SUPABASE_URL + '/functions/v1/log-page-event';
   var pixelConfig = { meta: null, tiktok: null };
   var pixelsInjected = false;
+
+  // ── Event-log batching (per-landing-page funnel) ───────────────────
+  // Buffer events for ~2 seconds before POSTing in one batch so a busy
+  // page doesn't hammer Supabase. Always flush before page-unload so
+  // PageView/AddToCart aren't lost if the user navigates quickly.
+  var SESSION_KEY = 'erp_session_id_v1';
+  function getOrCreateSessionId() {
+    var s = sessionStorage.getItem(SESSION_KEY);
+    if (!s) {
+      s = (window.crypto && window.crypto.randomUUID)
+        ? window.crypto.randomUUID()
+        : 'sess-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
+      sessionStorage.setItem(SESSION_KEY, s);
+    }
+    return s;
+  }
+  var eventQueue = [];
+  var flushTimer = null;
+  function enqueueEventLog(eventName, payload) {
+    payload = payload || {};
+    var attribution = readAttribution();
+    eventQueue.push({
+      event_name: eventName,
+      landing_page_url: attribution.landing_page_url || canonicalUrl(window.location.href),
+      cmp: attribution.cmp || null,
+      cr:  attribution.cr  || null,
+      session_id: getOrCreateSessionId(),
+      value:     typeof payload.value === 'number' ? payload.value : null,
+      currency:  payload.currency || 'NGN',
+      num_items: typeof payload.num_items === 'number' ? payload.num_items : null,
+      order_ref: payload.order_id || null,
+      source_url: canonicalUrl(window.location.href),
+      referrer:  attribution.referrer || (document.referrer || null),
+      occurred_at: new Date().toISOString(),
+    });
+    if (flushTimer) clearTimeout(flushTimer);
+    flushTimer = setTimeout(flushEventLog, 2000);
+    if (eventQueue.length >= 20) flushEventLog();
+  }
+  function flushEventLog() {
+    if (flushTimer) { clearTimeout(flushTimer); flushTimer = null; }
+    if (eventQueue.length === 0) return;
+    var batch = eventQueue.splice(0, eventQueue.length);
+    var payload = JSON.stringify({ events: batch });
+    // Use sendBeacon on page-unload paths so the request still goes out
+    // even if the page is closing. Falls back to fetch for normal calls.
+    if (navigator.sendBeacon) {
+      var blob = new Blob([payload], { type: 'application/json' });
+      navigator.sendBeacon(EVENTLOG_ENDPOINT, blob);
+    } else {
+      fetch(EVENTLOG_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: payload,
+        keepalive: true,
+      }).catch(function () { /* silent — event logging is best-effort */ });
+    }
+  }
+  window.addEventListener('beforeunload', flushEventLog);
+  window.addEventListener('pagehide',     flushEventLog);
 
   function loadMetaPixel(pixelId) {
     if (window.fbq) {                                  // already loaded by a prior visit
@@ -293,6 +354,10 @@
     if (pixelsInjected) return;
     var attribution = readAttribution();
     var cmp = attribution && attribution.cmp;
+    // Always log a PageView to our event-log, even on organic visits (no cmp).
+    // Lets the funnel widget show total page views per landing page including
+    // organic — so buyers can see ad-driven vs organic traffic split.
+    enqueueEventLog('PageView', {});
     if (!cmp) return;                                   // organic visit — no pixel
     try {
       var res = await fetch(PIXEL_ENDPOINT + '?cmp=' + encodeURIComponent(cmp));
@@ -346,6 +411,11 @@
         } catch (e) {}
       }
     }
+
+    // ALSO log this event to the ERP's funnel telemetry — same call
+    // regardless of whether a pixel is loaded. Lets the per-landing-page
+    // funnel dashboard count drop-off across organic + paid traffic.
+    enqueueEventLog(eventName, payload);
 
     // Strip customer from what we send to the pixel — it's already
     // applied via matching above.
