@@ -302,19 +302,17 @@
     if (eventQueue.length === 0) return;
     var batch = eventQueue.splice(0, eventQueue.length);
     var payload = JSON.stringify({ events: batch });
-    // Use sendBeacon on page-unload paths so the request still goes out
-    // even if the page is closing. Falls back to fetch for normal calls.
-    if (navigator.sendBeacon) {
-      var blob = new Blob([payload], { type: 'application/json' });
-      navigator.sendBeacon(EVENTLOG_ENDPOINT, blob);
-    } else {
-      fetch(EVENTLOG_ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: payload,
-        keepalive: true,
-      }).catch(function () { /* silent — event logging is best-effort */ });
-    }
+    // keepalive:true preserves the request through page-unload (replacing
+    // what sendBeacon offered) AND respects CORS preflight correctly.
+    // sendBeacon with application/json Blobs silently fails CORS in Chrome
+    // even when the function returns Access-Control-Allow-Origin: *.
+    fetch(EVENTLOG_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: payload,
+      keepalive: true,
+      mode: 'cors',
+    }).catch(function () { /* silent — event logging is best-effort */ });
   }
   window.addEventListener('beforeunload', flushEventLog);
   window.addEventListener('pagehide',     flushEventLog);
