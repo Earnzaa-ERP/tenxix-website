@@ -27,18 +27,25 @@
   var FALLBACK_FORM_SLUG  = 'tenxix-storefront';
   var FALLBACK_FORM_TOKEN = '265670a5-c79c-42bb-b6cd-023a9107798c';
 
-  // SKU → ERP product map. Single-unit products = pack 1.
+  // Storefront SKU → ERP product SKU + pack metadata.
+  // The ERP resolves base_sku → products.id server-side, so adding a
+  // new BASE product is an ERP-only change (no bridge deploy needed).
+  // This map only exists to declare CHECKOUT VARIANTS (3-pack subscribe,
+  // 6-pack subscribe etc.) that bundle one or more units of a single
+  // product. A brand-new variant pattern (e.g. a 12-pack) is still a
+  // bridge edit, but those are rare.
   var PRODUCT_MAP = {
-    'rapid-glow-corrector-serum':            { product_id: '4499cb30-467e-463d-a712-34f9fbfabfea', pack: 1, is_subscription: false },
-    'acne-complex-4-serum':                  { product_id: 'fa422213-dbbd-4b69-bfa5-9d543905a90a', pack: 1, is_subscription: false },
-    'clear-glow-soap':                       { product_id: 'd3c64137-4f63-4580-b526-2a1b60b65669', pack: 1, is_subscription: false },
-    'body-scrub':                            { product_id: '3d26bc5e-d9ba-43bb-b243-7caacc178156', pack: 1, is_subscription: false },
-    'orange-exfoliating-gel':                { product_id: 'adc8d7e7-a8c2-4f35-a490-889001fe9f19', pack: 1, is_subscription: false },
-    'acne-complex-4-serum-3-pack-subscribe': { product_id: 'fa422213-dbbd-4b69-bfa5-9d543905a90a', pack: 3, is_subscription: true },
-    'clear-glow-soap-3-pack-subscribe':      { product_id: 'd3c64137-4f63-4580-b526-2a1b60b65669', pack: 3, is_subscription: true },
-    'clear-glow-soap-6-pack-subscribe':      { product_id: 'd3c64137-4f63-4580-b526-2a1b60b65669', pack: 6, is_subscription: true },
-    // TODO: replace product_id with the wellness trainer's real UUID from ERP before going live.
-    'wellness-trainer':                      { product_id: 'REPLACE_WITH_WELLNESS_TRAINER_UUID', pack: 1, is_subscription: false },
+    'rapid-glow-corrector-serum':            { base_sku: 'rapid-glow-corrector-serum', pack: 1, is_subscription: false },
+    'acne-complex-4-serum':                  { base_sku: 'acne-complex-4-serum',       pack: 1, is_subscription: false },
+    'clear-glow-soap':                       { base_sku: 'clear-glow-soap',            pack: 1, is_subscription: false },
+    'body-scrub':                            { base_sku: 'body-scrub',                 pack: 1, is_subscription: false },
+    'orange-exfoliating-gel':                { base_sku: 'orange-exfoliating-gel',     pack: 1, is_subscription: false },
+    'acne-complex-4-serum-3-pack-subscribe': { base_sku: 'acne-complex-4-serum',       pack: 3, is_subscription: true },
+    'clear-glow-soap-3-pack-subscribe':      { base_sku: 'clear-glow-soap',            pack: 3, is_subscription: true },
+    'clear-glow-soap-6-pack-subscribe':      { base_sku: 'clear-glow-soap',            pack: 6, is_subscription: true },
+    // Wellness trainer (TWT-W01 in ERP). Make sure products.slug = 'wellness-trainer'
+    // for the matching ERP row before going live with sales on this product.
+    'wellness-trainer':                      { base_sku: 'wellness-trainer',           pack: 1, is_subscription: false },
   };
 
   // Tenxix dropdown shows some state names slightly differently than ERP
@@ -188,7 +195,7 @@
       var map = PRODUCT_MAP[line.sku];
       if (!map) throw new Error('Unknown SKU "' + line.sku + '" — add it to PRODUCT_MAP');
       items.push({
-        product_id: map.product_id,
+        sku: map.base_sku,                       // ERP resolves to products.id server-side
         tier_id: null,
         label: line.label || line.sku,
         quantity: (line.quantity || 1) * map.pack,
