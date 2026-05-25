@@ -37,6 +37,8 @@
     'acne-complex-4-serum-3-pack-subscribe': { product_id: 'fa422213-dbbd-4b69-bfa5-9d543905a90a', pack: 3, is_subscription: true },
     'clear-glow-soap-3-pack-subscribe':      { product_id: 'd3c64137-4f63-4580-b526-2a1b60b65669', pack: 3, is_subscription: true },
     'clear-glow-soap-6-pack-subscribe':      { product_id: 'd3c64137-4f63-4580-b526-2a1b60b65669', pack: 6, is_subscription: true },
+    // TODO: replace product_id with the wellness trainer's real UUID from ERP before going live.
+    'wellness-trainer':                      { product_id: 'REPLACE_WITH_WELLNESS_TRAINER_UUID', pack: 1, is_subscription: false },
   };
 
   // Tenxix dropdown shows some state names slightly differently than ERP

@@ -18,9 +18,10 @@ const PAYAHEAD_DISCOUNT = 0.05;
 
 // ─── Product name → ERP SKU mapping ─────────────────────────────────
 const BASE_SKU_MAP = {
-  'Acne Complex-4 Serum':         'acne-complex-4-serum',
-  'Rapid Glow & Corrector Serum': 'rapid-glow-corrector-serum',
-  'Clear Glow Exfoliating Soap':  'clear-glow-soap',
+  'Acne Complex-4 Serum':                  'acne-complex-4-serum',
+  'Rapid Glow & Corrector Serum':          'rapid-glow-corrector-serum',
+  'Clear Glow Exfoliating Soap':           'clear-glow-soap',
+  'Tenxix Wellness Pelvic Floor Trainer':  'wellness-trainer',
 };
 
 // Subscribe SKUs that exist in the bridge's PRODUCT_MAP

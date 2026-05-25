@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pelvic Floor Trainer — TENXIX Wellness</title>
+  <meta name="description" content="One small device. Five places it changes your body. Tone your arms, tighten where it counts, rebuild after baby, stop the leaks, age on your own terms. Tenxix Wellness — for the woman who refuses to just cope.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Tenxix system fonts (for chrome) -->
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Wellness editorial fonts (for body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/wellness.css">
+</head>
+<body>
+
+  <!-- ========== URGENCY BAR ========== -->
+  <div class="urgency-bar">
+    <strong>LIMITED OFFER:</strong> FREE shipping ends in <span class="promo-countdown">23:59:59</span> &mdash; shop now before stock runs out!
+  </div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" style="top:38px;">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/images/tenxix-logo.png" alt="TENXIX">
+      </a>
+      <ul class="nav-links" style="top:118px;">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../products.html">Products</a></li>
+        <li><a href="../shop.html">Shop</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><button class="btn-kira" onclick="openKira()"><span class="pulse-dot"></span> Try Kira AI</button></li>
+      </ul>
+      <a href="#" class="nav-cart" onclick="openCart(); return false;" aria-label="Open cart">&#9825;<span class="cart-count">0</span></a>
+      <button class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-quick-actions">
+      <a href="../shop.html" class="nav-quick-btn">Shop Now</a>
+      <button class="nav-quick-btn nav-quick-btn-yellow" onclick="openKira()">Try Kira AI &rarr;</button>
+    </div>
+  </nav>
+
+  <!-- ========== WELLNESS EDITORIAL BODY (scoped) ========== -->
+  <main class="tw-scope">
+
+    <!-- ============ HERO ============ -->
+    <section class="tw-hero">
+      <div class="tw-hero-bg"></div>
+      <div class="tw-hero-grain"></div>
+      <div class="tw-hero-inner">
+        <div class="tw-hero-text">
+          <div class="tw-hero-eyebrow tw-reveal d1">
+            <span class="tw-dot"></span>
+            <span class="tw-eyebrow">For Her · A Tenxix Wellness Story</span>
+          </div>
+          <h1 class="tw-reveal d2">
+            Stronger arms.<br>
+            Tighter floor.<br>
+            <span class="tw-accent tw-serif">No more leaks.</span>
+          </h1>
+          <p class="tw-hero-sub tw-reveal d3">
+            One small device. Fifteen minutes a day. The five things women endure quietly — toned where you'd given up, tightened where it counts, the bladder under control, the body coming back. All of it. Without the gym.
+          </p>
+          <div class="tw-hero-cta-row tw-reveal d4">
+            <button type="button" class="tw-btn-primary" onclick="addToCart('Tenxix Wellness Pelvic Floor Trainer', 27500)">Order Yours — ₦27,500 →</button>
+            <a href="#how" class="tw-btn-secondary">See how it works</a>
+          </div>
+          <div class="tw-hero-proof tw-reveal d4">
+            <div class="tw-proof-item">
+              <span class="tw-proof-num">10 min</span>
+              <span class="tw-proof-label">A day, that's it</span>
+            </div>
+            <div class="tw-proof-item">
+              <span class="tw-proof-num">4–6 wks</span>
+              <span class="tw-proof-label">To feel a difference</span>
+            </div>
+            <div class="tw-proof-item">
+              <span class="tw-proof-num">5,000+</span>
+              <span class="tw-proof-label">Nigerian women using it</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tw-hero-visual tw-reveal d3">
+          <div class="tw-hero-tag">★ Bestseller</div>
+          <!-- Stylized illustration of the trainer + woman silhouette -->
+          <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#E5D5BE"/>
+                <stop offset="1" stop-color="#C9A97E"/>
+              </linearGradient>
+              <linearGradient id="device" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#7B2D8B"/>
+                <stop offset="1" stop-color="#4D1A5C"/>
+              </linearGradient>
+              <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+                <stop offset="0" stop-color="rgba(255,255,255,0.4)"/>
+                <stop offset="1" stop-color="rgba(255,255,255,0)"/>
+              </radialGradient>
+            </defs>
+            <rect width="400" height="500" fill="url(#bg1)"/>
+            <circle cx="200" cy="200" r="180" fill="url(#glow)"/>
+            <!-- abstract female silhouette -->
+            <g transform="translate(200,250)" opacity="0.85">
+              <ellipse cx="0" cy="-90" rx="28" ry="32" fill="#3D332C"/>
+              <path d="M -40 -50 Q -45 0 -38 60 Q -30 110 -34 160 L -20 170 Q -10 130 -10 80 L 10 80 Q 10 130 20 170 L 34 160 Q 30 110 38 60 Q 45 0 40 -50 Q 30 -65 0 -65 Q -30 -65 -40 -50 Z" fill="#3D332C"/>
+            </g>
+            <!-- The trainer device -->
+            <g transform="translate(200,360)">
+              <path d="M -70 0 Q -55 -25 -10 -10 Q 0 -5 10 -10 Q 55 -25 70 0 Q 60 20 30 18 Q 0 16 -30 18 Q -60 20 -70 0 Z" fill="url(#device)"/>
+              <ellipse cx="-55" cy="-5" rx="20" ry="14" fill="#F5EFE6" opacity="0.95"/>
+              <ellipse cx="55" cy="-5" rx="20" ry="14" fill="#F5EFE6" opacity="0.95"/>
+              <circle cx="0" cy="-2" r="4" fill="#C8954A"/>
+            </g>
+            <!-- decorative text -->
+            <text x="200" y="430" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="16" fill="#3D332C" opacity="0.5">— quiet strength, daily —</text>
+          </svg>
+          <div class="tw-hero-quote">
+            After my third born, I felt finished. Six weeks with this, I feel like me again.
+            <cite>— Adaeze, Enugu</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ANGLE STRIP ============ -->
+    <section class="tw-angle-strip">
+      <div class="tw-strip-inner">
+        <div class="tw-strip-head">
+          <h2 class="tw-serif">Built for the woman who refuses to <em>just cope</em>.</h2>
+          <p>Five real concerns most Nigerian women carry quietly. One device that meets you at every one of them.</p>
+        </div>
+        <div class="tw-angles-grid">
+          <a href="#arms" class="tw-angle-num">
+            <div class="tw-n">01</div>
+            <h3>Arms</h3>
+            <p>For the wave that should be confident, not jiggly.</p>
+          </a>
+          <a href="#tight" class="tw-angle-num">
+            <div class="tw-n">02</div>
+            <h3>Tightness</h3>
+            <p>Where it matters most — back to how it was.</p>
+          </a>
+          <a href="#postpartum" class="tw-angle-num">
+            <div class="tw-n">03</div>
+            <h3>Postpartum</h3>
+            <p>Bring your body back from the work it did.</p>
+          </a>
+          <a href="#bladder" class="tw-angle-num">
+            <div class="tw-n">04</div>
+            <h3>No Leaks</h3>
+            <p>Sneeze. Laugh. Dance. Without panic.</p>
+          </a>
+          <a href="#menopause" class="tw-angle-num">
+            <div class="tw-n">05</div>
+            <h3>After 45</h3>
+            <p>This decade is for you. Be in it strong.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ANGLE 1 — ARMS ============ -->
+    <section class="tw-angle tw-angle-arms" id="arms">
+      <div class="tw-angle-inner">
+        <div class="tw-angle-text">
+          <div class="tw-marker">
+            <span class="tw-n tw-italic">01</span>
+            <span class="tw-line"></span>
+            <span class="tw-tag">The Arms</span>
+          </div>
+          <h2>Raise your hand in church.<br><em>Not your sleeve.</em></h2>
+          <p class="lead">You know the wave. You feel it before everyone else sees it. That second skin under your upper arm that moves when you don't ask it to.</p>
+          <p>It isn't fat. It's the underarm muscle — the tricep — that has gone quiet from years of doing nothing while you carried babies, cooked, ran a home, ran a business. The muscle is still there. It's just sleeping.</p>
+          <p>The Tenxix trainer wakes it up. Press the device between your palms at chest level — ten times, three sets. Hold it under your arm and squeeze. Two minutes per arm, twice a day. The tricep, the chest, the back of the shoulder — all firing while you sit on your bed and watch Africa Magic.</p>
+          <ul class="tw-outcome-list">
+            <li>Firmer underarm — sleeveless without the second-guess</li>
+            <li>Stronger upper back — that ache from carrying baby disappears</li>
+            <li>Lifted chest line — your blouses sit the way they used to</li>
+            <li>15 minutes a day. No gym. No trainer. No spectacle.</li>
+          </ul>
+          <div class="tw-testimonial-card">
+            <div class="tw-quote-mark">"</div>
+            <p>I was the woman who stopped wearing sleeveless. Now I wear what I want again. My husband noticed before I told him anything.</p>
+            <div class="tw-who"><strong>Funke A.</strong> · Ibadan · 42</div>
+          </div>
+        </div>
+        <div class="tw-angle-visual">
+          <div class="tw-badge" style="top:24px;right:24px">
+            <span class="tw-badge-stat">3 wks</span>
+            <span class="tw-badge-label">visible firming</span>
+          </div>
+          <svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="armBg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#D4B896"/>
+                <stop offset="1" stop-color="#9B7A55"/>
+              </linearGradient>
+              <linearGradient id="armDev" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#7B2D8B"/>
+                <stop offset="1" stop-color="#3D1448"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="460" fill="url(#armBg)"/>
+            <!-- decorative concentric arcs -->
+            <g opacity="0.18" stroke="#F5EFE6" fill="none" stroke-width="1.5">
+              <circle cx="200" cy="230" r="180"/>
+              <circle cx="200" cy="230" r="140"/>
+              <circle cx="200" cy="230" r="100"/>
+            </g>
+            <!-- arms pressing the device illustration -->
+            <g transform="translate(200,230)">
+              <!-- left arm -->
+              <path d="M -160 -80 Q -130 -60 -90 -30 Q -70 -10 -50 -5" stroke="#3D332C" stroke-width="22" fill="none" stroke-linecap="round" opacity="0.85"/>
+              <!-- right arm -->
+              <path d="M 160 -80 Q 130 -60 90 -30 Q 70 -10 50 -5" stroke="#3D332C" stroke-width="22" fill="none" stroke-linecap="round" opacity="0.85"/>
+              <!-- The device being squeezed -->
+              <g>
+                <path d="M -60 -5 Q -45 -28 0 -18 Q 45 -28 60 -5 Q 50 15 25 13 Q 0 12 -25 13 Q -50 15 -60 -5 Z" fill="url(#armDev)"/>
+                <ellipse cx="-45" cy="-8" rx="14" ry="10" fill="#F5EFE6" opacity="0.95"/>
+                <ellipse cx="45" cy="-8" rx="14" ry="10" fill="#F5EFE6" opacity="0.95"/>
+                <circle cx="0" cy="-5" r="3.5" fill="#C8954A"/>
+              </g>
+              <!-- effort lines -->
+              <g opacity="0.5" stroke="#F5EFE6" stroke-width="2" fill="none" stroke-linecap="round">
+                <path d="M -85 -45 L -75 -50"/>
+                <path d="M -90 -25 L -80 -25"/>
+                <path d="M 85 -45 L 75 -50"/>
+                <path d="M 90 -25 L 80 -25"/>
+              </g>
+            </g>
+            <text x="200" y="420" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="15" fill="#3D332C" opacity="0.7">press · hold · release</text>
+          </svg>
+          <div class="tw-badge" style="bottom:24px;left:24px">
+            <span class="tw-badge-stat">15 min</span>
+            <span class="tw-badge-label">a day</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ANGLE 2 — TIGHTENING ============ -->
+    <section class="tw-angle tw-angle-tight tw-flip" id="tight">
+      <div class="tw-angle-inner">
+        <div class="tw-angle-text">
+          <div class="tw-marker">
+            <span class="tw-n tw-italic">02</span>
+            <span class="tw-line"></span>
+            <span class="tw-tag">The Tightening</span>
+          </div>
+          <h2>Be the wife<br>he <em>can't stop</em><br>thinking about.</h2>
+          <p class="lead">Let's not pretend. After babies, after years, after the body does what the body does — it loosens. And it changes what happens in your bedroom.</p>
+          <p>The good news: the muscles that make you tight are muscles. And muscles, when you train them, get strong again. The Tenxix trainer is built around this exact principle. When you squeeze the device between your thighs in the right form, your pelvic floor fires automatically. Every squeeze is a Kegel — but better, because you can feel the resistance and you know you're doing it right.</p>
+          <p>Twenty minutes a day, sitting on your bed. In four to six weeks, you feel a difference. In eight weeks, he does too. This isn't theory — it's the same muscle training pelvic physiotherapists prescribe, just in a form you can actually do at home, in private, on your own time.</p>
+          <ul class="tw-outcome-list">
+            <li>Stronger grip, more sensation — for both of you</li>
+            <li>More intense orgasms (yes, that's what the research says)</li>
+            <li>Confidence in the bedroom you haven't felt in years</li>
+            <li>No surgery. No painful procedures. No herbs that don't work.</li>
+          </ul>
+          <div class="tw-testimonial-card">
+            <div class="tw-quote-mark">"</div>
+            <p>I won't lie — I bought this for one reason. After two months my husband asked what I was doing. I told him nothing. Let him keep wondering.</p>
+            <div class="tw-who"><strong>N.O.</strong> · Lagos · married 11 years</div>
+          </div>
+        </div>
+        <div class="tw-angle-visual">
+          <div class="tw-badge" style="top:24px;left:24px">
+            <span class="tw-badge-stat">4–6 wks</span>
+            <span class="tw-badge-label">to feel it</span>
+          </div>
+          <svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="tightBg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#3D1448"/>
+                <stop offset="1" stop-color="#2D0E04"/>
+              </linearGradient>
+              <linearGradient id="tightDev" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#C8954A"/>
+                <stop offset="1" stop-color="#8A6332"/>
+              </linearGradient>
+              <radialGradient id="tightGlow" cx="0.5" cy="0.5" r="0.6">
+                <stop offset="0" stop-color="rgba(200,149,74,0.35)"/>
+                <stop offset="1" stop-color="rgba(200,149,74,0)"/>
+              </radialGradient>
+            </defs>
+            <rect width="400" height="460" fill="url(#tightBg)"/>
+            <ellipse cx="200" cy="230" rx="220" ry="180" fill="url(#tightGlow)"/>
+            <!-- decorative gold lines -->
+            <g opacity="0.25" stroke="#C8954A" fill="none" stroke-width="1">
+              <path d="M 80 230 Q 200 180 320 230"/>
+              <path d="M 80 250 Q 200 200 320 250"/>
+              <path d="M 80 210 Q 200 160 320 210"/>
+            </g>
+            <!-- thighs holding the device -->
+            <g transform="translate(200,250)">
+              <!-- left thigh -->
+              <ellipse cx="-70" cy="40" rx="55" ry="100" fill="#3D1408" opacity="0.85"/>
+              <!-- right thigh -->
+              <ellipse cx="70" cy="40" rx="55" ry="100" fill="#3D1408" opacity="0.85"/>
+              <!-- The device -->
+              <g>
+                <path d="M -85 -10 Q -65 -38 0 -28 Q 65 -38 85 -10 Q 72 18 38 15 Q 0 13 -38 15 Q -72 18 -85 -10 Z" fill="url(#tightDev)"/>
+                <ellipse cx="-62" cy="-12" rx="20" ry="14" fill="#F5EFE6" opacity="0.95"/>
+                <ellipse cx="62" cy="-12" rx="20" ry="14" fill="#F5EFE6" opacity="0.95"/>
+                <circle cx="0" cy="-7" r="5" fill="#7B2D8B"/>
+              </g>
+              <!-- compression indicator -->
+              <g opacity="0.6" stroke="#C8954A" stroke-width="1.5" fill="none">
+                <path d="M -100 -8 L -110 -8 M -100 -2 L -110 -2"/>
+                <path d="M 100 -8 L 110 -8 M 100 -2 L 110 -2"/>
+              </g>
+            </g>
+            <text x="200" y="420" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="15" fill="#C8954A" opacity="0.85">squeeze · hold · breathe</text>
+          </svg>
+          <div class="tw-badge" style="bottom:24px;right:24px">
+            <span class="tw-badge-stat">20 min</span>
+            <span class="tw-badge-label">private practice</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ANGLE 3 — POSTPARTUM ============ -->
+    <section class="tw-angle tw-angle-postpartum" id="postpartum">
+      <div class="tw-angle-inner">
+        <div class="tw-angle-text">
+          <div class="tw-marker">
+            <span class="tw-n tw-italic">03</span>
+            <span class="tw-line"></span>
+            <span class="tw-tag">After Baby</span>
+          </div>
+          <h2>The baby came.<br>Now help your body <em>come home.</em></h2>
+          <p class="lead">No one told you it would feel this loose. This heavy. This tired down there. They told you about the joy. They didn't tell you about the rebuilding.</p>
+          <p>Pregnancy stretches your pelvic floor by up to three times its normal length. Childbirth — vaginal or C-section — leaves those muscles weak, often torn, often confused about how to fire again. That's why you feel heaviness when you stand too long. Why intimacy doesn't feel the same. Why a small cough sometimes makes you panic.</p>
+          <p>This isn't your new normal. It's a temporary state your body wants to recover from — it just needs the right tool. The Tenxix trainer rebuilds the pelvic floor the same way physical therapists do, except you do it at home, in your own time, while baby sleeps.</p>
+          <ul class="tw-outcome-list">
+            <li>Pelvic floor strength restored in 6–10 weeks of consistent use</li>
+            <li>The "heaviness" feeling lifts — your insides feel held again</li>
+            <li>Inner thighs tighten, hips realign, lower back stops aching</li>
+            <li>You feel like yourself again — not the version of you that survived</li>
+          </ul>
+          <div class="tw-testimonial-card">
+            <div class="tw-quote-mark">"</div>
+            <p>Six months after my second baby I still felt broken. Started using this for just 15 minutes daily. By week eight I cried — I felt strong down there for the first time since giving birth.</p>
+            <div class="tw-who"><strong>Chiamaka I.</strong> · Port Harcourt · mother of two</div>
+          </div>
+        </div>
+        <div class="tw-angle-visual">
+          <div class="tw-badge" style="top:24px;right:24px;background:rgba(92,61,79,0.95);color:#F5EFE6">
+            <span class="tw-badge-stat" style="color:#C8954A">61%</span>
+            <span class="tw-badge-label" style="color:rgba(245,239,230,0.85)">don't know they can train</span>
+          </div>
+          <svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="ppBg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#9D7787"/>
+                <stop offset="1" stop-color="#5C3D4F"/>
+              </linearGradient>
+              <linearGradient id="ppDev" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#E5D5BE"/>
+                <stop offset="1" stop-color="#B89A75"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="460" fill="url(#ppBg)"/>
+            <!-- abstract maternal arc lines -->
+            <g opacity="0.2" stroke="#F5EFE6" fill="none" stroke-width="1.2">
+              <path d="M -20 380 Q 200 300 420 380"/>
+              <path d="M -20 360 Q 200 280 420 360"/>
+              <path d="M -20 340 Q 200 260 420 340"/>
+            </g>
+            <!-- mother + baby silhouette -->
+            <g transform="translate(200,220)" opacity="0.92">
+              <!-- mother head -->
+              <ellipse cx="-15" cy="-110" rx="28" ry="32" fill="#3D2530"/>
+              <!-- mother torso cradling -->
+              <path d="M -55 -75 Q -65 -30 -55 20 Q -45 60 -50 100 L -25 110 Q -10 80 -10 40 L 30 40 Q 30 80 50 110 L 70 100 Q 65 60 75 20 Q 80 -30 70 -65 Q 50 -75 0 -75 Q -40 -75 -55 -75 Z" fill="#3D2530"/>
+              <!-- baby being cradled -->
+              <ellipse cx="25" cy="-30" rx="14" ry="18" fill="#E5D5BE" opacity="0.9"/>
+              <ellipse cx="25" cy="-45" rx="9" ry="10" fill="#E5D5BE" opacity="0.9"/>
+            </g>
+            <!-- device at base -->
+            <g transform="translate(200,380)">
+              <path d="M -50 0 Q -38 -18 -5 -10 Q 0 -7 5 -10 Q 38 -18 50 0 Q 42 14 22 12 Q 0 11 -22 12 Q -42 14 -50 0 Z" fill="url(#ppDev)"/>
+              <ellipse cx="-38" cy="-3" rx="13" ry="9" fill="#F5EFE6" opacity="0.95"/>
+              <ellipse cx="38" cy="-3" rx="13" ry="9" fill="#F5EFE6" opacity="0.95"/>
+              <circle cx="0" cy="-2" r="3" fill="#5C3D4F"/>
+            </g>
+            <text x="200" y="430" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="14" fill="#F5EFE6" opacity="0.75">healing happens quietly</text>
+          </svg>
+          <div class="tw-badge" style="bottom:24px;left:24px">
+            <span class="tw-badge-stat">6 wks</span>
+            <span class="tw-badge-label">safe to start</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MID LIFESTYLE STRIP ============ -->
+    <section style="padding:80px 0;">
+    <div class="tw-lifestyle">
+      <div class="tw-lifestyle-card">
+        <div>
+          <div class="tw-eyebrow">A Pattern Worth Naming</div>
+          <h2 class="tw-serif">Most Nigerian women carry these in <em>silence.</em> Not anymore.</h2>
+          <p>These aren't rare problems. These are normal problems made invisible by a culture that tells women to endure. Here's what the data actually says.</p>
+          <button type="button" class="tw-btn-primary" onclick="addToCart('Tenxix Wellness Pelvic Floor Trainer', 27500)">Stop enduring — start training →</button>
+        </div>
+        <div class="tw-lifestyle-stats">
+          <div class="tw-stat-row">
+            <span class="tw-figure">1 in 2</span>
+            <span class="tw-desc">Women aged 45–59 leak urine when they sneeze, cough or laugh</span>
+          </div>
+          <div class="tw-stat-row">
+            <span class="tw-figure">61%</span>
+            <span class="tw-desc">Of postpartum Nigerian women don't know pelvic floor training exists</span>
+          </div>
+          <div class="tw-stat-row">
+            <span class="tw-figure">4–6 wks</span>
+            <span class="tw-desc">To feel a measurable difference with consistent daily training</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <!-- ============ ANGLE 4 — BLADDER LEAKS ============ -->
+    <section class="tw-angle tw-angle-bladder tw-flip" id="bladder">
+      <div class="tw-angle-inner">
+        <div class="tw-angle-text">
+          <div class="tw-marker">
+            <span class="tw-n tw-italic">04</span>
+            <span class="tw-line"></span>
+            <span class="tw-tag">The Leaking</span>
+          </div>
+          <h2>Sneeze without<br>crossing your legs.<br><em>Laugh without panic.</em></h2>
+          <p class="lead">You don't talk about it. You just plan around it. The black trousers. The pad in your bag. The pause before a real laugh. The quiet decision to stop jumping rope with your children.</p>
+          <p>This is stress urinary incontinence. It affects up to half of women over forty. And it's almost never spoken about — not at hospital visits, not between friends, not even with the husbands who notice you don't laugh as freely anymore. Your doctor probably won't bring it up. Neither will your friends. So you assume it's just what happens now.</p>
+          <p>It isn't. The pelvic floor is the muscle that closes off your bladder when pressure rises. When it weakens — from babies, from age, from sitting all day — that closure fails. Train the muscle back to strength and the leaking stops. The Tenxix trainer does exactly that, in fifteen minutes a day.</p>
+          <ul class="tw-outcome-list">
+            <li>Stop the involuntary leaks during sneezes, laughs, coughs, lifting</li>
+            <li>Walk longer, climb stairs, dance at weddings — without scanning for toilets</li>
+            <li>Wear the colours you stopped wearing</li>
+            <li>Get the freedom back that you didn't know you'd lost</li>
+          </ul>
+          <div class="tw-testimonial-card">
+            <div class="tw-quote-mark">"</div>
+            <p>I thought this was just what happens after three children. I'm 51, I started this on a friend's recommendation. After seven weeks I sneezed in public and nothing happened. I almost cried in the supermarket.</p>
+            <div class="tw-who"><strong>Mrs. Bisi A.</strong> · Lagos · 51</div>
+          </div>
+        </div>
+        <div class="tw-angle-visual">
+          <div class="tw-badge" style="top:24px;left:24px">
+            <span class="tw-badge-stat">15 min</span>
+            <span class="tw-badge-label">a day · seated</span>
+          </div>
+          <svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="blBg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#3D332C"/>
+                <stop offset="1" stop-color="#0A0805"/>
+              </linearGradient>
+              <linearGradient id="blDev" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#D14B7A"/>
+                <stop offset="1" stop-color="#8E2F54"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="460" fill="url(#blBg)"/>
+            <!-- expanding ripple rings = strength radiating -->
+            <g fill="none" stroke="#D14B7A" opacity="0.18" stroke-width="1.2">
+              <circle cx="200" cy="240" r="60"/>
+              <circle cx="200" cy="240" r="100"/>
+              <circle cx="200" cy="240" r="140"/>
+              <circle cx="200" cy="240" r="180"/>
+            </g>
+            <!-- pelvic floor visualization (abstract hammock) -->
+            <g transform="translate(200,240)">
+              <!-- hammock representing strong pelvic floor -->
+              <path d="M -100 30 Q 0 -10 100 30" stroke="#D14B7A" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.85"/>
+              <path d="M -90 50 Q 0 15 90 50" stroke="#D14B7A" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6"/>
+              <path d="M -80 70 Q 0 40 80 70" stroke="#D14B7A" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.4"/>
+              <!-- hip bones -->
+              <circle cx="-100" cy="30" r="9" fill="#F5EFE6" opacity="0.9"/>
+              <circle cx="100" cy="30" r="9" fill="#F5EFE6" opacity="0.9"/>
+              <!-- the device below -->
+              <g transform="translate(0,130)">
+                <path d="M -55 0 Q -42 -22 -5 -12 Q 0 -8 5 -12 Q 42 -22 55 0 Q 45 16 24 14 Q 0 12 -24 14 Q -45 16 -55 0 Z" fill="url(#blDev)"/>
+                <ellipse cx="-42" cy="-4" rx="14" ry="10" fill="#F5EFE6" opacity="0.95"/>
+                <ellipse cx="42" cy="-4" rx="14" ry="10" fill="#F5EFE6" opacity="0.95"/>
+                <circle cx="0" cy="-2" r="3.5" fill="#C8954A"/>
+              </g>
+            </g>
+            <text x="200" y="420" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="14" fill="#D14B7A" opacity="0.85">the muscle that holds</text>
+          </svg>
+          <div class="tw-badge" style="bottom:24px;right:24px;background:rgba(209,75,122,0.95);color:#F5EFE6">
+            <span class="tw-badge-stat" style="color:#F5EFE6">7 wks</span>
+            <span class="tw-badge-label" style="color:rgba(245,239,230,0.9)">leaks stop</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ANGLE 5 — MENOPAUSE ============ -->
+    <section class="tw-angle tw-angle-menopause" id="menopause">
+      <div class="tw-angle-inner">
+        <div class="tw-angle-text">
+          <div class="tw-marker">
+            <span class="tw-n tw-italic">05</span>
+            <span class="tw-line"></span>
+            <span class="tw-tag">After 45</span>
+          </div>
+          <h2>The second half<br>belongs <em>to you.</em></h2>
+          <p class="lead">The estrogen drops. The body changes. The pelvic floor weakens. Intimacy starts feeling different. The bladder gets unreliable. The arms get softer. The waist gets thicker. And nobody — nobody — prepared you for any of it.</p>
+          <p>Menopause is not the end of your body. It is your body asking for a new kind of attention. The exercises that worked at thirty don't work the same way at fifty-five. But the pelvic floor still responds. The arms still tone. The hips still strengthen. You just need a tool that meets the muscle where it is now — gentle enough to start, strong enough to matter.</p>
+          <p>Tenxix Wellness is built for the woman who finally has the time, the money, and the wisdom to take care of herself first. This is the decade you stop pouring out and start filling up. Twenty minutes a day. While you watch the news, while you wait for grandchildren to call, while your husband watches football. Yours.</p>
+          <ul class="tw-outcome-list">
+            <li>Adjustable resistance — start gentle, build as you go</li>
+            <li>Combats the three things menopause attacks: pelvic floor, arms, core</li>
+            <li>Restores intimate sensation that estrogen took with it</li>
+            <li>A daily ritual just for you — finally</li>
+          </ul>
+          <div class="tw-testimonial-card">
+            <div class="tw-quote-mark">"</div>
+            <p>My doctor said pelvic floor exercises but didn't tell me how. This trainer showed me. At 58 I feel stronger than I did at 48. My only regret is not finding this five years ago.</p>
+            <div class="tw-who"><strong>Mrs. Grace O.</strong> · Abuja · 58</div>
+          </div>
+        </div>
+        <div class="tw-angle-visual">
+          <div class="tw-badge" style="top:24px;right:24px">
+            <span class="tw-badge-stat">3 levels</span>
+            <span class="tw-badge-label">adjustable tension</span>
+          </div>
+          <svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="mpBg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#D4A85E"/>
+                <stop offset="1" stop-color="#7A5325"/>
+              </linearGradient>
+              <linearGradient id="mpDev" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#4D1A5C"/>
+                <stop offset="1" stop-color="#4D1F12"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="460" fill="url(#mpBg)"/>
+            <!-- elegant arches (representing wisdom, second-half) -->
+            <g fill="none" stroke="#F5EFE6" opacity="0.22" stroke-width="1.5">
+              <path d="M 50 380 Q 200 100 350 380"/>
+              <path d="M 80 380 Q 200 140 320 380"/>
+              <path d="M 110 380 Q 200 180 290 380"/>
+            </g>
+            <!-- elegant seated woman silhouette -->
+            <g transform="translate(200,240)" opacity="0.88">
+              <!-- head with elegant updo suggestion -->
+              <ellipse cx="0" cy="-90" rx="26" ry="30" fill="#3D1408"/>
+              <ellipse cx="0" cy="-115" rx="18" ry="10" fill="#3D1408"/>
+              <!-- elegant seated torso -->
+              <path d="M -45 -55 Q -52 -10 -45 35 Q -38 65 -42 95 L -8 110 L 8 110 L 42 95 Q 38 65 45 35 Q 52 -10 45 -55 Q 30 -65 0 -65 Q -30 -65 -45 -55 Z" fill="#3D1408"/>
+              <!-- crossed legs sitting -->
+              <ellipse cx="-25" cy="135" rx="45" ry="22" fill="#3D1408"/>
+              <ellipse cx="25" cy="135" rx="45" ry="22" fill="#3D1408"/>
+            </g>
+            <!-- device between knees -->
+            <g transform="translate(200,390)">
+              <path d="M -50 0 Q -38 -20 -5 -12 Q 0 -8 5 -12 Q 38 -20 50 0 Q 42 14 22 13 Q 0 12 -22 13 Q -42 14 -50 0 Z" fill="url(#mpDev)"/>
+              <ellipse cx="-38" cy="-3" rx="13" ry="9" fill="#F5EFE6" opacity="0.95"/>
+              <ellipse cx="38" cy="-3" rx="13" ry="9" fill="#F5EFE6" opacity="0.95"/>
+              <circle cx="0" cy="-2" r="3" fill="#C8954A"/>
+            </g>
+            <text x="200" y="440" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="15" fill="#F5EFE6" opacity="0.85">finally · your turn</text>
+          </svg>
+          <div class="tw-badge" style="bottom:24px;left:24px">
+            <span class="tw-badge-stat">Any age</span>
+            <span class="tw-badge-label">safe & gentle</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="tw-how" id="how">
+      <div class="tw-how-inner">
+        <div class="tw-how-head">
+          <div class="tw-eyebrow">How It Works</div>
+          <h2>One device. Five places it changes you. <em>Fifteen minutes a day.</em></h2>
+        </div>
+        <div class="tw-how-grid">
+          <div class="tw-how-step">
+            <div class="tw-step-n">01</div>
+            <h3>Place</h3>
+            <p>Sit on your bed. Place the device between your thighs, or between your palms for arms. The padded ends grip without pinching.</p>
+          </div>
+          <div class="tw-how-step">
+            <div class="tw-step-n">02</div>
+            <h3>Squeeze</h3>
+            <p>Press inward for three seconds. Release for three. The spring resistance does the work — your muscles respond automatically. Ten repetitions, three sets.</p>
+          </div>
+          <div class="tw-how-step">
+            <div class="tw-step-n">03</div>
+            <h3>Repeat</h3>
+            <p>Daily, fifteen minutes, while you do other things. Watch your shows. Listen to a sermon. Within four to six weeks, you feel a difference. Within eight, others do too.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SEE IT IN ACTION (GIF STRIP) ============ -->
+    <!--
+      GIF strip — drop animated GIFs into images/ then replace each <img src="">.
+      Each .tw-gif-card has: visual (img.tw-gif-visual) + caption (figcaption).
+      Add or remove .tw-gif-card blocks freely — grid auto-fits.
+    -->
+    <section class="tw-gif-strip" id="see-it">
+      <div class="tw-gif-strip-inner">
+        <div class="tw-gif-strip-head">
+          <div class="tw-eyebrow">See It In Action</div>
+          <h2>The motion that makes the <em>difference.</em></h2>
+          <p>Three angles, three muscles, fifteen minutes. Watch how the Tenxix trainer works in real use.</p>
+        </div>
+        <div class="tw-gif-grid">
+
+          <figure class="tw-gif-card">
+            <div class="tw-gif-frame">
+              <!-- replace src with your GIF: e.g. images/squeeze-thighs.gif -->
+              <img class="tw-gif-visual" src="" alt="Squeeze between thighs — pelvic floor training">
+              <div class="tw-gif-placeholder">GIF 1 — between thighs</div>
+            </div>
+            <figcaption>
+              <strong>Pelvic Floor</strong>
+              <span>Between the thighs · 20 min</span>
+            </figcaption>
+          </figure>
+
+          <figure class="tw-gif-card">
+            <div class="tw-gif-frame">
+              <!-- replace src with your GIF: e.g. images/press-palms.gif -->
+              <img class="tw-gif-visual" src="" alt="Press between palms — arms toning">
+              <div class="tw-gif-placeholder">GIF 2 — between palms</div>
+            </div>
+            <figcaption>
+              <strong>Arms & Chest</strong>
+              <span>Between the palms · 15 min</span>
+            </figcaption>
+          </figure>
+
+          <figure class="tw-gif-card">
+            <div class="tw-gif-frame">
+              <!-- replace src with your GIF: e.g. images/seated-use.gif -->
+              <img class="tw-gif-visual" src="" alt="Seated use — discreet daily training">
+              <div class="tw-gif-placeholder">GIF 3 — seated, discreet</div>
+            </div>
+            <figcaption>
+              <strong>Anywhere, Anytime</strong>
+              <span>Seated · while you watch TV</span>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIAL WALL ============ -->
+    <section class="tw-wall">
+      <div class="tw-wall-inner">
+        <div class="tw-wall-head">
+          <div class="tw-eyebrow">Real Women · Real Results</div>
+          <h2 style="margin-top:20px">Stories from women who decided to <em>stop enduring.</em></h2>
+        </div>
+        <div class="tw-wall-grid">
+
+          <!--
+            Each tw-wall-card supports an optional <div class="tw-wall-gif"><img src="..."></div>
+            Drop a GIF in to enable it. Cards without one fall back gracefully to the all-text layout.
+          -->
+
+          <div class="tw-wall-card">
+            <div class="tw-wall-gif"><img src="" alt=""></div>
+            <div class="tw-stars">★★★★★</div>
+            <div class="tw-head-line">"My arms in church look different now"</div>
+            <div class="tw-body-text">I'm 47 and stopped raising my hands during worship because of the wave. Three weeks in, my daughter said "Mummy, your arms look toned." I almost cried. Twelve weeks in, I wear sleeveless again.</div>
+            <div class="tw-meta">
+              <div class="tw-avatar">F</div>
+              <div class="tw-meta-info">
+                <strong>Folake A.</strong>
+                <span>Lagos · using 12 weeks</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tw-wall-card">
+            <div class="tw-wall-gif"><img src="" alt=""></div>
+            <div class="tw-stars">★★★★★</div>
+            <div class="tw-head-line">"My husband noticed before I said anything"</div>
+            <div class="tw-body-text">Bought it after a friend whispered about it at a wedding. Used it for eight weeks faithfully. My husband asked what was different — I told him nothing. Best thing I've bought for myself in years. The bedroom has come alive again.</div>
+            <div class="tw-meta">
+              <div class="tw-avatar">A</div>
+              <div class="tw-meta-info">
+                <strong>Adaeze N.</strong>
+                <span>Enugu · using 9 weeks</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tw-wall-card">
+            <div class="tw-wall-gif"><img src="" alt=""></div>
+            <div class="tw-stars">★★★★★</div>
+            <div class="tw-head-line">"I sneezed in a meeting and nothing happened"</div>
+            <div class="tw-body-text">I'm 53. I had stopped laughing properly years ago because of leaking. Started this on my sister's recommendation. Week seven, I sneezed loud in a meeting and was completely dry. I cried in the bathroom afterward — out of joy this time.</div>
+            <div class="tw-meta">
+              <div class="tw-avatar">B</div>
+              <div class="tw-meta-info">
+                <strong>Bisi O.</strong>
+                <span>Abuja · using 8 weeks</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tw-wall-card">
+            <div class="tw-wall-gif"><img src="" alt=""></div>
+            <div class="tw-stars">★★★★★</div>
+            <div class="tw-head-line">"After 3 kids my body finally feels mine"</div>
+            <div class="tw-body-text">Three c-sections left me feeling broken below the waist. The heaviness, the looseness, the disconnection. Six weeks of Tenxix and I feel pulled together again. I wish someone had told me about this after my first baby.</div>
+            <div class="tw-meta">
+              <div class="tw-avatar">C</div>
+              <div class="tw-meta-info">
+                <strong>Chiamaka I.</strong>
+                <span>Port Harcourt · using 6 weeks</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tw-wall-card">
+            <div class="tw-wall-gif"><img src="" alt=""></div>
+            <div class="tw-stars">★★★★★</div>
+            <div class="tw-head-line">"Better than the kegel exercises my doctor told me to do"</div>
+            <div class="tw-body-text">My gynaecologist said do kegels. I never knew if I was doing them right. This trainer makes you feel the squeeze, you know it's working. My pelvic floor strength has come back at 56 in a way I didn't think possible.</div>
+            <div class="tw-meta">
+              <div class="tw-avatar">G</div>
+              <div class="tw-meta-info">
+                <strong>Grace O.</strong>
+                <span>Abuja · using 14 weeks</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tw-wall-card">
+            <div class="tw-wall-gif"><img src="" alt=""></div>
+            <div class="tw-stars">★★★★★</div>
+            <div class="tw-head-line">"I use it in traffic — that's how easy it is"</div>
+            <div class="tw-body-text">Lagos traffic is a gift. I keep mine in the car. Twenty minutes of squeezes between Lekki and Victoria Island and I've done my workout. My inner thighs are tighter than they've ever been since university.</div>
+            <div class="tw-meta">
+              <div class="tw-avatar">N</div>
+              <div class="tw-meta-info">
+                <strong>Ngozi A.</strong>
+                <span>Lagos · using 10 weeks</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="tw-faq">
+      <div class="tw-faq-inner">
+        <div class="tw-faq-head">
+          <div class="tw-eyebrow">Honest Answers</div>
+          <h2 style="margin-top:20px">Questions women <em>actually ask us.</em></h2>
+        </div>
+
+        <details class="tw-faq-item">
+          <summary>I've had three children. Is it too late for me?</summary>
+          <div class="answer">No. The pelvic floor is a muscle, and muscles respond to training at any age. Women who started in their fifties and sixties report the same kind of strength recovery as younger women — it just takes a few more weeks of consistent use. Six children, sixty years old — your body still wants to come back. You just have to invite it.</div>
+        </details>
+
+        <details class="tw-faq-item">
+          <summary>Does it really tighten the vagina, or is that just marketing?</summary>
+          <div class="answer">The honest answer: it strengthens the pelvic floor muscle, which is what creates the "tightness" women describe. When that muscle is stronger, sensation increases for you and grip increases for him. It's the same principle pelvic physiotherapists use — just at home, with resistance you can feel. Most women report a noticeable difference within 4–6 weeks of daily 15-minute sessions.</div>
+        </details>
+
+        <details class="tw-faq-item">
+          <summary>How long until I see a difference in my arms?</summary>
+          <div class="answer">Two to three weeks for firmness you can feel. Six weeks for a difference others notice. Twelve weeks for sleeveless confidence. The trick is consistency — five minutes daily beats forty minutes once a week, every single time.</div>
+        </details>
+
+        <details class="tw-faq-item">
+          <summary>I leak when I sneeze and laugh. Will this really help?</summary>
+          <div class="answer">Yes, very likely. Stress urinary incontinence — the kind that happens when you sneeze, laugh or lift — is almost always caused by a weak pelvic floor. Strengthening that muscle with consistent resistance training (which is exactly what this device does) is the first-line treatment recommended by doctors worldwide. Most women see significant improvement within 6–8 weeks. If your case is severe, please also see a doctor.</div>
+        </details>
+
+        <details class="tw-faq-item">
+          <summary>How soon after giving birth can I use it?</summary>
+          <div class="answer">Wait until your six-week postnatal check-up and get clearance from your doctor — especially if you had a c-section or vaginal tearing. After that, start gently. Use the lowest resistance, do fewer reps, and build up week by week. Your body has just done the hardest physical work of its life. Be patient with it.</div>
+        </details>
+
+        <details class="tw-faq-item">
+          <summary>How is this different from doing free Kegel exercises?</summary>
+          <div class="answer">Most women do Kegels wrong. Without resistance, you can't feel whether the right muscle is firing. With the Tenxix trainer, the squeeze gives you immediate feedback — you know the muscle is engaged, and you can progressively load it over time. It's the difference between doing air-squats forever and using actual weight. Same exercise. Real results.</div>
+        </details>
+
+        <details class="tw-faq-item">
+          <summary>Is it discreet? My husband / children / domestic staff will see it.</summary>
+          <div class="answer">Yes. It looks like a small piece of fitness equipment for inner thigh toning — because that is one of the things it does. Most women keep it next to the bed or on a closet shelf. No one will know what you're actually using it for unless you tell them.</div>
+        </details>
+
+        <details class="tw-faq-item">
+          <summary>How do I pay and how long does delivery take?</summary>
+          <div class="answer">Pay on Delivery in Lagos, Abuja, Port Harcourt and most major cities. Card and bank transfer available nationwide. Delivery is 1–3 working days in Lagos and Abuja, 3–5 working days elsewhere in Nigeria. Free shipping on all orders.</div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="tw-final" id="order">
+      <div class="tw-final-inner">
+        <div class="tw-eyebrow">Your Turn</div>
+        <h2>Stop enduring.<br><em>Start training.</em></h2>
+        <p>Fifteen minutes a day. A body that does what you ask of it. Confidence you used to have, coming back. This is the smallest investment with the biggest return you'll make this year.</p>
+        <button type="button" class="tw-btn-primary" onclick="addToCart('Tenxix Wellness Pelvic Floor Trainer', 27500)">Order Now — ₦27,500</button>
+        <div class="guarantee">★ Free Delivery · Pay on Delivery in Major Cities · 30-Day Money Back</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../assets/images/tenxix-logo.png" alt="TENXIX">
+          <p>Premium skincare crafted at the intersection of science and nature. Luxury you can feel, results you can see.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="../products.html">All Products</a></li>
+            <li><a href="../shop.html">Serums</a></li>
+            <li><a href="../shop.html">Soaps</a></li>
+            <li><a href="../shop.html">Wellness</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="../about.html">About Us</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="../contact.html">Help Centre</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TENXIX. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Kira AI Modal -->
+  <div class="kira-modal-overlay" onclick="closeKira()"></div>
+  <div class="kira-modal" role="dialog" aria-label="Kira Skin Analyser">
+    <div class="kira-modal-header">
+      <div class="kira-modal-title">
+        <div class="kira-modal-title-icon">K</div>
+        <div class="kira-modal-title-text">
+          <h3>Kira &mdash; AI Skin Analyser</h3>
+          <p>Africa's smartest skincare advisor</p>
+        </div>
+      </div>
+      <button class="kira-modal-close" onclick="closeKira()" aria-label="Close">&times;</button>
+    </div>
+    <div class="kira-modal-body">
+      <div class="kira-modal-loading">
+        <div class="kira-loader"></div>
+        <p>Loading Kira&hellip;</p>
+      </div>
+      <iframe data-src="https://scan.tenxix.com" allow="camera; microphone" title="Kira Skin Analyser"></iframe>
+    </div>
+  </div>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay"></div>
+  <div class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Your Cart (<span class="cart-count-text">0</span>)</h3>
+      <button class="cart-close" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="cart-progress">
+      <p class="cart-progress-text">Add <strong>&#8358;<span class="cart-progress-remaining">30,000</span></strong> more for <strong>FREE SHIPPING</strong></p>
+      <div class="cart-progress-bar"><div class="cart-progress-fill"></div></div>
+    </div>
+    <div class="cart-discount-banner">
+      <span class="cart-discount-banner-icon">&check;</span>
+      Limited Time Discount Auto-Applied
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Subtotal</span>
+        <span class="cart-total-amount">&#8358;0</span>
+      </div>
+      <a href="../checkout.html" class="btn btn-primary cart-checkout-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+        Secure Checkout
+      </a>
+      <div class="cart-trust">
+        <div class="cart-trust-item">
+          <span class="cart-trust-item-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+          4.9 Stars<br>50K+ reviews
+        </div>
+        <div class="cart-trust-item">
+          <span class="cart-trust-item-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3.5-7.1"/><polyline points="21 4 21 12 13 12"/></svg></span>
+          30-day<br>guarantee
+        </div>
+        <div class="cart-trust-item">
+          <span class="cart-trust-item-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+          Secure<br>checkout
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/erp-bridge.js"></script>
+  <script src="../assets/js/promo-countdown.js"></script>
+</body>
+</html>
