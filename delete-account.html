@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop — TENXIX</title>
+  <title>Delete Your Kira Account — TENXIX</title>
+  <meta name="description" content="Delete your Kira account and all personal data associated with it. Use the in-app option, or email us at support@tenxix.com.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -26,7 +27,7 @@
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/products">Products</a></li>
-        <li><a href="/shop" class="active">Shop</a></li>
+        <li><a href="/shop">Shop</a></li>
         <li><a href="/contact">Contact</a></li>
         <li><button class="btn-kira" onclick="openKira()"><span class="pulse-dot"></span> Try Kira AI</button></li>
       </ul>
@@ -44,68 +45,90 @@
   <!-- ========== PAGE HEADER ========== -->
   <section class="page-header">
     <div class="container">
-      <p class="section-label">Shop</p>
-      <h1>The Full Collection</h1>
-      <p>Browse all TENXIX products. Filter by category to find exactly what your skin needs.</p>
+      <p class="section-label">Account</p>
+      <h1>Delete Your Kira Account</h1>
+      <p>Remove your account and all personal data permanently &mdash; two ways to do it.</p>
     </div>
   </section>
 
-  <!-- ========== SHOP ========== -->
-  <section class="section">
+  <!-- ========== LEGAL CONTENT ========== -->
+  <section class="legal-page">
     <div class="container">
-      <!-- Kira CTA Banner -->
-      <div class="kira-cta-card fade-up">
-        <div class="kira-cta-icon">&#10024;</div>
-        <div class="kira-cta-text">
-          <h4>Not sure which product is right for you?</h4>
-          <p>Let Kira analyse your skin and recommend the exact products you need &mdash; in 60 seconds.</p>
-        </div>
-        <button class="btn btn-yellow" onclick="openKira()">Try Kira Free &rarr;</button>
-      </div>
+      <div class="legal-content">
 
-      <!-- Filter Bar -->
-      <div class="filter-bar text-center">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="serum">Serums</button>
-        <button class="filter-btn" data-filter="soap">Soaps</button>
-      </div>
+        <p class="legal-intro">
+          If you'd like to delete your Kira account and all the personal data associated with it,
+          you have two options.
+        </p>
 
-      <!-- Product Grid -->
-      <div class="products-grid">
-
-        <!-- Serums -->
-        <div class="product-card fade-up" data-category="serum" onclick="window.location='/products/acne-complex-4-serum'" style="cursor:pointer;">
-          <div class="product-image"><span class="product-badge">Bestseller</span><img src="assets/images/acne-complex-4-mockup.jpg" alt="Acne Complex-4 Serum"></div>
-          <div class="product-info">
-            <p class="product-category">Serum</p>
-            <h3 class="product-name">Acne Complex-4 Serum</h3>
-            <p class="product-desc">Kills Acne Bacteria, Unclogs Pores, Prevent New Breakouts &amp; Fades Acne Marks.</p>
-            <p class="product-price">&#8358;22,500</p>
-            <button class="btn btn-primary" onclick="event.stopPropagation(); addToCart('Acne Complex-4 Serum', 22500)">Add to Cart</button>
-          </div>
+        <h2>Option 1 &mdash; In-App (fastest)</h2>
+        <p>If you still have the Kira app installed:</p>
+        <ol>
+          <li>Open Kira on your phone</li>
+          <li>Go to <strong>Settings &rarr; Delete Account</strong></li>
+          <li>Confirm when prompted</li>
+        </ol>
+        <div class="legal-callout">
+          <strong>Your account and all associated data will be permanently deleted within 30 days.</strong>
         </div>
 
-        <div class="product-card fade-up" data-category="serum" onclick="window.location='/products/rapid-glow-corrector-serum'" style="cursor:pointer;">
-          <div class="product-image"><span class="product-badge">Bestseller</span><img src="assets/images/rapid-glow-corrector-mockup.jpg" alt="Rapid Glow &amp; Corrector Serum"></div>
-          <div class="product-info">
-            <p class="product-category">Serum</p>
-            <h3 class="product-name">Rapid Glow &amp; Corrector Serum</h3>
-            <p class="product-desc">Targets uneven skin tone, Post Acne Marks &amp; Hyperpigmentation, Rejuvenate Dull Tired-Looking Skin, Sun-Damage &amp; Wrinkles.</p>
-            <p class="product-price">&#8358;22,500</p>
-            <button class="btn btn-primary" onclick="event.stopPropagation(); addToCart('Rapid Glow & Corrector Serum', 22500)">Add to Cart</button>
-          </div>
-        </div>
+        <h2>Option 2 &mdash; Email Us</h2>
+        <p>
+          If you no longer have the app installed, or you'd prefer not to use the in-app option,
+          send us an email:
+        </p>
+        <ul>
+          <li><strong>To:</strong> <a href="mailto:support@tenxix.com?subject=Delete%20my%20Kira%20account">support@tenxix.com</a></li>
+          <li><strong>Subject:</strong> Delete my Kira account</li>
+          <li><strong>Include:</strong>
+            <ul>
+              <li>The email address you used to sign up</li>
+              <li>Your full name (so we can verify identity)</li>
+            </ul>
+          </li>
+        </ul>
+        <p>
+          We will confirm receipt within <strong>3 business days</strong> and complete the deletion within
+          <strong>30 days</strong> of the verified request.
+        </p>
 
-        <!-- Soaps -->
-        <div class="product-card fade-up" data-category="soap" onclick="window.location='/products/clear-glow-exfoliating-soap'" style="cursor:pointer;">
-          <div class="product-image"><span class="product-badge">Bestseller</span><img src="assets/images/clearfix.jpg" alt="Clear Glow Exfoliating Soap"></div>
-          <div class="product-info">
-            <p class="product-category">Soap</p>
-            <h3 class="product-name">Clear Glow Exfoliating Soap</h3>
-            <p class="product-desc">Remove dead skin, unclog pores and reveal visibly brighter, smoother skin from the very first wash.</p>
-            <p class="product-price">&#8358;9,500</p>
-            <button class="btn btn-primary" onclick="event.stopPropagation(); addToCart('Clear Glow Exfoliating Soap', 9500)">Add to Cart</button>
-          </div>
+        <h2>What Gets Deleted</h2>
+        <p>When you delete your account, the following data is permanently removed:</p>
+        <ul>
+          <li>Your name and email address</li>
+          <li>All skin scan photos you have uploaded</li>
+          <li>All skin analysis results and progress history</li>
+          <li>Your skincare quiz answers and routine tracking data</li>
+          <li>Your push notification token</li>
+        </ul>
+
+        <h2>What May Be Retained</h2>
+        <p>In limited cases, we may retain some information:</p>
+        <ul>
+          <li>Anonymised, aggregated statistics that cannot identify you (used for improving the service)</li>
+          <li>
+            Records required by law (such as financial records if you ever made a purchase), retained only
+            for the period required by Nigerian law
+          </li>
+        </ul>
+
+        <h2>Need Help?</h2>
+        <p>
+          If you don't receive confirmation within 3 business days, or if you have any questions about
+          the deletion process, contact us at
+          <a href="mailto:support@tenxix.com">support@tenxix.com</a>.
+        </p>
+
+        <div class="legal-contact-card">
+          <p>
+            <strong>Tenxix Ltd</strong><br>
+            5 Kudaki Road, Hostel Bus-Stop, Ikotun, Lagos<br>
+            Nigeria
+          </p>
+          <p>
+            Email: <a href="mailto:support@tenxix.com">support@tenxix.com</a><br>
+            Website: <a href="https://tenxix.com">https://tenxix.com</a>
+          </p>
         </div>
 
       </div>
@@ -126,6 +149,7 @@
             <li><a href="/products">All Products</a></li>
             <li><a href="/shop">Serums</a></li>
             <li><a href="/shop">Soaps</a></li>
+            <li><a href="/shop">Wellness</a></li>
           </ul>
         </div>
         <div>
@@ -133,17 +157,14 @@
           <ul>
             <li><a href="/about">About Us</a></li>
             <li><a href="/contact">Contact</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Press</a></li>
           </ul>
         </div>
         <div>
           <h4>Support</h4>
           <ul>
             <li><a href="/contact">Help Centre</a></li>
-            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">Shipping &amp; Returns</a></li>
             <li><a href="#">FAQs</a></li>
-            <li><a href="#">Track Order</a></li>
           </ul>
         </div>
       </div>

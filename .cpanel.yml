@@ -25,6 +25,7 @@ deployment:
     - /bin/rm -f  $DEPLOYPATH/contact.html
     - /bin/rm -f  $DEPLOYPATH/checkout.html
     - /bin/rm -f  $DEPLOYPATH/privacy-policy.html
+    - /bin/rm -f  $DEPLOYPATH/delete-account.html
     - /bin/rm -f  $DEPLOYPATH/.htaccess
 
     # Copy fresh HTML pages
@@ -35,6 +36,7 @@ deployment:
     - /bin/cp contact.html $DEPLOYPATH/
     - /bin/cp checkout.html $DEPLOYPATH/
     - /bin/cp privacy-policy.html $DEPLOYPATH/
+    - /bin/cp delete-account.html $DEPLOYPATH/
 
     # Copy .htaccess (enables clean URLs: /about works instead of /about.html)
     - /bin/cp .htaccess $DEPLOYPATH/
