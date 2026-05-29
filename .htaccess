@@ -1,0 +1,56 @@
+# ============================================
+# TENXIX.com — clean URLs
+# ============================================
+# Goals:
+#   1. /about.html → 301 redirect to /about  (canonical, SEO-friendly)
+#   2. /about      → silently serves about.html   (no extension needed)
+#   3. /index.html → 301 redirect to /         (canonical home)
+#   4. Existing files (css, js, images, etc.) served as-is, untouched
+# ============================================
+
+Options +FollowSymLinks -MultiViews
+
+# Default index file when a folder is visited
+DirectoryIndex index.html
+
+RewriteEngine On
+
+# ── 1. /folder/index.html  →  /folder/    (301)
+RewriteCond %{THE_REQUEST} \s/+(.+/)?index\.html[\s?] [NC]
+RewriteRule ^(.+/)?index\.html$ /%1 [R=301,L,NE]
+
+# ── 2. /anything.html  →  /anything       (301)
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L,NE]
+
+# ── 3. /anything  →  /anything.html       (silent rewrite, only if the .html exists)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# ── (Optional) Gzip compression for faster page loads
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# ── (Optional) Long cache for static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css                "access plus 30 days"
+  ExpiresByType application/javascript  "access plus 30 days"
+  ExpiresByType image/png               "access plus 60 days"
+  ExpiresByType image/jpeg              "access plus 60 days"
+  ExpiresByType image/jpg               "access plus 60 days"
+  ExpiresByType image/svg+xml           "access plus 60 days"
+  ExpiresByType image/webp              "access plus 60 days"
+  ExpiresByType font/woff               "access plus 60 days"
+  ExpiresByType font/woff2              "access plus 60 days"
+</IfModule>
+
+# ── Security headers (defence in depth)
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
