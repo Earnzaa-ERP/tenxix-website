@@ -5,26 +5,38 @@
 #   1. /about.html → 301 redirect to /about  (canonical, SEO-friendly)
 #   2. /about      → silently serves about.html   (no extension needed)
 #   3. /index.html → 301 redirect to /         (canonical home)
-#   4. Existing files (css, js, images, etc.) served as-is, untouched
+#   4. /products   → serves products.html (NOT the products/ folder listing)
+#   5. /products/wellness-trainer → serves products/wellness-trainer.html
+#   6. Directory listings disabled entirely
 # ============================================
 
-Options +FollowSymLinks -MultiViews
+Options -Indexes +FollowSymLinks -MultiViews
 
 # Default index file when a folder is visited
 DirectoryIndex index.html
 
 RewriteEngine On
 
-# ── 1. /folder/index.html  →  /folder/    (301)
+# ── 1. Trailing-slash strip when an equivalent .html exists.
+#       e.g. /products/  →  /products   (then rule 4 serves products.html)
+#       Stops mod_dir from auto-appending the slash that would cause a loop.
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.+)/$ /$1 [R=301,L,NE]
+
+# ── 2. /folder/index.html  →  /folder/    (301)
 RewriteCond %{THE_REQUEST} \s/+(.+/)?index\.html[\s?] [NC]
 RewriteRule ^(.+/)?index\.html$ /%1 [R=301,L,NE]
 
-# ── 2. /anything.html  →  /anything       (301)
+# ── 3. /anything.html  →  /anything       (301)
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
 RewriteRule ^ /%1 [R=301,L,NE]
 
-# ── 3. /anything  →  /anything.html       (silent rewrite, only if the .html exists)
-RewriteCond %{REQUEST_FILENAME} !-d
+# ── 4. /anything  →  /anything.html       (silent rewrite, only if the .html exists)
+#       NOTE: we deliberately do NOT skip when a directory of the same name exists
+#       (so /products serves products.html even though /products/ folder exists).
+#       The -f check on $1.html still guarantees we only rewrite when the file
+#       actually exists, so /assets stays a directory and serves nothing
+#       (with -Indexes giving a clean 403 instead of a listing).
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{DOCUMENT_ROOT}/$1.html -f
 RewriteRule ^(.+?)/?$ $1.html [L]
