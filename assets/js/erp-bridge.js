@@ -456,15 +456,55 @@
     return eventId;
   }
 
+  // Detect a "thank-you" landing — the ERP order form redirects to a
+  // thank-you URL with ?ref=ORD-…&value=…&currency=…&event_id=… on
+  // successful submission. When we land on such a URL we auto-fire
+  // Purchase browser-side so the buyer's pixel records the conversion
+  // without needing CAPI to be configured (CAPI requires BM developer
+  // privileges that many buyers don't have).
+  //
+  // Idempotent: stores the order ref in sessionStorage so a customer
+  // refreshing the thank-you page doesn't double-count.
+  async function fireThankYouPurchaseIfPresent() {
+    if (typeof window === 'undefined') return;
+    var params = new URLSearchParams(window.location.search);
+    var ref      = params.get('ref');
+    var rawValue = params.get('value');
+    var currency = params.get('currency') || 'NGN';
+    var eventId  = params.get('event_id') || undefined;
+
+    if (!ref || !rawValue) return;
+    var value = Number(rawValue);
+    if (!isFinite(value) || value <= 0) return;
+
+    // Dedup per (ref, this tab session). Refreshing thank-you = no re-fire.
+    var firedKey = 'erp_purchase_fired_' + ref;
+    try { if (sessionStorage.getItem(firedKey)) return; } catch (e) {}
+
+    await trackEvent('Purchase', {
+      value:     value,
+      currency:  currency,
+      event_id:  eventId,
+      order_id:  ref,
+      content_type: 'product',
+    });
+
+    try { sessionStorage.setItem(firedKey, '1'); } catch (e) {}
+  }
+
   // Auto-capture on every page load so attribution sticks across navigation.
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', async function () {
       captureAttribution();
-      fetchAndInjectPixels();
+      await fetchAndInjectPixels();
+      fireThankYouPurchaseIfPresent();
     });
   } else {
-    captureAttribution();
-    fetchAndInjectPixels();
+    (async function () {
+      captureAttribution();
+      await fetchAndInjectPixels();
+      fireThankYouPurchaseIfPresent();
+    })();
   }
 
   window.erpBridge = {
