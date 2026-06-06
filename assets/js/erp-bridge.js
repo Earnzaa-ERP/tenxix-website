@@ -492,16 +492,86 @@
     try { sessionStorage.setItem(firedKey, '1'); } catch (e) {}
   }
 
+  // ─── ERP form iframe attribution sync ──────────────────────────────
+  // Buyers paste ONE generic iframe per landing page. The campaign that
+  // owns an order is decided purely by the parent page URL's ?cmp= — the
+  // iframe's src is rewritten on load (and on lazy-inserts) so whatever
+  // cmp/cr/pg the page is carrying becomes the source of truth, beating
+  // any baked-in values from legacy embed snippets.
+  //
+  // Matches both production (erp.earnzaagroup.com/form/...) and any
+  // staging mirrors via a substring on /form/. Old iframes that had a
+  // cmp baked in still resolve correctly because URL.searchParams.set
+  // REPLACES, not appends — no duplicate-param ambiguity.
+  function syncErpFormIframes() {
+    if (typeof document === 'undefined') return;
+    var attr = readAttribution();
+    if (!attr || !attr.cmp) return;  // organic visit — leave iframes alone
+    var iframes = document.querySelectorAll('iframe[src*="/form/"]');
+    for (var i = 0; i < iframes.length; i++) {
+      var iframe = iframes[i];
+      var src = iframe.src || '';
+      // Only touch ERP form iframes — never a third-party
+      if (src.indexOf('earnzaa') === -1 && src.indexOf('erp.') === -1) continue;
+      try {
+        var url = new URL(src);
+        var changed = false;
+        if (url.searchParams.get('cmp') !== attr.cmp) {
+          url.searchParams.set('cmp', attr.cmp);
+          changed = true;
+        }
+        if (attr.cr && url.searchParams.get('cr') !== attr.cr) {
+          url.searchParams.set('cr', attr.cr);
+          changed = true;
+        }
+        if (attr.pg && url.searchParams.get('pg') !== attr.pg) {
+          url.searchParams.set('pg', attr.pg);
+          changed = true;
+        }
+        if (changed) iframe.src = url.toString();
+      } catch (e) { /* malformed src, skip */ }
+    }
+  }
+
+  // Watch for iframes inserted after initial load (page builders like
+  // Elementor / Funnelish lazy-render form blocks). On any DOM addition,
+  // re-run the sync. Cheap: we filter to childList mutations + attribute
+  // changes on iframe.src specifically.
+  function observeIframeInserts() {
+    if (typeof MutationObserver === 'undefined') return;
+    var observer = new MutationObserver(function (mutations) {
+      for (var i = 0; i < mutations.length; i++) {
+        var m = mutations[i];
+        if (m.type === 'childList' && m.addedNodes.length > 0) {
+          syncErpFormIframes();
+          return;
+        }
+        if (m.type === 'attributes' && m.attributeName === 'src') {
+          syncErpFormIframes();
+          return;
+        }
+      }
+    });
+    observer.observe(document.documentElement, {
+      childList: true, subtree: true,
+      attributes: true, attributeFilter: ['src'],
+    });
+  }
+
   // Auto-capture on every page load so attribution sticks across navigation.
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', async function () {
       captureAttribution();
+      syncErpFormIframes();
+      observeIframeInserts();
       await fetchAndInjectPixels();
       fireThankYouPurchaseIfPresent();
     });
   } else {
     (async function () {
       captureAttribution();
+      syncErpFormIframes();
+      observeIframeInserts();
       await fetchAndInjectPixels();
       fireThankYouPurchaseIfPresent();
     })();
