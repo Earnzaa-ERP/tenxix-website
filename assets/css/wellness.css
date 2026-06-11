@@ -8,7 +8,7 @@
 :root{
   --bone:#F6F1EA;
   --cream:#EDE5DA;
-  --terracotta:#7B2D8B;
+  --terracotta:#7a137c;
   --terracotta-deep:#4D1A5C;
   --clay:#A8588A;
   --forest:#3D2F4F;
@@ -62,7 +62,7 @@
   position:absolute;inset:0;
   background:
     radial-gradient(ellipse 60% 50% at 80% 20%, rgba(180,83,58,0.12), transparent 60%),
-    radial-gradient(ellipse 50% 40% at 10% 90%, rgba(123,45,139,0.10), transparent 60%);
+    radial-gradient(ellipse 50% 40% at 10% 90%, rgba(122, 19, 124,0.10), transparent 60%);
   z-index:0;
 }
 .tw-hero-grain{
@@ -352,7 +352,7 @@
 .tw-angle-postpartum .tw-angle-visual{background:linear-gradient(140deg,#9D7787 0%,#5C3D4F 100%)}
 .tw-angle-postpartum .tw-marker .tw-n,.tw-angle-postpartum .tw-marker .tw-tag,
 .tw-angle-postpartum .tw-outcome-list li::before,
-.tw-angle-postpartum .tw-testimonial-card{border-left-color:#7B2D8B}
+.tw-angle-postpartum .tw-testimonial-card{border-left-color:#7a137c}
 .tw-angle-postpartum .tw-angle-text h2 em{color:#5C3D4F}
 
 /* Angle 4 — Bladder leaks (deep ink) */
