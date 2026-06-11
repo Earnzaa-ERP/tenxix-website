@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="ppBg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#9D7787"/>
+            <stop offset="1" stop-color="#5C3D4F"/>
+          </linearGradient>
+          <linearGradient id="ppDev" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#E5D5BE"/>
+            <stop offset="1" stop-color="#B89A75"/>
+          </linearGradient>
+        </defs>
+        <rect width="400" height="460" fill="url(#ppBg)"/>
+        <!-- abstract maternal arc lines -->
+        <g opacity="0.2" stroke="#F5EFE6" fill="none" stroke-width="1.2">
+          <path d="M -20 380 Q 200 300 420 380"/>
+          <path d="M -20 360 Q 200 280 420 360"/>
+          <path d="M -20 340 Q 200 260 420 340"/>
+        </g>
+        <!-- mother + baby silhouette -->
+        <g transform="translate(200,220)" opacity="0.92">
+          <!-- mother head -->
+          <ellipse cx="-15" cy="-110" rx="28" ry="32" fill="#3D2530"/>
+          <!-- mother torso cradling -->
+          <path d="M -55 -75 Q -65 -30 -55 20 Q -45 60 -50 100 L -25 110 Q -10 80 -10 40 L 30 40 Q 30 80 50 110 L 70 100 Q 65 60 75 20 Q 80 -30 70 -65 Q 50 -75 0 -75 Q -40 -75 -55 -75 Z" fill="#3D2530"/>
+          <!-- baby being cradled -->
+          <ellipse cx="25" cy="-30" rx="14" ry="18" fill="#E5D5BE" opacity="0.9"/>
+          <ellipse cx="25" cy="-45" rx="9" ry="10" fill="#E5D5BE" opacity="0.9"/>
+        </g>
+        <!-- device at base -->
+        <g transform="translate(200,380)">
+          <path d="M -50 0 Q -38 -18 -5 -10 Q 0 -7 5 -10 Q 38 -18 50 0 Q 42 14 22 12 Q 0 11 -22 12 Q -42 14 -50 0 Z" fill="url(#ppDev)"/>
+          <ellipse cx="-38" cy="-3" rx="13" ry="9" fill="#F5EFE6" opacity="0.95"/>
+          <ellipse cx="38" cy="-3" rx="13" ry="9" fill="#F5EFE6" opacity="0.95"/>
+          <circle cx="0" cy="-2" r="3" fill="#5C3D4F"/>
+        </g>
+        <text x="200" y="430" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="14" fill="#F5EFE6" opacity="0.75">healing happens quietly</text>
+      </svg>

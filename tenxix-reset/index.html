@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tenxix Reset — Pelvic Floor Trainer | Tone, Tighten, Recover</title>
+<meta name="description" content="Tenxix Reset. One small device. Fifteen minutes a day. Tone your arms, tighten where it counts, rebuild after baby, stop the leaks. The pelvic floor trainer Nigerian women trust.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ============ PROMO BAR ============ -->
+<div class="promo-bar">
+  <strong>FREE DELIVERY</strong> Nationwide <span class="promo-divider">·</span> Pay on Delivery <span class="promo-divider">·</span> Limited Stock
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Tenxix <span class="accent">wellness</span></a>
+    <ul class="nav-links">
+      <li><a href="#benefits">What it does</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#compare">Why us</a></li>
+      <li><a href="#watch">Watch</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#order" class="nav-cta">Order Now →</a>
+    <button class="nav-mobile-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+
+      <!-- Gallery (left) -->
+      <div class="hero-gallery">
+        <div class="hero-gallery-badge">★ Bestseller</div>
+        <button class="hero-sound-toggle" id="heroSoundToggle" aria-label="Toggle video sound" type="button">
+          <span class="sound-icon" aria-hidden="true">🔊</span>
+          <span class="sound-label">Tap for sound</span>
+        </button>
+        <div class="hero-gallery-main" id="heroMain">
+          <video autoplay loop muted playsinline preload="auto">
+            <source src="images/hdvid.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="hero-gallery-thumbs">
+          <div class="hero-thumb active" data-img="images/hdvid.mp4">
+            <video muted playsinline preload="metadata"><source src="images/hdvid.mp4#t=0.5" type="video/mp4"></video>
+            <span class="hero-thumb-play">▶</span>
+          </div>
+          <div class="hero-thumb" data-img="images/hdimg1.jpg.jpeg"><img src="images/hdimg1.jpg.jpeg" alt=""></div>
+          <div class="hero-thumb" data-img="images/hdimg2.jpg.jpeg"><img src="images/hdimg2.jpg.jpeg" alt=""></div>
+          <div class="hero-thumb" data-img="images/hdimg3.jpg.jpeg"><img src="images/hdimg3.jpg.jpeg" alt=""></div>
+          <div class="hero-thumb" data-img="images/hdimg4.jpg.jpeg"><img src="images/hdimg4.jpg.jpeg" alt=""></div>
+          <div class="hero-thumb" data-img="images/hdimg5.jpg"><img src="images/hdimg5.jpg" alt=""></div>
+        </div>
+      </div>
+
+      <!-- Buy box (right) -->
+      <div class="hero-buy">
+        <div class="hero-product-name">Tenxix Reset <span>· Pelvic Floor Trainer</span></div>
+        <div class="hero-rating">
+          <span class="hero-rating-stars">★★★★★</span>
+          <span><strong>4.9 / 5</strong> · 5,000+ Nigerian women</span>
+        </div>
+        <h1 class="hero-headline">
+          Tone your arms.<br>
+          Strengthen your pelvic floor.<br>
+          <span class="accent">Stop your bladder leaks.</span><br>
+          Recover after baby.
+        </h1>
+        <p class="hero-tagline">
+          One small device. Fifteen minutes a day. Four things women endure quietly — fixed without the gym, without surgery, without a single embarrassing conversation.
+        </p>
+
+        <!-- Pricing -->
+        <div class="price-card featured">
+          <div class="price-badge">Most Popular</div>
+          <div class="price-tiers">
+            <div class="price-tier" data-price="45000">
+              <div class="qty">1</div>
+              <div class="label">Unit Of Tenxix Reset</div>
+            </div>
+            <div class="price-tier active" data-price="80000">
+              <div class="price-tier-badge">Save 11%</div>
+              <div class="qty">2</div>
+              <div class="label">Units Of Tenxix Reset</div>
+              <div class="save">Save ₦10,000</div>
+            </div>
+            <div class="price-tier" data-price="110000">
+              <div class="price-tier-badge">Save 19%</div>
+              <div class="qty">3</div>
+              <div class="label">Units Of Tenxix Reset</div>
+              <div class="save">Save ₦25,000</div>
+            </div>
+          </div>
+          <div class="price-display">
+            <span class="price-now" id="priceNow">₦80,000</span>
+            <span class="price-was" id="priceWas">₦90,000</span>
+            <span class="price-save" id="priceSave">Save 11%</span>
+          </div>
+          <div class="price-perday" id="pricePerday">Just <strong>₦219/day</strong> for the next year of confidence.</div>
+          <a href="#order" class="btn btn-pink btn-lg btn-block">Order Yours →</a>
+          <div class="hero-trust-strip">
+            <span class="trust">Free Delivery Nationwide</span>
+            <span class="trust">Pay on Delivery</span>
+            <span class="trust">30-day money back</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FIVE BENEFITS ============ -->
+<section class="section section-loose" id="benefits">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Four things, one device</span>
+      <h2>Built for the woman who refuses to <em>just cope.</em></h2>
+      <p>The four real concerns most Nigerian women carry quietly — and how Tenxix Reset fixes every one of them.</p>
+    </div>
+
+    <!-- Block 01 — Arms (image left) -->
+    <div class="benefit-block fade-up">
+      <div class="benefit-block-image">
+        <div class="num-badge">01</div>
+        <video autoplay loop muted playsinline preload="auto">
+          <source src="images/arms.gif.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="benefit-block-text">
+        <span class="kicker">For the arms</span>
+        <h3>Tone your arms <span class="accent">without the gym.</span></h3>
+        <p>The wave under your upper arm? That's a sleeping tricep — quiet from years of carrying babies, cooking, running a home.</p>
+        <p>Fifteen minutes a day wakes it up. Sleeveless again in three weeks. No spectacle, no membership, no judgment.</p>
+      </div>
+    </div>
+
+    <!-- Block 02 — Tightness (image right) -->
+    <div class="benefit-block flip fade-up">
+      <div class="benefit-block-image">
+        <div class="num-badge">02</div>
+        <video autoplay loop muted playsinline preload="auto">
+          <source src="images/vigina.gif.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="benefit-block-text">
+        <span class="kicker">For the tightness</span>
+        <h3>Tighten <span class="accent">where it matters most.</span></h3>
+        <p>After babies, after years, the muscles that make you tight loosen. But muscles trained get strong again — that's how the body works.</p>
+        <p>Stronger grip, more sensation — for both of you. The therapy physios prescribe, done at home in private. Four to six weeks to feel a real difference.</p>
+      </div>
+    </div>
+
+    <!-- Block 03 — Postpartum (image left) -->
+    <div class="benefit-block fade-up">
+      <div class="benefit-block-image">
+        <div class="num-badge">03</div>
+        <video autoplay loop muted playsinline preload="auto">
+          <source src="images/postpartum.gif.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="benefit-block-text">
+        <span class="kicker">After baby</span>
+        <h3>Rebuild <span class="accent">after baby.</span></h3>
+        <p>Pregnancy stretches the pelvic floor up to three times its length. That's why you feel heavy, loose, disconnected — even months later.</p>
+        <p>This isn't your new normal. Tenxix rebuilds it the same way physical therapists do — at home, in your own time, while baby sleeps.</p>
+      </div>
+    </div>
+
+    <!-- Block 04 — Bladder (image right) -->
+    <div class="benefit-block flip fade-up">
+      <div class="benefit-block-image">
+        <div class="num-badge">04</div>
+        <video autoplay loop muted playsinline preload="auto">
+          <source src="images/bladder.gif.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="benefit-block-text">
+        <span class="kicker">No more leaks</span>
+        <h3>Stop the <span class="accent">bladder leaks.</span></h3>
+        <p>You don't talk about it. You just plan around it — the black trousers, the pad in your bag, the pause before a real laugh.</p>
+        <p>Stress urinary incontinence is reversible. Train the muscle, end the panic. Sneeze, laugh, dance — without scanning the room for toilets.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats">
+  <div class="stats-inner">
+    <div class="stats-head">
+      <span class="eyebrow">A pattern worth naming</span>
+      <h2>Most Nigerian women carry these in <em>silence.</em> Not anymore.</h2>
+      <p>These aren't rare problems. They're normal problems made invisible by a culture that tells women to endure.</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat fade-up">
+        <div class="figure">1 in 2</div>
+        <div class="desc">Women aged 45–59 leak urine when they sneeze, cough or laugh</div>
+      </div>
+      <div class="stat fade-up">
+        <div class="figure">61%</div>
+        <div class="desc">Of postpartum Nigerian women don't know pelvic floor training exists</div>
+      </div>
+      <div class="stat fade-up">
+        <div class="figure">4–6 wks</div>
+        <div class="desc">To feel a measurable difference with consistent daily training</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VIDEO TESTIMONIALS ============ -->
+<!--
+  Each .video-card holds a 9:16 portrait MP4.
+  To wire up a real video:
+    1. Drop the .mp4 into images/ (e.g. images/test-folake.mp4)
+    2. Drop a poster frame (.jpg) at images/test-folake-poster.jpg
+    3. Replace the empty src + poster attrs below.
+-->
+<section class="video-tests" id="watch">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">See it on video</span>
+      <h2>Real women, <em>in their own words.</em></h2>
+      <p>No actors. No scripts. Filmed by real Tenxix customers on their phones — tap any video to hear them tell it.</p>
+    </div>
+    <div class="video-tests-grid">
+
+      <div class="video-card" data-video>
+        <video preload="metadata" playsinline poster="images/Testimg.jpg.jpeg">
+          <source src="images/testvid1.mp4" type="video/mp4">
+        </video>
+        <div class="video-stars">★★★★★</div>
+        <button class="video-play" aria-label="Play Folake's video">▶</button>
+        <div class="video-caption">
+          <div class="quote">"My arms in church look different now"</div>
+          <div class="who"><strong>Folake A.</strong> · Lagos · 47</div>
+        </div>
+      </div>
+
+      <div class="video-card" data-video>
+        <video preload="metadata" playsinline poster="images/Testimg1.jpg.jpeg">
+          <source src="images/testvid2.mp4" type="video/mp4">
+        </video>
+        <div class="video-stars">★★★★★</div>
+        <button class="video-play" aria-label="Play Adaeze's video">▶</button>
+        <div class="video-caption">
+          <div class="quote">"My husband noticed before I told him"</div>
+          <div class="who"><strong>Adaeze N.</strong> · Enugu · 38</div>
+        </div>
+      </div>
+
+      <div class="video-card" data-video>
+        <video preload="metadata" playsinline>
+          <source src="images/testvid3.mp4#t=0.5" type="video/mp4">
+        </video>
+        <div class="video-stars">★★★★★</div>
+        <button class="video-play" aria-label="Play Bisi's video">▶</button>
+        <div class="video-caption">
+          <div class="quote">"I sneezed in a meeting and stayed dry"</div>
+          <div class="who"><strong>Bisi O.</strong> · Abuja · 53</div>
+        </div>
+      </div>
+
+      <div class="video-card" data-video>
+        <video preload="metadata" playsinline>
+          <source src="images/testvid4.mp4#t=0.5" type="video/mp4">
+        </video>
+        <div class="video-stars">★★★★★</div>
+        <button class="video-play" aria-label="Play Chiamaka's video">▶</button>
+        <div class="video-caption">
+          <div class="quote">"Six weeks. I feel pulled together again."</div>
+          <div class="who"><strong>Chiamaka I.</strong> · Port Harcourt · 32</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="video-tests-more">
+      <a href="#reviews">Watch all reviews</a>
+      <div class="count">5,000+ Nigerian women · 4.9 ★ average</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="how" id="how">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">How it works</span>
+      <h2>Three steps. <em>Fifteen minutes.</em></h2>
+      <p>Sit on your bed. Watch your shows. Do this while you do other things. That's it.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-card fade-up">
+        <div class="num">01</div>
+        <h3>Place</h3>
+        <p>Sit comfortably. Place the device between your thighs (pelvic floor) or palms (arms). The padded ends grip without pinching.</p>
+      </div>
+      <div class="how-card fade-up">
+        <div class="num">02</div>
+        <h3>Squeeze</h3>
+        <p>Press inward for three seconds. Release for three. The spring resistance does the work — your muscles fire automatically. 10 reps, 3 sets.</p>
+      </div>
+      <div class="how-card fade-up">
+        <div class="num">03</div>
+        <h3>Repeat</h3>
+        <p>Daily, 15 minutes, while you watch TV. Within 4–6 weeks you feel a difference. Within 8, others do too.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ US VS THEM ============ -->
+<section class="compare" id="compare">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Tenxix vs the alternatives</span>
+      <h2>Why women who tried <em>everything else</em> stayed.</h2>
+      <p>Most women have tried Kegels. Or paid for surgery. Or just used pads forever. Here's why Tenxix beats every option.</p>
+    </div>
+    <div class="compare-table">
+
+      <div class="compare-row head">
+        <div class="compare-cell">Feature</div>
+        <div class="compare-cell us">Tenxix Reset</div>
+        <div class="compare-cell">Free Kegels</div>
+        <div class="compare-cell">Surgery / Pads</div>
+      </div>
+
+      <div class="compare-row">
+        <div class="compare-cell feature">Feels the muscle working</div>
+        <div class="compare-cell us center col-us"><span class="check">✓</span></div>
+        <div class="compare-cell center col-kegels"><span class="x">×</span></div>
+        <div class="compare-cell center col-surgery"><span class="x">×</span></div>
+      </div>
+
+      <div class="compare-row">
+        <div class="compare-cell feature">Works in 4–6 weeks</div>
+        <div class="compare-cell us center col-us"><span class="check">✓</span></div>
+        <div class="compare-cell center col-kegels">Months</div>
+        <div class="compare-cell center col-surgery">Days (Pads: never)</div>
+      </div>
+
+      <div class="compare-row">
+        <div class="compare-cell feature">Done at home, in private</div>
+        <div class="compare-cell us center col-us"><span class="check">✓</span></div>
+        <div class="compare-cell center col-kegels"><span class="check">✓</span></div>
+        <div class="compare-cell center col-surgery"><span class="x">×</span></div>
+      </div>
+
+      <div class="compare-row">
+        <div class="compare-cell feature">Tones arms &amp; thighs too</div>
+        <div class="compare-cell us center col-us"><span class="check">✓</span></div>
+        <div class="compare-cell center col-kegels"><span class="x">×</span></div>
+        <div class="compare-cell center col-surgery"><span class="x">×</span></div>
+      </div>
+
+      <div class="compare-row">
+        <div class="compare-cell feature">One-time cost</div>
+        <div class="compare-cell us center col-us"><strong>From ₦45,000</strong></div>
+        <div class="compare-cell center col-kegels">Free</div>
+        <div class="compare-cell center col-surgery">₦400k+ / Pads forever</div>
+      </div>
+
+      <div class="compare-row">
+        <div class="compare-cell feature">Safe at any age</div>
+        <div class="compare-cell us center col-us"><span class="check">✓</span></div>
+        <div class="compare-cell center col-kegels"><span class="check">✓</span></div>
+        <div class="compare-cell center col-surgery">Risk depends</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="tests" id="reviews">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Real women, real results</span>
+      <h2>Stories from women who decided to <em>stop enduring.</em></h2>
+    </div>
+    <div class="tests-grid">
+
+      <!--
+        Each .avatar shows the letter as fallback until you add a photo.
+        To wire a customer photo: replace src="" with src="images/test-folake.jpg" (etc.)
+        Recommended: square photos, 200×200 or larger, will be cropped to circle.
+      -->
+
+      <div class="test-card fade-up">
+        <div class="stars">★★★★★</div>
+        <div class="head-line">"My arms in church look different now"</div>
+        <div class="body-text">I'm 47 and stopped raising my hands during worship because of the wave. Three weeks in, my daughter said "Mummy, your arms look toned." I almost cried.</div>
+        <div class="meta">
+          <div class="avatar"><img src="" alt="Yetunde O.">Y</div>
+          <div class="meta-info">
+            <strong>Yetunde O.</strong>
+            <span>Ibadan · 12 weeks in</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-card fade-up">
+        <div class="stars">★★★★★</div>
+        <div class="head-line">"My husband noticed before I said anything"</div>
+        <div class="body-text">Bought it after a friend whispered about it at a wedding. Eight weeks faithfully. My husband asked what was different — I told him nothing. Let him keep wondering.</div>
+        <div class="meta">
+          <div class="avatar"><img src="" alt="Chinwe E.">C</div>
+          <div class="meta-info">
+            <strong>Chinwe E.</strong>
+            <span>Owerri · 9 weeks in</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-card fade-up">
+        <div class="stars">★★★★★</div>
+        <div class="head-line">"I sneezed in a meeting and nothing happened"</div>
+        <div class="body-text">I'm 53. I had stopped laughing properly years ago. Week seven, I sneezed loud in a meeting and was completely dry. I cried in the bathroom — out of joy this time.</div>
+        <div class="meta">
+          <div class="avatar"><img src="images/testimg3.jpg" alt="Zainab M.">Z</div>
+          <div class="meta-info">
+            <strong>Zainab M.</strong>
+            <span>Kano · 8 weeks in</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-card fade-up">
+        <div class="stars">★★★★★</div>
+        <div class="head-line">"After 3 kids my body finally feels mine"</div>
+        <div class="body-text">Three c-sections left me feeling broken. The heaviness, the looseness. Six weeks with Tenxix Reset and I feel pulled together again. I wish I'd known about this after my first baby.</div>
+        <div class="meta">
+          <div class="avatar"><img src="images/textimg4.jpg" alt="Amaka U.">A</div>
+          <div class="meta-info">
+            <strong>Amaka U.</strong>
+            <span>Onitsha · 6 weeks in</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-card fade-up">
+        <div class="stars">★★★★★</div>
+        <div class="head-line">"Better than the kegels my doctor told me to do"</div>
+        <div class="body-text">My gynaecologist said do kegels. I never knew if I was doing them right. The Reset makes you feel the squeeze — you know it's working. At 56 my pelvic floor strength is back.</div>
+        <div class="meta">
+          <div class="avatar"><img src="images/testimg5.jpg" alt="Grace O.">G</div>
+          <div class="meta-info">
+            <strong>Grace O.</strong>
+            <span>Abuja · 14 weeks in</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-card fade-up">
+        <div class="stars">★★★★★</div>
+        <div class="head-line">"I use it in traffic — that's how easy it is"</div>
+        <div class="body-text">Lagos traffic is a gift. I keep mine in the car. Twenty minutes of squeezes between Lekki and VI and I've done my workout. My inner thighs are tighter than they've been since university.</div>
+        <div class="meta">
+          <div class="avatar"><img src="images/testimg6.jpg" alt="Ngozi A.">N</div>
+          <div class="meta-info">
+            <strong>Ngozi A.</strong>
+            <span>Lagos · 10 weeks in</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ GIF STRIP (See It In Action) ============ -->
+<!--
+  Drop GIFs into images/ then replace each <img src="">.
+  Cards with empty src fall back to the elegant placeholder text.
+-->
+<section class="gifs" id="see-it" style="display:none">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">See it in action</span>
+      <h2>The motion that makes the <em>difference.</em></h2>
+      <p>Three angles, three muscles, fifteen minutes. Here's how the Reset works in real use.</p>
+    </div>
+    <div class="gifs-grid">
+
+      <div class="gif-card fade-up">
+        <div class="gif-frame">
+          <img src="" alt="Squeeze between thighs — pelvic floor training">
+          <div class="gif-placeholder">GIF 1 — between thighs</div>
+        </div>
+        <div class="gif-card-caption">
+          <strong>Pelvic Floor</strong>
+          <span>Between the thighs · 20 min</span>
+        </div>
+      </div>
+
+      <div class="gif-card fade-up">
+        <div class="gif-frame">
+          <img src="" alt="Press between palms — arms toning">
+          <div class="gif-placeholder">GIF 2 — between palms</div>
+        </div>
+        <div class="gif-card-caption">
+          <strong>Arms &amp; Chest</strong>
+          <span>Between the palms · 15 min</span>
+        </div>
+      </div>
+
+      <div class="gif-card fade-up">
+        <div class="gif-frame">
+          <img src="" alt="Seated discreet daily use">
+          <div class="gif-placeholder">GIF 3 — seated, discreet</div>
+        </div>
+        <div class="gif-card-caption">
+          <strong>Anywhere, anytime</strong>
+          <span>Seated · while you watch TV</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Honest answers</span>
+      <h2>Questions women <em>actually ask us.</em></h2>
+    </div>
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary>I've had three children. Is it too late for me?</summary>
+        <div class="answer">No. The pelvic floor is a muscle, and muscles respond to training at any age. Women who started in their fifties and sixties report the same strength recovery as younger women — it just takes a few more weeks of consistent use. Six children, sixty years old — your body still wants to come back.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Does it really tighten, or is that just marketing?</summary>
+        <div class="answer">The honest answer: it strengthens the pelvic floor muscle, which is what creates the "tightness" women describe. When that muscle is stronger, sensation increases for you and grip increases for him. Same principle pelvic physiotherapists use — at home, with resistance you can feel. Most women report noticeable difference in 4–6 weeks.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How long until I see a difference in my arms?</summary>
+        <div class="answer">Two to three weeks for firmness you can feel. Six weeks for a difference others notice. Twelve weeks for sleeveless confidence. The trick is consistency — five minutes daily beats forty minutes once a week, every time.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>I leak when I sneeze. Will this really help?</summary>
+        <div class="answer">Yes, very likely. Stress urinary incontinence — the kind that happens when you sneeze, laugh or lift — is almost always caused by a weak pelvic floor. Strengthening that muscle with consistent resistance training is the first-line treatment recommended by doctors worldwide. Most women see significant improvement in 6–8 weeks.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How soon after giving birth can I use it?</summary>
+        <div class="answer">Wait until your six-week postnatal check-up and get clearance from your doctor — especially after a c-section or vaginal tearing. After that, start gently: lowest resistance, fewer reps, build up weekly. Your body has just done the hardest physical work of its life. Be patient with it.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How is this different from doing free Kegel exercises?</summary>
+        <div class="answer">Most women do Kegels wrong. Without resistance you can't feel whether the right muscle is firing. With the Reset, the squeeze gives you immediate feedback — you know the muscle is engaged, and you can progressively load it. It's the difference between air-squats forever and using actual weight. Same exercise. Real results.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is it discreet? My husband / children / staff will see it.</summary>
+        <div class="answer">Yes. It looks like a small piece of fitness equipment for inner-thigh toning — because that's one of the things it does. Most women keep it next to the bed or on a closet shelf. No one will know what you're actually using it for unless you tell them.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How do I pay and how long does delivery take?</summary>
+        <div class="answer">Pay on Delivery in Lagos, Abuja, Port Harcourt and most major cities. We accept cash, card and bank transfer. Delivery within 24 hours in Lagos and Abuja, 2–5 working days elsewhere in Nigeria. Free shipping on all orders.</div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final">
+  <div class="final-inner">
+    <span class="eyebrow">Your turn</span>
+    <h2>Stop enduring.<br><em>Start training.</em></h2>
+    <p>Fifteen minutes a day. A body that does what you ask of it. Confidence you used to have, coming back. The smallest investment with the biggest return you'll make this year.</p>
+    <a href="#order" class="btn btn-lg">Order Now — From ₦45,000 ↓</a>
+    <div class="final-guarantee">★ Free Delivery Nationwide · Pay on Delivery · 30-Day Money Back</div>
+  </div>
+</section>
+
+<!-- ============ ORDER FORM ============ -->
+<section class="order" id="order">
+  <div class="container">
+    <div class="order-head">
+      <span class="eyebrow">Place your order</span>
+      <h2>Fill the form. <em>We'll do the rest.</em></h2>
+      <p>Pay on Delivery in Lagos, Abuja &amp; Port Harcourt. Cash, card and transfer accepted nationwide. Delivery within 24 hours in Lagos &amp; Abuja.</p>
+    </div>
+    <div class="order-frame">
+      <iframe id="earnzaa-form" src="https://erp.earnzaagroup.com/form/women-wellness-trainer?cmp=MET-XLOETR&cr=TEN-UGC03" width="100%" height="800" frameborder="0" style="border:none;max-width:600px;margin:0 auto;display:block;"></iframe>
+      <script>
+      (function(){
+        var f=document.getElementById("earnzaa-form"),p=window.location.search;
+        if(p&&f){var s=f.src;f.src=s+(s.indexOf("?")>-1?"&":"?")+p.substring(1);}
+        window.addEventListener("message",function(e){if(e.data&&e.data.type==="earnzaa-form-resize"){f.style.height=e.data.height+"px";}});
+      })();
+      </script>
+    </div>
+    <div class="order-trust">
+      <span class="item">Free Delivery Nationwide</span>
+      <span class="item">Pay on Delivery</span>
+      <span class="item">30-Day Money Back</span>
+      <span class="item">Discreet Packaging</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">Tenxix <span class="accent">wellness</span></div>
+        <p class="footer-tagline">Discreet, effective body wellness for the woman who's ready to take care of herself first. Part of the Tenxix family — premium skincare and wellness, made for African women.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#order">Tenxix Reset</a></li>
+          <li><a href="#how">How It Works</a></li>
+          <li><a href="#compare">vs. Alternatives</a></li>
+          <li><a href="#order">Pay on Delivery</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">WhatsApp Us</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#">Track Order</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Tenxix</h4>
+        <ul>
+          <li><a href="https://tenxix.com">Tenxix Skincare</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Tenxix Wellness. For women. By women.</div>
+      <div>Made with care · Lagos &amp; Mumbai</div>
+    </div>
+  </div>
+</footer>
+
+<!-- Sticky mobile CTA -->
+<div class="sticky-cta">
+  <a href="#order" class="btn btn-pink">Order Yours — From ₦45,000 →</a>
+</div>
+
+<!-- ============ INTERACTIONS ============ -->
+<script>
+  // Hide sticky CTA when the order form is on screen
+  (function(){
+    var sticky = document.querySelector('.sticky-cta');
+    var order = document.getElementById('order');
+    if (!sticky || !order || !('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        sticky.classList.toggle('hidden', e.isIntersecting);
+      });
+    }, { threshold: 0.05 });
+    io.observe(order);
+  })();
+
+  // Mobile nav drawer
+  (function(){
+    var nav = document.querySelector('.nav');
+    var toggle = document.querySelector('.nav-mobile-toggle');
+    if (!nav || !toggle) return;
+    toggle.addEventListener('click', function(){
+      nav.classList.toggle('menu-open');
+    });
+    // Close drawer when an anchor link is tapped
+    nav.querySelectorAll('.nav-links a').forEach(function(a){
+      a.addEventListener('click', function(){ nav.classList.remove('menu-open'); });
+    });
+  })();
+
+  // Pricing tier selector — updates price, was, save%, and per-day spread
+  (function(){
+    var tiers = document.querySelectorAll('.price-tier');
+    var priceNow = document.getElementById('priceNow');
+    var priceWas = document.getElementById('priceWas');
+    var priceSave = document.getElementById('priceSave');
+    var pricePerday = document.getElementById('pricePerday');
+    var unit = 45000;
+    var fmt = function(n){ return '₦' + n.toLocaleString(); };
+    tiers.forEach(function(t){
+      t.addEventListener('click', function(){
+        tiers.forEach(function(x){ x.classList.remove('active'); });
+        t.classList.add('active');
+        var price = parseInt(t.dataset.price, 10);
+        var qty = parseInt(t.querySelector('.qty').textContent, 10);
+        var was = unit * qty;
+        priceNow.textContent = fmt(price);
+        if (was > price) {
+          priceWas.textContent = fmt(was);
+          priceWas.style.display = '';
+          priceSave.textContent = 'Save ' + Math.round((1 - price/was) * 100) + '%';
+          priceSave.style.display = '';
+        } else {
+          priceWas.style.display = 'none';
+          priceSave.style.display = 'none';
+        }
+        if (pricePerday) {
+          var perDay = Math.round(price / 365);
+          pricePerday.innerHTML = 'Just <strong>' + fmt(perDay) + '/day</strong> for the next year of confidence.';
+        }
+      });
+    });
+  })();
+
+  // Hero gallery — thumb swap + sound toggle (preserves user sound preference across swaps)
+  (function(){
+    var thumbs = document.querySelectorAll('.hero-thumb');
+    var main = document.getElementById('heroMain');
+    var toggle = document.getElementById('heroSoundToggle');
+    if (!main) return;
+
+    var userWantsSound = false;
+
+    function updateToggle() {
+      if (!toggle) return;
+      var video = main.querySelector('video');
+      if (!video) { toggle.classList.add('hidden'); return; }
+      toggle.classList.remove('hidden');
+      var muted = video.muted;
+      toggle.querySelector('.sound-icon').textContent = muted ? '🔊' : '🔇';
+      toggle.querySelector('.sound-label').textContent = muted ? 'Tap for sound' : 'Mute';
+    }
+
+    function syncSoundPref() {
+      var video = main.querySelector('video');
+      if (!video) return;
+      if (userWantsSound) {
+        video.muted = false;
+        video.play().catch(function(){});
+      }
+      updateToggle();
+    }
+
+    // Initial state
+    syncSoundPref();
+
+    if (toggle) {
+      toggle.addEventListener('click', function(){
+        var video = main.querySelector('video');
+        if (!video) return;
+        video.muted = !video.muted;
+        userWantsSound = !video.muted;
+        if (!video.muted) video.play().catch(function(){});
+        updateToggle();
+      });
+    }
+
+    thumbs.forEach(function(t){
+      t.addEventListener('click', function(){
+        thumbs.forEach(function(x){ x.classList.remove('active'); });
+        t.classList.add('active');
+        var src = t.dataset.img;
+        if (/\.mp4(\?.*)?$/i.test(src)) {
+          var mutedAttr = userWantsSound ? '' : 'muted ';
+          main.innerHTML = '<video autoplay loop ' + mutedAttr + 'playsinline preload="auto"><source src="' + src + '" type="video/mp4"></video>';
+        } else {
+          main.innerHTML = '<img src="' + src + '" alt="">';
+        }
+        syncSoundPref();
+      });
+    });
+  })();
+
+  // Video testimonials — click to play
+  (function(){
+    var cards = document.querySelectorAll('.video-card[data-video]');
+    cards.forEach(function(card){
+      card.addEventListener('click', function(e){
+        if (card.classList.contains('playing')) return;
+        var video = card.querySelector('video');
+        if (!video || !video.querySelector('source') && !video.src) {
+          // No video wired up yet — do nothing
+          return;
+        }
+        // Pause other playing videos
+        cards.forEach(function(c){
+          if (c !== card && c.classList.contains('playing')) {
+            var v = c.querySelector('video');
+            v && v.pause();
+            c.classList.remove('playing');
+            v.controls = false;
+          }
+        });
+        video.controls = true;
+        video.play();
+        card.classList.add('playing');
+      });
+    });
+  })();
+
+  // Fade-up on scroll
+  (function(){
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('.fade-up').forEach(function(el){ el.classList.add('visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(function(el){ io.observe(el); });
+  })();
+</script>
+
+</body>
+</html>

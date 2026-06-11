@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#E5D5BE"/>
+            <stop offset="1" stop-color="#C9A97E"/>
+          </linearGradient>
+          <linearGradient id="device" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#7B2D8B"/>
+            <stop offset="1" stop-color="#4D1A5C"/>
+          </linearGradient>
+          <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0" stop-color="rgba(255,255,255,0.4)"/>
+            <stop offset="1" stop-color="rgba(255,255,255,0)"/>
+          </radialGradient>
+        </defs>
+        <rect width="400" height="500" fill="url(#bg1)"/>
+        <circle cx="200" cy="200" r="180" fill="url(#glow)"/>
+        <!-- abstract female silhouette -->
+        <g transform="translate(200,250)" opacity="0.85">
+          <ellipse cx="0" cy="-90" rx="28" ry="32" fill="#3D332C"/>
+          <path d="M -40 -50 Q -45 0 -38 60 Q -30 110 -34 160 L -20 170 Q -10 130 -10 80 L 10 80 Q 10 130 20 170 L 34 160 Q 30 110 38 60 Q 45 0 40 -50 Q 30 -65 0 -65 Q -30 -65 -40 -50 Z" fill="#3D332C"/>
+        </g>
+        <!-- The trainer device -->
+        <g transform="translate(200,360)">
+          <path d="M -70 0 Q -55 -25 -10 -10 Q 0 -5 10 -10 Q 55 -25 70 0 Q 60 20 30 18 Q 0 16 -30 18 Q -60 20 -70 0 Z" fill="url(#device)"/>
+          <ellipse cx="-55" cy="-5" rx="20" ry="14" fill="#F5EFE6" opacity="0.95"/>
+          <ellipse cx="55" cy="-5" rx="20" ry="14" fill="#F5EFE6" opacity="0.95"/>
+          <circle cx="0" cy="-2" r="4" fill="#C8954A"/>
+        </g>
+        <!-- decorative text -->
+        <text x="200" y="430" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="16" fill="#3D332C" opacity="0.5">— quiet strength, daily —</text>
+      </svg>

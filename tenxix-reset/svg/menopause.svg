@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="mpBg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#D4A85E"/>
+            <stop offset="1" stop-color="#7A5325"/>
+          </linearGradient>
+          <linearGradient id="mpDev" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#4D1A5C"/>
+            <stop offset="1" stop-color="#4D1F12"/>
+          </linearGradient>
+        </defs>
+        <rect width="400" height="460" fill="url(#mpBg)"/>
+        <!-- elegant arches (representing wisdom, second-half) -->
+        <g fill="none" stroke="#F5EFE6" opacity="0.22" stroke-width="1.5">
+          <path d="M 50 380 Q 200 100 350 380"/>
+          <path d="M 80 380 Q 200 140 320 380"/>
+          <path d="M 110 380 Q 200 180 290 380"/>
+        </g>
+        <!-- elegant seated woman silhouette -->
+        <g transform="translate(200,240)" opacity="0.88">
+          <!-- head with elegant updo suggestion -->
+          <ellipse cx="0" cy="-90" rx="26" ry="30" fill="#3D1408"/>
+          <ellipse cx="0" cy="-115" rx="18" ry="10" fill="#3D1408"/>
+          <!-- elegant seated torso -->
+          <path d="M -45 -55 Q -52 -10 -45 35 Q -38 65 -42 95 L -8 110 L 8 110 L 42 95 Q 38 65 45 35 Q 52 -10 45 -55 Q 30 -65 0 -65 Q -30 -65 -45 -55 Z" fill="#3D1408"/>
+          <!-- crossed legs sitting -->
+          <ellipse cx="-25" cy="135" rx="45" ry="22" fill="#3D1408"/>
+          <ellipse cx="25" cy="135" rx="45" ry="22" fill="#3D1408"/>
+        </g>
+        <!-- device between knees -->
+        <g transform="translate(200,390)">
+          <path d="M -50 0 Q -38 -20 -5 -12 Q 0 -8 5 -12 Q 38 -20 50 0 Q 42 14 22 13 Q 0 12 -22 13 Q -42 14 -50 0 Z" fill="url(#mpDev)"/>
+          <ellipse cx="-38" cy="-3" rx="13" ry="9" fill="#F5EFE6" opacity="0.95"/>
+          <ellipse cx="38" cy="-3" rx="13" ry="9" fill="#F5EFE6" opacity="0.95"/>
+          <circle cx="0" cy="-2" r="3" fill="#C8954A"/>
+        </g>
+        <text x="200" y="440" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="15" fill="#F5EFE6" opacity="0.85">finally · your turn</text>
+      </svg>

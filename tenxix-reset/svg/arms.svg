@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="armBg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#D4B896"/>
+            <stop offset="1" stop-color="#9B7A55"/>
+          </linearGradient>
+          <linearGradient id="armDev" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#7B2D8B"/>
+            <stop offset="1" stop-color="#3D1448"/>
+          </linearGradient>
+        </defs>
+        <rect width="400" height="460" fill="url(#armBg)"/>
+        <!-- decorative concentric arcs -->
+        <g opacity="0.18" stroke="#F5EFE6" fill="none" stroke-width="1.5">
+          <circle cx="200" cy="230" r="180"/>
+          <circle cx="200" cy="230" r="140"/>
+          <circle cx="200" cy="230" r="100"/>
+        </g>
+        <!-- arms pressing the device illustration -->
+        <g transform="translate(200,230)">
+          <!-- left arm -->
+          <path d="M -160 -80 Q -130 -60 -90 -30 Q -70 -10 -50 -5" stroke="#3D332C" stroke-width="22" fill="none" stroke-linecap="round" opacity="0.85"/>
+          <!-- right arm -->
+          <path d="M 160 -80 Q 130 -60 90 -30 Q 70 -10 50 -5" stroke="#3D332C" stroke-width="22" fill="none" stroke-linecap="round" opacity="0.85"/>
+          <!-- The device being squeezed -->
+          <g>
+            <path d="M -60 -5 Q -45 -28 0 -18 Q 45 -28 60 -5 Q 50 15 25 13 Q 0 12 -25 13 Q -50 15 -60 -5 Z" fill="url(#armDev)"/>
+            <ellipse cx="-45" cy="-8" rx="14" ry="10" fill="#F5EFE6" opacity="0.95"/>
+            <ellipse cx="45" cy="-8" rx="14" ry="10" fill="#F5EFE6" opacity="0.95"/>
+            <circle cx="0" cy="-5" r="3.5" fill="#C8954A"/>
+          </g>
+          <!-- effort lines -->
+          <g opacity="0.5" stroke="#F5EFE6" stroke-width="2" fill="none" stroke-linecap="round">
+            <path d="M -85 -45 L -75 -50"/>
+            <path d="M -90 -25 L -80 -25"/>
+            <path d="M 85 -45 L 75 -50"/>
+            <path d="M 90 -25 L 80 -25"/>
+          </g>
+        </g>
+        <text x="200" y="420" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="15" fill="#3D332C" opacity="0.7">press · hold · release</text>
+      </svg>

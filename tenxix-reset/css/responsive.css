@@ -1,0 +1,156 @@
+/* ===========================================================
+   responsive.css — Media queries
+   - <980px : tablet / small laptop
+   - <640px : phones
+   =========================================================== */
+
+@media (max-width:980px){
+
+  /* Nav */
+  .nav-mobile-toggle{display:block}
+  .nav-cta{padding:10px 18px;font-size:12px}
+  /* Mobile drawer: nav-links collapses, expands when .menu-open is set */
+  .nav-links{
+    display:flex;flex-direction:column;align-items:flex-start;gap:0;
+    position:absolute;top:100%;left:0;right:0;
+    background:var(--bone);
+    border-bottom:1px solid var(--line);
+    padding:8px 24px 24px;
+    transform:translateY(-12px);opacity:0;visibility:hidden;
+    transition:all .25s ease;
+    z-index:48;
+  }
+  .nav.menu-open .nav-links{
+    transform:translateY(0);opacity:1;visibility:visible;
+  }
+  .nav-links li{width:100%}
+  .nav-links a{
+    display:block;padding:14px 0;
+    font-size:17px;font-weight:600;color:var(--ink);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-links li:last-child a{border-bottom:none}
+
+  /* Hero */
+  .hero{padding:32px 0 60px}
+  .hero-inner{grid-template-columns:1fr;gap:32px}
+  .hero-gallery{aspect-ratio:4/5;max-width:520px;margin:0 auto;width:100%}
+  .hero-buy{padding:0;text-align:left}
+
+  /* Trust row */
+  .trust-row{padding:24px 0}
+  .trust-row-inner{justify-content:flex-start}
+  .trust-badge{flex-basis:calc(50% - 12px)}
+
+  /* Sections */
+  .section{padding:60px 0}
+  .section-loose{padding:80px 0}
+  .section-head{margin-bottom:40px}
+
+  /* Benefit blocks: stack image above text, image always first */
+  .benefit-block,
+  .benefit-block.flip{grid-template-columns:1fr;gap:28px;padding:56px 0}
+  .benefit-block.flip .benefit-block-image{order:1}
+  .benefit-block.flip .benefit-block-text{order:2}
+  .benefit-block-image{aspect-ratio:9/16;max-width:300px;margin:0 auto;width:100%}
+  .benefit-block-image .num-badge{width:44px;height:44px;font-size:15px;top:18px;left:18px}
+  .benefit-block-text{padding:0;text-align:center}
+  .benefit-block-text h3{font-size:clamp(28px,5.5vw,40px);margin-bottom:18px}
+  .benefit-block-text p{font-size:16px;margin-left:auto;margin-right:auto}
+
+  /* Stats */
+  .stats{padding:60px 0}
+  .stats-grid{grid-template-columns:1fr;gap:16px}
+  .stat{padding:32px 24px}
+
+  /* How it works */
+  .how{padding:64px 0}
+  .how-grid{grid-template-columns:1fr;gap:16px}
+  .how-card{padding:32px 28px}
+  .how-card .num{font-size:60px}
+
+  /* Compare table → cards on mobile */
+  .compare{padding:64px 0}
+  .compare-table{border-radius:16px}
+  .compare-row{grid-template-columns:1.4fr 1fr 1fr 1fr}
+  .compare-cell{padding:12px 10px;font-size:12px}
+  .compare-row.head .compare-cell{font-size:11px;padding:14px 8px}
+
+  /* Video tests */
+  .video-tests{padding:64px 0}
+  .video-tests-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+
+  /* Tests */
+  .tests{padding:64px 0}
+  .tests-grid{grid-template-columns:1fr;gap:14px}
+  .test-card{padding:28px 24px}
+
+  /* GIF strip */
+  .gifs{padding:64px 0}
+  .gifs-grid{grid-template-columns:1fr;gap:16px}
+  .gif-frame{aspect-ratio:16/11}
+
+  /* FAQ */
+  .faq{padding:64px 0}
+  .faq-item summary{font-size:16px;padding:18px 22px;gap:16px}
+  .faq-item .answer{padding:0 22px 18px;font-size:14.5px}
+
+  /* Final + order */
+  .final{padding:64px 0}
+  .order{padding:48px 0 80px}
+  .order-frame{padding:16px 12px;border-radius:16px}
+
+  /* Footer */
+  .footer{padding:60px 24px 28px}
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+  .footer-brand{grid-column:span 2}
+}
+
+@media (max-width:640px){
+  .container{padding:0 18px}
+
+  /* Hero typography */
+  .hero{padding:24px 0 48px}
+  .hero h1.hero-headline{font-size:30px;line-height:1.1}
+  .hero-tagline{font-size:16px}
+  .hero-gallery{aspect-ratio:1/1}
+
+  /* Buy box compact */
+  .price-card{padding:20px 18px;border-radius:14px}
+  .price-tiers{flex-direction:row;gap:6px}
+  .price-tier{padding:12px 6px}
+  .price-tier .qty{font-size:18px}
+  .price-display .price-now{font-size:30px}
+
+  /* Trust badges 2 col */
+  .trust-row-inner{flex-direction:column;gap:14px}
+  .trust-badge{flex-basis:100%}
+
+  /* Benefit blocks: tighter on phones */
+  .benefit-block{padding:48px 0;gap:24px}
+  .benefit-block-image{aspect-ratio:9/16;max-width:260px;border-radius:18px}
+
+  /* Video tests — 1 col, max width so cards aren't huge */
+  .video-tests-grid{grid-template-columns:1fr;gap:14px;max-width:360px;margin:0 auto}
+
+  /* Sticky CTA on phones */
+  .sticky-cta{display:block}
+  body{padding-bottom:80px}
+
+  /* Compare: stack into mini cards */
+  .compare-row{grid-template-columns:1fr 1fr;font-size:12px}
+  .compare-row .compare-cell:first-child{grid-column:span 2;background:var(--bone);font-weight:700}
+  .compare-row.head{display:none}
+  .compare-row .compare-cell::before{
+    display:block;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:4px;font-weight:600;
+  }
+  .compare-row .compare-cell.col-us::before{content:"Tenxix"}
+  .compare-row .compare-cell.col-kegels::before{content:"Just Kegels"}
+  .compare-row .compare-cell.col-surgery::before{content:"Surgery"}
+
+  /* Footer 1 col */
+  .footer-top{grid-template-columns:1fr;gap:32px}
+  .footer-brand{grid-column:span 1}
+  .footer-bottom{flex-direction:column;gap:8px}
+}

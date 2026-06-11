@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="blBg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#3D332C"/>
+            <stop offset="1" stop-color="#0A0805"/>
+          </linearGradient>
+          <linearGradient id="blDev" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#D14B7A"/>
+            <stop offset="1" stop-color="#8E2F54"/>
+          </linearGradient>
+        </defs>
+        <rect width="400" height="460" fill="url(#blBg)"/>
+        <!-- expanding ripple rings = strength radiating -->
+        <g fill="none" stroke="#D14B7A" opacity="0.18" stroke-width="1.2">
+          <circle cx="200" cy="240" r="60"/>
+          <circle cx="200" cy="240" r="100"/>
+          <circle cx="200" cy="240" r="140"/>
+          <circle cx="200" cy="240" r="180"/>
+        </g>
+        <!-- pelvic floor visualization (abstract hammock) -->
+        <g transform="translate(200,240)">
+          <!-- hammock representing strong pelvic floor -->
+          <path d="M -100 30 Q 0 -10 100 30" stroke="#D14B7A" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.85"/>
+          <path d="M -90 50 Q 0 15 90 50" stroke="#D14B7A" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6"/>
+          <path d="M -80 70 Q 0 40 80 70" stroke="#D14B7A" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.4"/>
+          <!-- hip bones -->
+          <circle cx="-100" cy="30" r="9" fill="#F5EFE6" opacity="0.9"/>
+          <circle cx="100" cy="30" r="9" fill="#F5EFE6" opacity="0.9"/>
+          <!-- the device below -->
+          <g transform="translate(0,130)">
+            <path d="M -55 0 Q -42 -22 -5 -12 Q 0 -8 5 -12 Q 42 -22 55 0 Q 45 16 24 14 Q 0 12 -24 14 Q -45 16 -55 0 Z" fill="url(#blDev)"/>
+            <ellipse cx="-42" cy="-4" rx="14" ry="10" fill="#F5EFE6" opacity="0.95"/>
+            <ellipse cx="42" cy="-4" rx="14" ry="10" fill="#F5EFE6" opacity="0.95"/>
+            <circle cx="0" cy="-2" r="3.5" fill="#C8954A"/>
+          </g>
+        </g>
+        <text x="200" y="420" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="14" fill="#D14B7A" opacity="0.85">the muscle that holds</text>
+      </svg>

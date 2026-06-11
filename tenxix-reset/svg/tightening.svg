@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="tightBg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#3D1448"/>
+            <stop offset="1" stop-color="#2D0E04"/>
+          </linearGradient>
+          <linearGradient id="tightDev" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#C8954A"/>
+            <stop offset="1" stop-color="#8A6332"/>
+          </linearGradient>
+          <radialGradient id="tightGlow" cx="0.5" cy="0.5" r="0.6">
+            <stop offset="0" stop-color="rgba(200,149,74,0.35)"/>
+            <stop offset="1" stop-color="rgba(200,149,74,0)"/>
+          </radialGradient>
+        </defs>
+        <rect width="400" height="460" fill="url(#tightBg)"/>
+        <ellipse cx="200" cy="230" rx="220" ry="180" fill="url(#tightGlow)"/>
+        <!-- decorative gold lines -->
+        <g opacity="0.25" stroke="#C8954A" fill="none" stroke-width="1">
+          <path d="M 80 230 Q 200 180 320 230"/>
+          <path d="M 80 250 Q 200 200 320 250"/>
+          <path d="M 80 210 Q 200 160 320 210"/>
+        </g>
+        <!-- thighs holding the device -->
+        <g transform="translate(200,250)">
+          <!-- left thigh -->
+          <ellipse cx="-70" cy="40" rx="55" ry="100" fill="#3D1408" opacity="0.85"/>
+          <!-- right thigh -->
+          <ellipse cx="70" cy="40" rx="55" ry="100" fill="#3D1408" opacity="0.85"/>
+          <!-- The device -->
+          <g>
+            <path d="M -85 -10 Q -65 -38 0 -28 Q 65 -38 85 -10 Q 72 18 38 15 Q 0 13 -38 15 Q -72 18 -85 -10 Z" fill="url(#tightDev)"/>
+            <ellipse cx="-62" cy="-12" rx="20" ry="14" fill="#F5EFE6" opacity="0.95"/>
+            <ellipse cx="62" cy="-12" rx="20" ry="14" fill="#F5EFE6" opacity="0.95"/>
+            <circle cx="0" cy="-7" r="5" fill="#7B2D8B"/>
+          </g>
+          <!-- compression indicator -->
+          <g opacity="0.6" stroke="#C8954A" stroke-width="1.5" fill="none">
+            <path d="M -100 -8 L -110 -8 M -100 -2 L -110 -2"/>
+            <path d="M 100 -8 L 110 -8 M 100 -2 L 110 -2"/>
+          </g>
+        </g>
+        <text x="200" y="420" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="15" fill="#C8954A" opacity="0.85">squeeze · hold · breathe</text>
+      </svg>
